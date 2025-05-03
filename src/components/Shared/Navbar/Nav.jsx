@@ -66,7 +66,7 @@ const Nav = () => {
     return (
 
         <div className={`${scrolling ? '' : 'fixed z-50 bg-white w-full shadow-md border-b'}`}>
-            <div className='max-w-7xl mx-[3%] md:mx-auto  space-y-3 mt-5 '>
+            <div className='mx-[5%] space-y-3 mt-5 '>
                 <NavbarTop />
                 <hr />
                 <div>
@@ -74,52 +74,42 @@ const Nav = () => {
                         ? ' lg:fixed top-2  w-full py-2 max-w-7xl mx-auto bg-white lg:shadow-lg border-t rounded-xl transition-all duration-300 lg:z-[9999]'
                         : 'relative bg-white'
                         }`}>
-                        <div className="">
-                            <div className="flex justify-between items-center h-16">
-                                <div className="flex gap-3">
-                                    <Link to='/'>
-                                        <img
-                                            className='w-60 pb-2'
-                                            src={logo}
-                                            alt="SSF" />
-                                    </Link>
+                        <div className="flex justify-between">
+                            {/* Menu for larger screens */}
+                            <div className="hidden md:flex space-x-4 items-center font-semibold">
+                                <div className="nav-item">
+                                    <NavLink
+                                        to="/"
+                                        className={({ isActive }) => isActive ? "block px-4 py-2  text-primary-base  active" :
+                                            "block px-4 py-2 text-gray-800  hover:text-primary-light"}
+                                        onClick={handleLinkClick}
+                                    >
+                                        Home
+                                    </NavLink>
+                                </div>
+                                <div className="nav-item">
+                                    <NavLink
+                                        to="/about"
+                                        className={({ isActive }) => isActive ? "block px-4 py-2  text-primary-base  active" :
+                                            "block px-4 py-2 text-gray-800  hover:text-primary-light"}
+                                        onClick={handleLinkClick}
+                                    >
+                                        About Us
+                                    </NavLink>
                                 </div>
 
-                                {/* Menu for larger screens */}
-                                <div className="hidden md:flex space-x-4 items-center font-semibold">
-                                    <div className="nav-item">
-                                        <NavLink
-                                            to="/"
-                                            className={({ isActive }) => isActive ? "block px-4 py-2  text-primary-base  active" :
-                                                "block px-4 py-2 text-gray-800  hover:text-primary-light"}
-                                            onClick={handleLinkClick}
-                                        >
-                                            Home
-                                        </NavLink>
-                                    </div>
-                                    <div className="nav-item">
-                                        <NavLink
-                                            to="/about"
-                                            className={({ isActive }) => isActive ? "block px-4 py-2  text-primary-base  active" :
-                                                "block px-4 py-2 text-gray-800  hover:text-primary-light"}
-                                            onClick={handleLinkClick}
-                                        >
-                                            About Us
-                                        </NavLink>
-                                    </div>
+                                <div
+                                    className="relative group "
+                                    onMouseEnter={toggleServices}
+                                    onMouseLeave={() => setTimeout(() => setServicesOpen(false), 200)} >
+                                    <button className="nav-item text-gray-800 py-2 px-3 rounded  hover:text-primary-light flex items-center">
+                                        Product & Items
+                                        {servicesOpen ? <FiChevronUp className='ml-1 text-xl' /> : <FiChevronDown className='ml-1 text-xl' />}
+                                    </button>
 
-                                    <div
-                                        className="relative group "
-                                        onMouseEnter={toggleServices}
-                                        onMouseLeave={() => setTimeout(() => setServicesOpen(false), 200)} >
-                                        <button className="nav-item text-gray-800 py-2 px-3 rounded  hover:text-primary-light flex items-center">
-                                            Product & Items
-                                            {servicesOpen ? <FiChevronUp className='ml-1 text-xl' /> : <FiChevronDown className='ml-1 text-xl' />}
-                                        </button>
-
-                                        {/* Mega menu */}
-                                        <div className={`mega-menu mt-3 ${servicesOpen ? 'show' : ''}`}>
-                                            {/* <NavLink to="/a" onClick={handleLinkClick} className={({ isActive }) =>
+                                    {/* Mega menu */}
+                                    <div className={`mega-menu mt-3 ${servicesOpen ? 'show' : ''}`}>
+                                        {/* <NavLink to="/a" onClick={handleLinkClick} className={({ isActive }) =>
                                                 isActive ? "block px-4 py-1 rounded text-white bg-primary-base" :
                                                     "block px-4 py-2 text-gray-800 hover:bg-gradient-to-t from-primary-light to-primary-deep hover:text-white"}>
                                                 Our Products
@@ -135,32 +125,37 @@ const Nav = () => {
                                                 Top Item
                                             </NavLink> */}
 
-                                        </div>
-
                                     </div>
 
+                                </div>
 
 
-                                    <div className="nav-item">
-                                        <NavLink
-                                            to="/sustainability"
-                                            className={({ isActive }) => isActive ? "block px-4 py-2 text-primary-base text-primary-baseactive" :
-                                                "block px-4 py-2 text-gray-800  hover:text-primary-light"}
-                                            onClick={handleLinkClick}
-                                        >
-                                            Sustainability
-                                        </NavLink>
-                                    </div>
-                                    <div className="nav-item">
-                                        <NavLink
-                                            to="/contact"
-                                            className={({ isActive }) => isActive ? "block px-4 py-2  text-primary-base  active" :
-                                                "block px-4 py-2 text-gray-800  hover:text-primary-light"}
-                                            onClick={handleLinkClick}
-                                        >
-                                            Contact Us
-                                        </NavLink>
-                                    </div>
+
+                                <div className="nav-item">
+                                    <NavLink
+                                        to="/sustainability"
+                                        className={({ isActive }) => isActive ? "block px-4 py-2 text-primary-base text-primary-baseactive" :
+                                            "block px-4 py-2 text-gray-800  hover:text-primary-light"}
+                                        onClick={handleLinkClick}
+                                    >
+                                        Sustainability
+                                    </NavLink>
+                                </div>
+                                <div className="nav-item">
+                                    <NavLink
+                                        to="/contact"
+                                        className={({ isActive }) => isActive ? "block px-4 py-2  text-primary-base  active" :
+                                            "block px-4 py-2 text-gray-800  hover:text-primary-light"}
+                                        onClick={handleLinkClick}
+                                    >
+                                        Contact Us
+                                    </NavLink>
+                                </div>
+                            </div>
+
+                            <div className="flex justify-between items-center h-16">
+                                <div className="flex gap-3">
+                                   <button className='text-lg font-semibold bg-second-base px-5 py-2 rounded '>Get In Tauch</button>
                                 </div>
 
                                 {/* Mobile Menu Icon */}

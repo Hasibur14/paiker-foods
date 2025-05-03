@@ -7,13 +7,17 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        poppins: "'Poppins', sans-serif"
+        poppins: "'Poppins', sans-serif",
+        shadows: "'Shadows Into Light Two', cursive",
+        outfit: "'Outfit', sans-serif",
       },
       colors: {
         primary: {
-          light: "#92C442",
-          base: "#31A343",
-          deep: "#049444",
+          light: "#49A760",
+          deep: "#1F4E3D",
+        },
+        second: {
+          base: "#F7C35F",
         },
       },
 

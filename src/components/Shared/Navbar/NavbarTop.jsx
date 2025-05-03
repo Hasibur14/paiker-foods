@@ -9,15 +9,15 @@ const NavbarTop = () => {
     return (
         <div className='flex justify-between mx-3'>
             <div className='flex gap-2 md:gap-5 text-gray-900 uppercase'>
-                <Link to="/">
-                    <h4 className='text-[12px] md:text-[15px] hover:text-primary-base transition-colors duration-300'>Supplier</h4>
-                </Link>
-                <Link to="/">
-                    <h4 className='text-[12px] md:text-[15px] hover:text-primary-base transition-colors duration-300'>Buyer</h4>
-                </Link>
-                <Link to="/">
-                    <h4 className='text-[12px] md:text-[15px] hover:text-primary-base transition-colors duration-300'>Help & Support</h4>
-                </Link>
+                <div className="flex gap-3">
+                    <Link to='/'>
+                        {/* <img
+                            className='w-60 pb-2'
+                            src={logo}
+                            alt="SSF" /> */}
+                        <h2 className="text-xl font-bold">Paiker Foods</h2>
+                    </Link>
+                </div>
             </div>
             <div className="flex space-x-4">
                 <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Facebook">

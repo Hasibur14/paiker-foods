@@ -1,0 +1,74 @@
+[
+    {
+        "productName": "MOTARRO Rubber Bands",
+        "image": "https://i.postimg.cc/tC3xLnDt/Rectangle-6.png",
+        "rating": "5.00",
+        "description": "Strong and flexible rubber bands for office use."
+    },
+    {
+        "productName": "Office Paper A4 Sheets",
+        "image": "https://i.postimg.cc/0j5TPwDM/2150246078.jpg",
+        "rating": "4.2",
+        "description": "High-quality A4 sheets for printing and writing."
+    },
+    {
+        "productName": "Premium Sticky Notes",
+        "image": "https://i.postimg.cc/Fs5SWVbH/Rectangle-5.png",
+        "rating": "4.8",
+        "description": "Colorful sticky notes for quick reminders."
+    },
+    {
+        "productName": "High-Quality Gel Pens",
+        "image": "https://i.postimg.cc/tC3xLnDt/Rectangle-6.png",
+        "rating": "4.6",
+        "description": "Smooth gel pens with fast-drying ink."
+    },
+    {
+        "productName": "Colorful Paper Clips",
+        "image": "https://i.postimg.cc/0j5TPwDM/2150246078.jpg",
+        "rating": "4.3",
+        "description": "Durable paper clips for organizing documents."
+    },
+    {
+        "productName": "Durable Office Folders",
+        "image": "https://i.postimg.cc/Fs5SWVbH/Rectangle-5.png",
+        "rating": "4.7",
+        "description": "Sturdy folders for storing papers securely."
+    },
+    {
+        "productName": "Ergonomic Scissors",
+        "image": "https://i.postimg.cc/tC3xLnDt/Rectangle-6.png",
+        "rating": "4.4",
+        "description": "Sharp scissors with a comfortable grip."
+    },
+    {
+        "productName": "Multi-Purpose Adhesive Tape",
+        "image": "https://i.postimg.cc/0j5TPwDM/2150246078.jpg",
+        "rating": "4.5",
+        "description": "Strong tape for packing and office tasks."
+    },
+    {
+        "productName": "Heavy-Duty Stapler",
+        "image": "https://i.postimg.cc/Fs5SWVbH/Rectangle-5.png",
+        "rating": "4.9",
+        "description": "Powerful stapler for thick documents."
+    },
+    {
+        "productName": "Magnetic Whiteboard Markers",
+        "image": "https://i.postimg.cc/tC3xLnDt/Rectangle-6.png",
+        "rating": "4.6",
+        "description": "Bright markers with magnetic caps."
+    },
+    {
+        "productName": "Professional Drawing Set",
+        "image": "https://i.postimg.cc/0j5TPwDM/2150246078.jpg",
+        "rating": "4.7",
+        "description": "Complete set for sketching and drawing."
+    },
+    {
+        "productName": "Compact Paper Shredder",
+        "image": "https://i.postimg.cc/Fs5SWVbH/Rectangle-5.png",
+        "rating": "4.8",
+        "description": "Efficient shredder for secure document disposal."
+    }
+]

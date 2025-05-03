@@ -1,0 +1,52 @@
+[
+    {
+        "banner": {
+            "image": "https://i.postimg.cc/0j5TPwDM/2150246078.jpg",
+            "text": "Your Trusted Source For Printing & Packaging Solutions!"
+        },
+        "bottomCards": [
+            {
+                "image": "https://i.postimg.cc/Fs5SWVbH/Rectangle-5.png"
+            },
+            {
+                "image": "https://i.postimg.cc/tC3xLnDt/Rectangle-6.png"
+            },
+            {
+                "image": "https://i.postimg.cc/HkTyHWhG/Rectangle-7.png"
+            }
+        ],
+        "sidebar": {
+            "title": "Product You May Like",
+            "products": [
+                {
+                    "title": "Big Saving On Laser Printer!!!",
+                    "description": "Limited time offer,",
+                    "cta": "Shop Now!",
+                    "buttonText": "Shop Now",
+                    "image": "https://i.postimg.cc/QtzZjqkB/12-2-1.png"
+                },
+                {
+                    "title": "Exclusive Discount on Inkjet Printers!",
+                    "description": "Hurry, limited stock!",
+                    "cta": "Grab Yours Now!",
+                    "buttonText": "Buy Now",
+                    "image": "https://i.postimg.cc/sxZdxZwT/12-2.png"
+                },
+                {
+                    "title": "Office Stationery Deals!",
+                    "description": "Best prices on all supplies,",
+                    "cta": "Check it out!",
+                    "buttonText": "Shop Now",
+                    "image": "https://i.postimg.cc/QtzZjqkB/12-2-1.png"
+                },
+                {
+                    "title": "Premium Quality A4 Papers!",
+                    "description": "Stock up and save!",
+                    "cta": "Order Today!",
+                    "buttonText": "Shop Now",
+                    "image": "https://i.postimg.cc/sxZdxZwT/12-2.png"
+                }
+            ]
+        }
+    }
+]

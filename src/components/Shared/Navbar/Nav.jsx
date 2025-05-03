@@ -68,7 +68,7 @@ const Nav = () => {
         <div className={`${scrolling ? '' : 'fixed z-50 bg-white w-full shadow-md border-b'}`}>
             <div className='mx-[5%] space-y-3 mt-5 '>
                 <NavbarTop />
-                <hr />
+                <div className='border-b-2 border-dashed '></div>
                 <div>
                     <nav className={`${scrolling
                         ? ' lg:fixed top-2  w-full py-2 max-w-7xl mx-auto bg-white lg:shadow-lg border-t rounded-xl transition-all duration-300 lg:z-[9999]'
@@ -155,7 +155,7 @@ const Nav = () => {
 
                             <div className="flex justify-between items-center h-16">
                                 <div className="flex gap-3">
-                                   <button className='text-lg font-semibold bg-second-base px-5 py-2 rounded '>Get In Tauch</button>
+                                    <button className='text-lg font-semibold bg-second-base px-5 py-2 rounded '>Get In Tauch</button>
                                 </div>
 
                                 {/* Mobile Menu Icon */}

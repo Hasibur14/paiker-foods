@@ -161,12 +161,21 @@ const Nav = () => {
                                 </div>
                             </div>
 
-                            <div className="flex justify-between items-center h-16">
+                            <div className="flex gap-2 justify-between items-center h-16">
                                 <div className="flex gap-3">
                                     <a
                                         href="#getInTauch"
                                         className='text-lg font-semibold bg-second-light hover:bg-second-deep   px-5 py-2 rounded transition-all duration-500 text-gray-900'>Get In Tauch</a>
                                 </div>
+                                <label htmlFor="languageToggle" className="font-poppins inline-flex items-center p-1 rounded-md cursor-pointer bg-gray-200/80 hover:bg-gray-300/90 transition-colors duration-200">
+                                    <input id="languageToggle" type="checkbox" className="hidden peer" />
+                                    <span className="px-3 py-1.5 rounded-l-md bg-[#6154dd] peer-checked:bg-[#da801a] text-white font-medium transition-all duration-200 shadow-inner">
+                                        EN
+                                    </span>
+                                    <span className="px-3 py-1.5 rounded-r-md bg-[#da801a] peer-checked:bg-[#6154dd] text-white font-medium transition-all duration-200 shadow-inner">
+                                        BN
+                                    </span>
+                                </label>
 
                                 {/* Mobile Menu Icon */}
                                 <div className="md:hidden flex items-center border border-primary-base p-1  hover:">

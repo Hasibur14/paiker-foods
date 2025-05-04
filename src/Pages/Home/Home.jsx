@@ -1,6 +1,7 @@
 import React from "react";
 import Hero from "../../components/Hero/Hero";
 import About from "./Section/About";
+import FeatureDepertment from "./Section/FeatureDepertment";
 
 
 const Home = () => {
@@ -10,6 +11,7 @@ const Home = () => {
         <Hero />
       </div>
       <About />
+      <FeatureDepertment />
     </div>
   );
 };

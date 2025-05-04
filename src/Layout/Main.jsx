@@ -6,7 +6,7 @@ import Nav from "../components/Shared/Navbar/Nav";
 
 const Main = () => {
     return (
-        <div className="font-poppins">
+        <div className="font-outfit">
             <div className="h-28">
                 <Nav />
             </div>

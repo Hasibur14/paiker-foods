@@ -13,7 +13,7 @@ const FeatureDepartment = () => {
     if (!data) return <div className="text-center py-20">Loading...</div>;
 
     return (
-        <div className="flex flex-col items-center justify-center px-6 py-12 md:px-12 lg:flex-row lg:gap-12">
+        <div className="flex flex-col items-center justify-center px-[10%] py-12 lg:flex-row lg:gap-12">
             {/* Left Image */}
             <div className="mb-8 lg:mb-0 transform rotate-[-10deg]">
                 <img

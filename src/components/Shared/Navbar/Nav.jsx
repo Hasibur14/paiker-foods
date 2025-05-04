@@ -67,17 +67,17 @@ const Nav = () => {
 
     return (
 
-        <div className={` ${scrolling ? 'shadow-md' : 'fixed z-50 w-full '}`}>
-            <div className='container mx-auto space-y-3 mt-5 font-outfit'>
+        <div className={` ${scrolling ? 'shadow-md ' : 'fixed z-50 w-full '}`}>
+            <div className='container mx-auto space-y-3 mt-5 font-outfit '>
                 <span className='hidden lg:block'>
                     <NavbarTop />
                 </span>
-                <div className='border-b-2 border-dashed '></div>
+                <div className='border-b-2 border-dashed border-gray-500'></div>
                 <div>
                     <nav className={`${scrolling ? ' lg:fixed top-2 py-2 px-4 w-full container mx-auto  bg-base-100 lg:shadow-xl border-t rounded-xl transition-all duration-300 lg:z-[9999]' : 'relative bg-transparent text-white'}`}>
                         <div className="flex justify-between">
                             {/* Menu for larger screens */}
-                            <div className="hidden md:flex space-x-4 items-center text-lg font-bold">
+                            <div className="hidden md:flex space-x-4 items-center text-lg font-semibold">
                                 <div className="nav-item">
                                     <NavLink
                                         to="/"

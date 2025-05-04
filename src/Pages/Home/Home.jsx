@@ -3,6 +3,7 @@ import Hero from "../../components/Hero/Hero";
 import About from "./Section/About";
 import FeatureDepertment from "./Section/FeatureDepertment";
 import WhyChooseUs from "./Section/WhyChooseUs";
+import Gallery from "./Section/Gallery";
 
 
 const Home = () => {
@@ -14,6 +15,7 @@ const Home = () => {
       <About />
       <FeatureDepertment />
       <WhyChooseUs />
+      <Gallery />
     </div>
   );
 };

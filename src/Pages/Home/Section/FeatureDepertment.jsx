@@ -13,17 +13,17 @@ const FeatureDepartment = () => {
     if (!data) return <div className="text-center py-20">Loading...</div>;
 
     return (
-        <div className="flex flex-col items-center justify-center px-[10%] py-12  mb-10 lg:flex-row lg:gap-12">
+        <div className="flex flex-col items-center justify-center container mx-auto py-12  mb-10 lg:flex-row lg:gap-12">
             {/* Left Image */}
             <div className="mb-8 lg:mb-0 transform rotate-[-10deg]">
                 <img
                     src={data.images.left}
                     alt="Farmer 1"
-                    className="rounded-xl shadow-lg max-w-xs md:max-w-sm h-[500px]" />
+                    className="rounded shadow-lg max-w-xs md:max-w-sm h-[500px]" />
             </div>
 
             {/* Center Text */}
-            <div className="text-center max-w-3xl text-[#01312C] text-md">
+            <div className="text-center max-w-4xl text-[#01312C] text-md">
                 <p className="text-yellow-500 font-medium mb-2">{data.tagline}</p>
                 <h2 className="font-poppins text-3xl md:text-5xl font-extrabold text-[#01312C] mb-4 whitespace-pre-line">
                     {data.heading}
@@ -43,7 +43,7 @@ const FeatureDepartment = () => {
                 <img
                     src={data.images.right}
                     alt="Farmer 2"
-                    className="rounded-xl shadow-lg max-w-xs md:max-w-sm h-[500px]" />
+                    className="rounded shadow-lg max-w-xs md:max-w-sm h-[500px]" />
             </div>
         </div>
     );

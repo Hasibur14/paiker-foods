@@ -6,6 +6,7 @@ import WhyChooseUs from "./Section/WhyChooseUs";
 import Gallery from "./Section/Gallery";
 import BuildBest from "./Section/BuildBest";
 import Blogs from "./Section/Blogs";
+import GetTauch from "./Section/GetTauch";
 
 
 const Home = () => {
@@ -20,6 +21,7 @@ const Home = () => {
       <Gallery />
       <BuildBest />
       <Blogs />
+      <GetTauch />
     </div>
   );
 };

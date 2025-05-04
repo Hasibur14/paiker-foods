@@ -163,7 +163,9 @@ const Nav = () => {
 
                             <div className="flex justify-between items-center h-16">
                                 <div className="flex gap-3">
-                                    <button className='text-lg font-semibold bg-second-light hover:bg-second-deep   px-5 py-2 rounded transition-all duration-500 text-gray-900'>Get In Tauch</button>
+                                    <a
+                                        href="#getInTauch"
+                                        className='text-lg font-semibold bg-second-light hover:bg-second-deep   px-5 py-2 rounded transition-all duration-500 text-gray-900'>Get In Tauch</a>
                                 </div>
 
                                 {/* Mobile Menu Icon */}

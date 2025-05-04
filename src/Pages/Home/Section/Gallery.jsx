@@ -31,18 +31,13 @@ const Gallery = () => {
       imageUrl: 'https://res.cloudinary.com/dh34eqbhu/image/upload/v1746264661/wnselevi9tahsnhhponq.jpg',
       title: 'Wanderlust',
       description: 'Discover the world through breathtaking destinations.',
-    },
-    {
-      id: 6,
-      imageUrl: 'https://res.cloudinary.com/dh34eqbhu/image/upload/v1746264661/wnselevi9tahsnhhponq.jpg',
-      title: 'Wanderlust',
-      description: 'Discover the world through breathtaking destinations.',
-    },
+    }
+    
   ];
 
   return (
-    <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
-      <div className="mx-[10%]">
+    <section className="py-16  bg-gray-50">
+      <div className="mx-[7%]">
         <div className="text-center mb-12">
             <h4 className='font-shadows text-primary-light'>Awesome Gallery</h4>
           <h2 className="text-4xl font-bold text-gray-900 mb-4">Explore Projects</h2>
@@ -53,7 +48,7 @@ const Gallery = () => {
             <div 
               key={item.id}
               className={`group relative overflow-hidden transition-all duration-500 hover:shadow-2xl ${
-                index === 1 ? 'lg:row-span-2 lg:col-span-2' : ''
+                index === 1 ? 'lg:row-span-1 lg:col-span-2 h-[450px]' : ''
               }`}
             >
               <img

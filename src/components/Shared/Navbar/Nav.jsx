@@ -100,7 +100,7 @@ const Nav = () => {
                                 </div>
                                 <div className="nav-item">
                                     <NavLink
-                                        to="/about"
+                                        to="/products"
                                         className={({ isActive }) => isActive ? "block px-4 py-2  text-primary-light  active" :
                                             "block px-4 py-2   hover:text-primary-light"}
                                         onClick={handleLinkClick}

@@ -4,6 +4,7 @@ import "keen-slider/keen-slider.min.css";
 import slider1 from '../../assets/hero/banner3.png'
 import slider2 from '../../assets/hero/banner1.png'
 import slider3 from '../../assets/hero/banner4.png'
+import { Link } from "react-router-dom";
 
 const Hero = () => {
     const sliderData = [
@@ -74,7 +75,7 @@ const Hero = () => {
     };
 
     return (
-        <div className="absolute w-full mx-auto lg:top-0">
+        <div className="absolute w-full mx-auto  lg:top-0">
             <div className="relative font-outfit">
                 {/* Slider Section */}
                 <div
@@ -97,12 +98,12 @@ const Hero = () => {
                                 <p className="font-mulish text-md sm:text-lg md:text-2xl text-gray-300 animate__animated animate__fadeInUp">
                                     {slide.description}
                                 </p>
-
-                                <button class="rounded relative inline-flex group items-center justify-center px-3 lg:px-8 py-2 lg:py-3 m-1 cursor-pointer border-b-4 border-l-2 active:border-second-light active:shadow-none shadow-lg bg-gradient-to-tr from-second-light to-second-light border-second-deep text-gray-900 font-semibold text-md">
-                                    <span class="absolute w-0 h-0 transition-all duration-300 ease-out bg-white rounded-full group-hover:w-32 group-hover:h-32 opacity-10"></span>
-                                    <span class="relative uppercase">Explore Our Products</span>
-                                </button>
-
+                                <Link to='/products'>
+                                    <button class="rounded relative inline-flex group items-center justify-center px-3 lg:px-8 py-2 lg:py-3 m-1 cursor-pointer border-b-4 border-l-2 active:border-second-light active:shadow-none shadow-lg bg-gradient-to-tr from-second-light to-second-light border-second-deep text-gray-900 font-semibold text-md">
+                                        <span class="absolute w-0 h-0 transition-all duration-300 ease-out bg-white rounded-full group-hover:w-32 group-hover:h-32 opacity-10"></span>
+                                        <span class="relative uppercase">Explore Our Products</span>
+                                    </button>
+                                </Link>
                             </div>
                         </div>
                     ))}

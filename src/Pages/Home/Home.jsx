@@ -9,7 +9,7 @@ const Home = () => {
   return (
     <div className="bg-stone-100 w-full h-full">
       <Hero />
-
+      
     </div>
   );
 };

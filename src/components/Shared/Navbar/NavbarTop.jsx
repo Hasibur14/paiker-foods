@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const NavbarTop = () => {
     return (
-        <div className='w-full flex gap-16 justify-between items-center mx-3 py-4'>
+        <div className='w-full flex gap-16 justify-between items-center mx-3 py-4 text-white'>
             <div className='w-1/2 flex gap-2 md:gap-5 text-gray-900 uppercase'>
                 <div className="flex gap-3">
                     <Link to='/'>
@@ -16,7 +16,7 @@ const NavbarTop = () => {
                 {/* Head Office */}
                 <div className="flex gap-3 items-center ">
                     <div>
-                        <GrLocation className="text-5xl bg-second-base p-2 rounded-full" />
+                        <GrLocation className="text-5xl text-gray-900 bg-second-light p-3 rounded-full" />
                     </div>
                     <div>
                         <h2 className="text-lg font-semibold">Head Office</h2>
@@ -27,7 +27,7 @@ const NavbarTop = () => {
                 {/* Marketing Office */}
                 <div className="flex gap-3 items-center ">
                     <div>
-                        <GrLocation className="text-5xl bg-second-base p-2 rounded-full" />
+                        <GrLocation className="text-5xl text-gray-900 bg-second-light p-3 rounded-full" />
                     </div>
                     <div>
                         <h2 className="text-lg font-semibold">Marketing Office</h2>
@@ -37,7 +37,7 @@ const NavbarTop = () => {
 
                 {/* Call Us */}
                 <div className="flex gap-3 items-center ">
-                    <PiPhoneCallBold className="text-5xl bg-second-base p-2 rounded-full" />
+                    <PiPhoneCallBold className="text-5xl text-gray-900 bg-second-light p-3 rounded-full" />
                     <div>
                         <h2 className="text-lg font-semibold">Contact </h2>
                         <h3 className="text-xs">+8801755690256</h3>

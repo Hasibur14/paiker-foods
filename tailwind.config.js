@@ -17,7 +17,8 @@ export default {
           deep: "#1F4E3D",
         },
         second: {
-          base: "#F7C35F",
+          light: "#F7C35F",
+          deep: "#cc9b41"
         },
       },
 

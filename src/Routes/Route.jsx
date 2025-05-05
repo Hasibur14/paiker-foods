@@ -5,6 +5,7 @@ import Home from "../Pages/Home/Home";
 import AboutUs from "../Pages/AboutUs/AboutUs";
 import ContactUs from "../Pages/Contact/ContactUs";
 import Products from "../Pages/Products/Products";
+import WholesaleExport from "../Pages/WholesaleExport/WholesaleExport";
 
 
 
@@ -27,7 +28,11 @@ const router = createBrowserRouter([
                 path: '/products',
                 element: <Products />
             },
-           
+            {
+                path: '/wholesale-export',
+                element: <WholesaleExport />
+            },
+
             {
                 path: '/contact',
                 element: <ContactUs />

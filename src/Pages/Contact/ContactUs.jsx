@@ -1,11 +1,20 @@
 import React from 'react'
+import BannerTitle from '../../components/BannerTitle/BannerTitle';
+import banner from '../../assets/hero/banner1.png'
+import Container from '../../components/Container/Container';
+
 
 const ContactUs = () => {
     return (
         <div className='space-y-5 '>
-            <section class="p-10 bg-gray-100">
-                <div class=" max-w-7xl mx-[3%] md:mx-auto ">
-                    <div class="mt-12 sm:mt-16">
+            <BannerTitle
+                bannerImg={banner}
+                subTitle='Contact Us'
+                title="Contact" />
+
+            <section class="bg-gray-100">
+                <Container>
+                    <div class="">
                         <div class="grid grid-cols-1 gap-6 px-8 text-center md:px-0 md:grid-cols-3">
                             <div class="overflow-hidden  bg-white rounded-xl">
                                 <div class="p-6">
@@ -191,9 +200,8 @@ const ContactUs = () => {
                             </div>
                         </div>
                     </div>
-                </div>
+                </Container>
             </section>
-
             {/* map  */}
             <iframe
                 className="w-full h-[70vh] py-5"

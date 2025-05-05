@@ -1,15 +1,15 @@
 import React from 'react'
+import Container from '../../components/Container/Container'
 import BannerTitle from '../../components/BannerTitle/BannerTitle';
-import banner from '../../assets/hero/banner1.png'
-import Container from '../../components/Container/Container';
+import banner from '../../assets/hero/banner1.png';
 
-const Products = () => {
+const WholesaleExport = () => {
     return (
         <div>
             <BannerTitle
                 bannerImg={banner}
-                subTitle='Products'
-                title="Products" />
+                subTitle='Wholesale & Export'
+                title="Wholesale & Export" />
 
             <Container>
                 <h2 className='text-rose-600 animate-pulse text-center'>Comming...</h2>
@@ -18,4 +18,4 @@ const Products = () => {
     )
 }
 
-export default Products
+export default WholesaleExport

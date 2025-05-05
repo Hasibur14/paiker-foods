@@ -27,8 +27,8 @@ const About = () => {
     ]
 
     return (
-        <div className='bg-[#01312C] rounded-2xl p-8 m-5'>
-            <div className="lg:flex justify-center items-center space-x-10 border border-dashed rounded-2xl px-8 py-14">
+        <div className='bg-[#01312C] rounded-2xl p-4 md:p-8 m-5'>
+            <div className="lg:flex justify-center items-center md:space-x-10 space-y-8 md:space-y-0 border border-dashed rounded-2xl px-3 md:px-8 py-14">
                 {aboutData.map((item, index) => (
                     <div key={item._id} className="flex items-center">
                         <div className="flex flex-col items-center text-center max-w-md space-y-4">

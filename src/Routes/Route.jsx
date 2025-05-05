@@ -6,7 +6,9 @@ import AboutUs from "../Pages/AboutUs/AboutUs";
 import ContactUs from "../Pages/Contact/ContactUs";
 import Products from "../Pages/Products/Products";
 import WholesaleExport from "../Pages/WholesaleExport/WholesaleExport";
-import ProductDetails from "../Pages/Products/productDetails";
+import ProductsDetails from "../Pages/Products/ProductsDetails";
+
+
 
 
 
@@ -31,11 +33,11 @@ const router = createBrowserRouter([
             },
             {
                 path: '/product-details/:id',
-                element: <ProductDetails />,
+                element: <ProductsDetails />,
                 loader: async ({ params }) => {
                     const response = await fetch(`/freshProduct.json`);
                     const products = await response.json();
-                    const product = products.find(p => p._id === params.id); 
+                    const product = products.find(p => p._id === params.id);
                     return product;
                 }
             },

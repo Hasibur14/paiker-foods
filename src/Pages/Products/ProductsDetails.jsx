@@ -1,11 +1,8 @@
-import React from 'react';
-import { useLoaderData } from 'react-router-dom';
-import Container from '../../components/Container/Container';
-import BannerTitle from '../../components/BannerTitle/BannerTitle';
-import banner from '../../assets/hero/banner1.png'
+import React from 'react'
 
-const ProductDetails = () => {
-    const product = useLoaderData(); // This gets the data from your loader function
+const ProductsDetails = () => {
+
+    const product = useLoaderData();
 
     return (
         <div className="py-12">
@@ -49,7 +46,7 @@ const ProductDetails = () => {
             </Container>
 
         </div>
-    );
-};
+    )
+}
 
-export default ProductDetails;
+export default ProductsDetails

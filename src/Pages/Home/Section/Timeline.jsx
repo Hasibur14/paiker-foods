@@ -1,18 +1,71 @@
-import React from 'react'
-import Container from '../../../components/Container/Container'
+import React from 'react';
+import { motion } from 'framer-motion';
+import Container from '../../../components/Container/Container';
+
+const timelineData = [
+    { year: '1906', title: 'Open Farm' },
+    { year: '1920', title: 'Farm Remodelacion' },
+    { year: '1925', title: 'Grainfarmers Formed' },
+    { year: '1930', title: 'Start of Agriculture' }
+];
 
 const Timeline = () => {
     return (
-        <div>
+        <div className="py-16 bg-gray-50">
             <Container>
-                <div className='md:flex justify-between'>
-                    <h2 className='text-5xl font-bold'>Farming have been
-                        since 1866</h2>
-                    <p>Quickly matrix cutting-edge solutions for customized vortals. Competently drive virtual materials rather than user-centric bandwidth. Competently whiteboard process-centric solutions rather than collaborative.</p>
+                {/* Header */}
+                <div className='md:flex justify-between mb-16'>
+                    <h2 className='text-4xl md:text-5xl font-bold mb-6 md:mb-0'>Farming have been<br />since 1866</h2>
+                    <p className='md:w-1/2 text-gray-600 text-lg'>
+                        Assertively formulate cross-platform sources rather than virtual results. Efficiently innovate revolutionary process improvements before distinctive "outside the box" thinking. Monotonectally conceptualize market.
+                    </p>
+                </div>
+
+                {/* Timeline */}
+                <div className="relative">
+                    <div className="relative flex justify-between items-start pt-10">
+                        {timelineData.map((item, index) => (
+                            <motion.div
+                                key={index}
+                                className="flex flex-col items-center relative z-10"
+                                style={{ width: `${100 / timelineData.length}%` }}
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: index * 0.2, duration: 0.6 }}
+                            >
+                                {/* Dot */}
+                                <div className="w-6 h-6 bg-white border-4 border-green-700 rounded-full mx-auto mb-4 flex items-center justify-center">
+                                    <motion.div
+                                        className="w-3 h-3 bg-green-700 rounded-full"
+                                        initial={{ scale: 0 }}
+                                        animate={{ scale: 1 }}
+                                        transition={{ delay: index * 0.2 + 0.3 }}
+                                    />
+                                </div>
+
+                                {/* Text */}
+                                <div className="text-center px-2">
+                                    <h3 className="text-3xl md:text-4xl lg:text-6xl font-bold text-green-700 mt-2">{item.year}</h3>
+                                    <p className="text-md md:text-lg font-medium mt-2 text-gray-700">{item.title}</p>
+                                </div>
+
+                                {/* Connector line animation */}
+                                {index < timelineData.length - 1 && (
+                                    <motion.div
+                                        className="absolute top-3 left-1/2 h-1 bg-green-700 origin-left"
+                                        style={{ width: '100%' }}
+                                        initial={{ scaleX: 0 }}
+                                        animate={{ scaleX: 1 }}
+                                        transition={{ delay: index * 0.2 + 0.4, duration: 0.8 }}
+                                    />
+                                )}
+                            </motion.div>
+                        ))}
+                    </div>
                 </div>
             </Container>
         </div>
-    )
-}
+    );
+};
 
-export default Timeline
+export default Timeline;

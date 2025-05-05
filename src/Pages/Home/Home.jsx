@@ -9,6 +9,7 @@ import Blogs from "./Section/Blogs";
 import GetTauch from "./Section/GetTauch";
 import BestOrganic from "./Section/BestOrganic";
 import FreshProduct from "./Section/FreshProduct";
+import Timeline from "./Section/Timeline";
 
 
 const Home = () => {
@@ -22,6 +23,7 @@ const Home = () => {
       <BestOrganic />
       <WhyChooseUs />
       <FreshProduct />
+      <Timeline />
       <Gallery />
       <BuildBest />
       <Blogs />

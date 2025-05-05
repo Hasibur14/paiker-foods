@@ -7,6 +7,7 @@ import Gallery from "./Section/Gallery";
 import BuildBest from "./Section/BuildBest";
 import Blogs from "./Section/Blogs";
 import GetTauch from "./Section/GetTauch";
+import BestOrganic from "./Section/BestOrganic";
 
 
 const Home = () => {
@@ -17,6 +18,7 @@ const Home = () => {
       </div>
       <About />
       <FeatureDepertment />
+      <BestOrganic />
       <WhyChooseUs />
       <Gallery />
       <BuildBest />

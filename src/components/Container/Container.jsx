@@ -2,7 +2,7 @@
 
 const Container = ({ children }) => {
     
-    return <div className=" px-4 mx-[10%] mt-96">{children}</div>;
+    return <div className="mx-[5%] lg:mx-[10%]">{children}</div>;
 };
 
 

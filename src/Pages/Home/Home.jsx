@@ -8,6 +8,7 @@ import BuildBest from "./Section/BuildBest";
 import Blogs from "./Section/Blogs";
 import GetTauch from "./Section/GetTauch";
 import BestOrganic from "./Section/BestOrganic";
+import FreshProduct from "./Section/FreshProduct";
 
 
 const Home = () => {
@@ -20,6 +21,7 @@ const Home = () => {
       <FeatureDepertment />
       <BestOrganic />
       <WhyChooseUs />
+      <FreshProduct />
       <Gallery />
       <BuildBest />
       <Blogs />

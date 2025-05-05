@@ -1,4 +1,5 @@
 import React from 'react';
+import Container from '../../../components/Container/Container';
 
 const Gallery = () => {
   const galleryItems = [
@@ -32,24 +33,23 @@ const Gallery = () => {
       title: 'Wanderlust',
       description: 'Discover the world through breathtaking destinations.',
     }
-    
+
   ];
 
   return (
     <section className="py-16  bg-gray-50">
-      <div className="mx-[7%]">
+      <Container>
         <div className="text-center mb-12">
-            <h4 className='font-shadows text-primary-light'>Awesome Gallery</h4>
+          <h4 className='font-shadows text-primary-light'>Awesome Gallery</h4>
           <h2 className="text-4xl font-bold text-gray-900 mb-4">Explore Projects</h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {galleryItems.map((item, index) => (
-            <div 
+            <div
               key={item.id}
-              className={`group relative overflow-hidden transition-all duration-500 hover:shadow-2xl ${
-                index === 1 ? 'lg:row-span-1 lg:col-span-2 h-[450px]' : ''
-              }`}
+              className={`group relative overflow-hidden transition-all duration-500 hover:shadow-2xl ${index === 1 ? 'lg:row-span-1 lg:col-span-2 h-[450px]' : ''
+                }`}
             >
               <img
                 src={item.imageUrl}
@@ -71,7 +71,8 @@ const Gallery = () => {
             View Full Gallery
           </button>
         </div> */}
-      </div>
+
+      </Container>
     </section>
   );
 };

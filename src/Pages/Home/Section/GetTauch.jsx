@@ -1,47 +1,108 @@
 import React from 'react';
-import bg from '../../../assets/home/getIn.jpg'
+import { FaMapMarkerAlt, FaEnvelope, FaPhoneAlt, FaClock } from 'react-icons/fa';
+import Container from '../../../components/Container/Container';
+import icon from '../../../assets/home/getTauch-1.png'
+import icon2 from '../../../assets/home/getTauch-2.png'
+import bg from '../../../assets/home/getTauchBg.png'
 
 const GetTauch = () => {
     return (
+        <div id="getInTauch" className="pt-10 pb-5">
+            <Container>
+                {/* Grid Layout */}
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
+                    {/* Left Side: Map & Contact */}
+                    <div>
+                        {/* Google Map */}
+                        <iframe
+                            title="Google Map"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d19819.710451896313!2d-0.120853!3d51.492138!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487604b2a85cf29d%3A0x91a8b77978a30742!2sWalnut%20Tree%20Walk%2C%20London%20SE11%206DN%2C%20UK!5e0!3m2!1sen!2sbd!4v1717660936502!5m2!1sen!2sbd"
+                            className="w-full h-64 rounded-lg mb-6"
+                            allowFullScreen=""
+                            loading="lazy"
+                        ></iframe>
 
-        <section id='getInTauch'>
-            <div className='text-center contact mb-24 p-4 bg-black bg-opacity-50'
-                style={{
-                    backgroundImage: `url(${bg})`,
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                }}>
-                <fieldset className='border container mx-auto py-20 lg:max-w-2xl'>
-                    <legend className='text-second-light text-xl font-bold'>Get In Tauch</legend>
-                    <h1 className="text-3xl text-white mb-8">Stay connected with us</h1>
-                    <input type="email"
-                        placeholder="Email address"
-                        className="input w-full max-w-sm mb-5"
-                        data-aos="fade-up"
-                        data-aos-duration="1500" />
-                    <br />
-                    <input type="text"
-                        placeholder="Subject"
-                        className="input  w-full max-w-sm mb-5"
-                        data-aos="fade-up"
-                        data-aos-duration="2000" />
-                    <br />
-                    <textarea className="textarea  w-full max-w-sm h-[130px] mb-5"
-                        placeholder="Your message"
-                        data-aos="fade-up"
-                        data-aos-duration="2500">
-                    </textarea>
-                    <br />
-                    <button className=' py-2 w-full max-w-sm rounded-sm text-white bg-gradient-to-r from-second-light to-second-deep border-purple-600 '
-                        data-aos="fade-up"
-                        data-aos-duration="2500">
-                        SUBMIT
-                    </button>
-                </fieldset>
-            </div>
-        </section>
+                        {/* Contact Info Box */}
+                        <div className="bg-[#F8C32C] p-6 rounded-xl space-y-6 text-gray-800 border-dashed border-white">
+                            <div className='border border-dashed border-gray-100 p-6 rounded-xl space-y-6'>
+                                {/* Address */}
+                                <div className="flex items-start space-x-4">
+                                    <FaMapMarkerAlt className="mmt-1 text-5xl bg-[#52320A] p-3 rounded-full text-white" />
+                                    <div>
+                                        <h4 className="font-semibold">Farm Address</h4>
+                                        <p>Prinsengracht 250, 2501016 PM<br />Amsterdam Netherlands</p>
+                                    </div>
+                                </div>
 
-    )
-}
+                                {/* Contact */}
+                                <div className="flex items-start space-x-4">
+                                    <FaEnvelope className="mt-1 text-5xl bg-[#52320A] p-3 rounded-full text-white" />
+                                    <div>
+                                        <h4 className="font-semibold">Contact Us</h4>
+                                        <p>Donalfarms@gmail.com<br />Call Us 24/7: +1 987 654 3210</p>
+                                    </div>
+                                </div>
+
+                                {/* Hours */}
+                                <div className="flex items-start space-x-4">
+                                    <FaClock className="mt-1 text-5xl bg-[#52320A] p-3 rounded-full text-white" />
+                                    <div>
+                                        <h4 className="font-semibold">Working Hours</h4>
+                                        <p>Mon - Fri: 8.00am - 18.00pm<br />Sat: 9.00am - 17.00pm Holidays: Closes</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    {/* Right Side: Form */}
+                    <div>
+                        <div className='flex justify-between'>
+                            <h2 className="text-green-700 font-medium mb-1">Let's Cooperate Together</h2>
+                            <img src={icon2} alt="icon2" className='opacity-30' />
+                        </div>
+                        <p className="mb-6 text-sm">We will reply you within 24 hours via email, thank you for contacting</p>
+                        <img src={icon} alt="icon" />
+                        <form className="space-y-4 mt-8">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <input type="text" placeholder="Name*" className="input input-bordered w-full rounded-full px-5 py-3 bg-gray-100" required />
+                                <input type="email" placeholder="Email*" className="input input-bordered w-full rounded-full px-5 py-3 bg-gray-100" required />
+                            </div>
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <input type="text" placeholder="Phone Number*" className="input input-bordered w-full rounded-full px-5 py-3 bg-gray-100" required />
+                                <select className="input input-bordered w-full rounded-full px-5 py-3 bg-gray-100">
+                                    <option>You need support?</option>
+                                    <option>General Inquiry</option>
+                                    <option>Partnership</option>
+                                    <option>Technical Help</option>
+                                </select>
+                            </div>
+                            <textarea placeholder="Message..." rows="5" className="w-full p-5 rounded-xl bg-gray-100 resize-none"></textarea>
+                            <div className="md:flex justify-between space-y-6 md:space-y-0">
+                                <div className="flex items-center space-x-2">
+                                    <input type="checkbox" id="terms" className="accent-yellow-500" required />
+                                    <label htmlFor="terms" className="text-sm">Agree to our terms and conditions</label>
+                                </div>
+
+                                <button type="submit" className="bg-green-900 hover:bg-green-800 text-white flex items-center space-x-4 px-6 py-3 rounded-full">
+                                    <span>Send Message</span>
+                                    <span className="bg-[#F8C32C]  text-black rounded-full p-2 w-10 h-10 font-bold">&rarr;</span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </Container>
+
+            <img
+                src={bg}
+                alt="bg"
+                className='mt-10'
+            />
+
+        </div>
+    );
+};
 
 export default GetTauch;

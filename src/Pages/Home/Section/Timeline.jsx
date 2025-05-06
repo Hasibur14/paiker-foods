@@ -15,7 +15,7 @@ const Timeline = () => {
     const isInView = useInView(ref, { once: true, margin: '-100px' });
 
     return (
-        <div ref={ref} className="py-16 bg-gray-50">
+        <div ref={ref} className="py-16">
             <Container>
                 {/* Header */}
                 <div className='md:flex justify-between mb-16'>

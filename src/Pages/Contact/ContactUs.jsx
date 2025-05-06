@@ -12,7 +12,7 @@ const ContactUs = () => {
             <BannerTitle
                 bannerImg={banner}
                 subTitle='Contact Us'
-                title="Contact" />
+                title="Contact Us" />
 
             <GetTauch />
             <Brands />

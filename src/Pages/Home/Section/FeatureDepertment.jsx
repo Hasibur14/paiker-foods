@@ -27,7 +27,7 @@ const FeatureDepartment = () => {
 
                     {/* Center Text */}
                     <div className="text-center max-w-4xl text-[#01312C] text-md">
-                        <p className="text-yellow-500 font-medium mb-2">{data.tagline}</p>
+                        <p className="text-second-deep font-medium text-lg mb-2">{data.tagline}</p>
                         <h2 className="font-poppins text-3xl md:text-5xl font-extrabold text-[#01312C] mb-4 whitespace-pre-line">
                             {data.heading}
                         </h2>

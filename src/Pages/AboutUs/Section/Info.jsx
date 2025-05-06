@@ -5,7 +5,7 @@ import { FaHotTubPerson } from 'react-icons/fa6';
 
 const Info = () => {
     return (
-        <div className='py-16'>
+        <div className='pt-16'>
             <Container>
                 <div className='md:flex gap-16 justify-between w-full'>
                     <h2 className='text-2xl w-1/2'>We are confident that we are the leading farm in

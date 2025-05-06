@@ -8,6 +8,7 @@ import About from '../Home/Section/About'
 import FreshnessCommitment from './Section/FreshnessCommitment'
 import Timeline from '../Home/Section/Timeline'
 import GetTauch from '../Home/Section/GetTauch'
+import MDMessage from './Section/MDMessage'
 
 const AboutUs = () => {
     return (
@@ -20,6 +21,7 @@ const AboutUs = () => {
             <Info />
             <ProvidingProduct />
             <MissionVision />
+            <MDMessage />
             <About />
             <FreshnessCommitment />
             <Timeline />

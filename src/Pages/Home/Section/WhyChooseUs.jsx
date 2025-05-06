@@ -1,4 +1,5 @@
 import React from 'react';
+import CountUp from 'react-countup';
 import { BiCheckCircle } from 'react-icons/bi';
 
 const WhyChooseUs = () => {
@@ -14,7 +15,7 @@ const WhyChooseUs = () => {
                 label: 'Growth Tonns of Harvest'
             }
         ],
-        image:'https://res.cloudinary.com/dh34eqbhu/image/upload/v1746264661/wnselevi9tahsnhhponq.jpg',
+        image: 'https://res.cloudinary.com/dh34eqbhu/image/upload/v1746264661/wnselevi9tahsnhhponq.jpg',
         features: [
             {
                 title: 'Always Fresh',
@@ -59,14 +60,18 @@ const WhyChooseUs = () => {
                 <div className="flex justify-between">
                     <div className="items-center gap-12">
                         {chooseUsData.stats.map((stat, idx) => (
-                            <div key={idx} className=" items-center gap-4">
+                            <div key={idx} className="items-center gap-4">
                                 {idx > 0 && <div className="border-b-2 border-gray-600 h-5 w-32 mb-3"></div>}
                                 <div>
-                                    <h3 className="text-4xl font-bold text-yellow-400">{stat.value}</h3>
+                                    <h3 className="text-4xl font-bold text-yellow-400">
+                                        <CountUp start={0} end={parseFloat(stat.value)} duration={3} delay={0.5} />
+                                        <span>{stat.value.replace(/[0-9.]/g, '')}</span>+
+                                    </h3>
                                     <p className="text-gray-700 mt-1">{stat.label}</p>
                                 </div>
                             </div>
                         ))}
+
                     </div>
 
                     <div className="mt-4 flex justify-end">

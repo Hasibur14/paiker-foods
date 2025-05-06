@@ -11,7 +11,7 @@
     bottom: 0;
     height: 3px; 
     width: 100%;
-    background-color: #31A343; 
+    background-color: #06a41d; 
     transform: translateX(-100%); 
     transition: transform 0.5s ease;
 }

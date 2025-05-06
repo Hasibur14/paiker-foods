@@ -4,6 +4,8 @@ import BannerTitle from '../../components/BannerTitle/BannerTitle'
 import Info from './Section/Info'
 import ProvidingProduct from './Section/ProvidingProduct'
 import MissionVision from './Section/MissionVision'
+import About from '../Home/Section/About'
+import FreshnessCommitment from './Section/FreshnessCommitment'
 
 const AboutUs = () => {
     return (
@@ -16,6 +18,8 @@ const AboutUs = () => {
             <Info />
             <ProvidingProduct />
             <MissionVision />
+            <About />
+            <FreshnessCommitment />
         </div>
     )
 }

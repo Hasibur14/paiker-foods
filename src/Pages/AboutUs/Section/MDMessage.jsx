@@ -4,7 +4,7 @@ import Container from '../../../components/Container/Container';
 
 const MDMessage = () => {
     return (
-        <div className='bg-gray-50 my-16'>
+        <div className='bg-base-100 my-16'>
             <Container>
                 <div className="lg:mt-48 bg-gradient-to-r from-green-700 to-emerald-700 rounded-2xl pl-[7%]">
                     {

@@ -16,7 +16,7 @@ const GetTauch = () => {
                         {/* Google Map */}
                         <iframe
                             title="Google Map"
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d19819.710451896313!2d-0.120853!3d51.492138!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487604b2a85cf29d%3A0x91a8b77978a30742!2sWalnut%20Tree%20Walk%2C%20London%20SE11%206DN%2C%20UK!5e0!3m2!1sen!2sbd!4v1717660936502!5m2!1sen!2sbd"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3620.350692400587!2d89.37086107607465!3d24.85186934559988!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39fc54e3b9e72701%3A0xb026409faa8f68c4!2z4Kaw4Ka-4Kac4Ka-IOCmrOCmvuCmnOCmvuCmsCDgprDgp4vgpqEsIOCmrOCml-CngeCmoeCmvOCmvg!5e0!3m2!1sbn!2sbd!4v1746514165428!5m2!1sbn!2sbd"
                             className="w-full h-64 rounded-lg mb-6"
                             allowFullScreen=""
                             loading="lazy"
@@ -29,8 +29,9 @@ const GetTauch = () => {
                                 <div className="flex items-start space-x-4">
                                     <FaMapMarkerAlt className="mmt-1 text-5xl bg-[#52320A] p-3 rounded-full text-white" />
                                     <div>
-                                        <h4 className="font-semibold">Farm Address</h4>
-                                        <p>Prinsengracht 250, 2501016 PM<br />Amsterdam Netherlands</p>
+                                        <h4 className="font-semibold"> Address</h4>
+                                        <p>408/445, Raza Bazar, Bogura Sadar,
+                                        Bogura, Bangladesh</p>
                                     </div>
                                 </div>
 
@@ -39,7 +40,7 @@ const GetTauch = () => {
                                     <FaEnvelope className="mt-1 text-5xl bg-[#52320A] p-3 rounded-full text-white" />
                                     <div>
                                         <h4 className="font-semibold">Contact Us</h4>
-                                        <p>Donalfarms@gmail.com<br />Call Us 24/7: +1 987 654 3210</p>
+                                        <p>paikerfoods@gmail.com<br />Call Us 24/7: +1 987 654 3210</p>
                                     </div>
                                 </div>
 

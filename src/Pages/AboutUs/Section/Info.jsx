@@ -3,6 +3,7 @@ import Container from '../../../components/Container/Container';
 import { AiFillProduct } from 'react-icons/ai';
 import { FaHotTubPerson } from 'react-icons/fa6';
 
+
 const Info = () => {
     return (
         <div className='pt-16'>

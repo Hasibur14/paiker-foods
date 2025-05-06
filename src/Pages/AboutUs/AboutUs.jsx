@@ -3,6 +3,7 @@ import banner from '../../assets/titleBG.png'
 import BannerTitle from '../../components/BannerTitle/BannerTitle'
 import Info from './Section/Info'
 import ProvidingProduct from './Section/ProvidingProduct'
+import MissionVision from './Section/MissionVision'
 
 const AboutUs = () => {
     return (
@@ -14,6 +15,7 @@ const AboutUs = () => {
 
             <Info />
             <ProvidingProduct />
+            <MissionVision />
         </div>
     )
 }

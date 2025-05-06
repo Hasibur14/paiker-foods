@@ -6,6 +6,8 @@ import ProvidingProduct from './Section/ProvidingProduct'
 import MissionVision from './Section/MissionVision'
 import About from '../Home/Section/About'
 import FreshnessCommitment from './Section/FreshnessCommitment'
+import Timeline from '../Home/Section/Timeline'
+import GetTauch from '../Home/Section/GetTauch'
 
 const AboutUs = () => {
     return (
@@ -20,6 +22,8 @@ const AboutUs = () => {
             <MissionVision />
             <About />
             <FreshnessCommitment />
+            <Timeline />
+            <GetTauch />
         </div>
     )
 }

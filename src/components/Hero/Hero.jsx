@@ -5,6 +5,7 @@ import slider1 from '../../assets/hero/banner3.png'
 import slider2 from '../../assets/hero/banner1.png'
 import slider3 from '../../assets/hero/banner4.png'
 import { Link } from "react-router-dom";
+import { LiaSquareFullSolid } from "react-icons/lia";
 
 const Hero = () => {
     const sliderData = [
@@ -110,36 +111,19 @@ const Hero = () => {
                 </div>
 
                 {/* Navigation Controls */}
-                <div className="absolute font-cinzel bottom-5 lg:bottom-20 left-0 right-0 flex justify-center items-center space-x-4 w-full z-50">
-                    <button
-                        onClick={handlePrevious}
-                        className="flex  text-white font-semibold px-4 py-2 rounded-full hover:bg-primary-dark"
-                        aria-label="Previous Slide"
-                    >
-                        Prev
-                    </button>
-                    <div className="border border-gray-400 min-w-14 hidden md:block"></div>
-                    <div className="flex justify-center h-5 space-x-4">
+                <div className="absolute md:left-[6%] top-1/2 transform -translate-y-1/2 z-50">
+                    <div className="flex flex-col space-y-4">  {/* Changed from space-x-4 to space-y-4 */}
                         {sliderData.map((_, index) => (
                             <button
                                 key={index}
                                 onClick={() => instanceRef.current?.moveToIdx(index)}
-                                className={`text-md md:text-xl font-bold border-r border-gray-400 px-2 ${currentIndex === index ? "text-primary-light" : "text-white"
-                                    }`}
+                                className={`text-md md:text-xl font-bold ${currentIndex === index ? "text-[#31c52c]" : "text-white"}`}
                                 aria-label={`Go to slide ${index + 1}`}
                             >
-                                0{index + 1}
+                                <LiaSquareFullSolid />
                             </button>
                         ))}
                     </div>
-                    <div className="border border-gray-400 min-w-14 hidden md:block"></div>
-                    <button
-                        onClick={handleNext}
-                        className=" text-white px-4 py-2 font-semibold rounded-full hover:bg-primary-dark"
-                        aria-label="Next Slide"
-                    >
-                        Next
-                    </button>
                 </div>
             </div>
         </div>

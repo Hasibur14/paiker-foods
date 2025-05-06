@@ -8,7 +8,7 @@ const NavbarTop = () => {
             <div className='w-1/2 flex gap-2 md:gap-5 text-gray-900 uppercase'>
                 <div className="flex gap-3">
                     <Link to='/'>
-                        <h2 className="text-5xl font-extrabold font-shadows bg-gradient-to-t from-primary-light to-primary-deep text-transparent bg-clip-text">Paiker Foods</h2>
+                        <h2 className="text-5xl font-extrabold font-shadows bg-gradient-to-t from-[#52db64] via-primary-light to-[#016524] text-transparent bg-clip-text">Paiker Foods</h2>
                     </Link>
                 </div>
             </div>

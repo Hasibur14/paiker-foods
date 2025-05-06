@@ -1,4 +1,8 @@
 import React from 'react'
+import { useLoaderData } from 'react-router-dom';
+import BannerTitle from '../../components/BannerTitle/BannerTitle';
+import Container from '../../components/Container/Container';
+import banner from '../../assets/hero/banner1.png'
 
 const ProductsDetails = () => {
 

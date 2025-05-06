@@ -51,8 +51,8 @@ const WhyChooseUs = () => {
 
             {/* Right Side */}
             <div className="bg-white pt-[12%] ml-[12%] flex flex-col justify-center">
-                <p className="font-shadows text-green-600 font-medium text-lg">Why Choose Us</p>
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-6 max-w-sm">
+                <p className="font-shadows text-green-600 font-medium text-xl">Why Choose Us</p>
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mt-2 mb-6 max-w-md">
                     {chooseUsData.heading}
                 </h2>
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import banner from '../../assets/hero/banner1.png'
+import banner from '../../assets/titleBG.png'
 import BannerTitle from '../../components/BannerTitle/BannerTitle'
 import Container from '../../components/Container/Container'
 
@@ -9,7 +9,7 @@ const AboutUs = () => {
             <BannerTitle
                 bannerImg={banner}
                 subTitle='About Us'
-                title="About" />
+                title="About Paiker Foods" />
 
             <Container>
                 <div className='pt-14'>

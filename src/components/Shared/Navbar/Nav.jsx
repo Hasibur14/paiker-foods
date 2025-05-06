@@ -5,6 +5,11 @@ import { Link, NavLink } from 'react-router-dom';
 import "./navbar.css";
 import logo from "../../../assets/Logo_SSF.png"
 import NavbarTop from './NavbarTop';
+import LanguageToggle from '../../Language/LanguageToggle';
+import { FaFacebook, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
+import { FaXTwitter } from 'react-icons/fa6';
+import { IoLogoYoutube } from 'react-icons/io5';
+import { BsFacebook } from 'react-icons/bs';
 
 
 
@@ -161,21 +166,44 @@ const Nav = () => {
                                 </div>
                             </div>
 
-                            <div className="flex gap-2 justify-between items-center h-16">
-                                <div className="flex gap-3">
-                                    <a
-                                        href="#getInTauch"
-                                        className='text-lg font-semibold bg-second-light hover:bg-second-deep   px-5 py-2 rounded transition-all duration-500 text-gray-900'>Get In Tauch</a>
+                            <div className="flex gap-4 justify-between items-center h-16">
+                                {/* Social Media */}
+                                <div className="flex justify-start space-x-3">
+                                    {[
+                                        {
+                                            url: "https://www.facebook.com/codeinnovior2020",
+                                            icon: <BsFacebook  />,
+                                            label: "Follow us on Facebook"
+                                        },
+                                        {
+                                            url: "https://www.linkedin.com/in/codeinnovior/",
+                                            icon: <FaLinkedinIn />,
+                                            label: "Follow us on LinkedIn"
+                                        },
+                                        {
+                                            url: "https://x.com/i/flow/login?redirect_after_login=%2Fcodeinnovior",
+                                            icon: <FaXTwitter />,
+                                            label: "Follow us on Twitter"
+                                        },
+                                        {
+                                            url: "https://www.instagram.com/codeinnovior/",
+                                            icon: <FaInstagram />,
+                                            label: "Email us"
+                                        }
+                                    ].map((link, index) => (
+                                        <a
+                                            key={index}
+                                            href={link.url}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            aria-label={link.label}
+                                            className='text-xl hover:text-[#05B689] transition duration-500'
+                                        >
+                                            {link.icon}
+                                        </a>
+                                    ))}
                                 </div>
-                                <label htmlFor="languageToggle" className="font-poppins inline-flex items-center p-1 rounded-md cursor-pointer bg-gray-200/80 hover:bg-gray-300/90 transition-colors duration-200">
-                                    <input id="languageToggle" type="checkbox" className="hidden peer" />
-                                    <span className="px-3 py-1.5 rounded-l-md bg-[#6154dd] peer-checked:bg-[#da801a] text-white font-medium transition-all duration-200 shadow-inner">
-                                        EN
-                                    </span>
-                                    <span className="px-3 py-1.5 rounded-r-md bg-[#da801a] peer-checked:bg-[#6154dd] text-white font-medium transition-all duration-200 shadow-inner">
-                                        BN
-                                    </span>
-                                </label>
+                                <LanguageToggle />
 
                                 {/* Mobile Menu Icon */}
                                 <div className="md:hidden flex items-center border border-primary-base p-1  hover:">

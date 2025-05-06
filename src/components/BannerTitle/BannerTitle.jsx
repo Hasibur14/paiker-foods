@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const BannerTitle = ({ bannerImg, title, subTitle }) => {
     return (
-        <div className="mt-80">
+        <div className="mt-96">
             <div
                 className="absolute top-0 grid md:h-72 lg:h-[470px] place-items-center bg-cover bg-no-repeat w-full bg-[#2b2a2acf] bg-blend-overlay"
                 style={{

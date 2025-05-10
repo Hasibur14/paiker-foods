@@ -3,13 +3,13 @@ import Container from '../../components/Container/Container'
 import BannerTitle from '../../components/BannerTitle/BannerTitle';
 import banner from '../../assets/hero/banner1.png';
 
-const WholesaleExport = () => {
+const Blogs = () => {
     return (
         <div>
             <BannerTitle
                 bannerImg={banner}
-                subTitle='Wholesale & Export'
-                title="Wholesale & Export" />
+                subTitle='Blogs'
+                title="Our Blogs" />
 
             <Container>
                 <h2 className='text-rose-600 animate-pulse text-center'>Comming...</h2>
@@ -18,4 +18,4 @@ const WholesaleExport = () => {
     )
 }
 
-export default WholesaleExport
+export default Blogs;

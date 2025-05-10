@@ -5,8 +5,9 @@ import Home from "../Pages/Home/Home";
 import AboutUs from "../Pages/AboutUs/AboutUs";
 import ContactUs from "../Pages/Contact/ContactUs";
 import Products from "../Pages/Products/Products";
-import WholesaleExport from "../Pages/WholesaleExport/WholesaleExport";
 import ProductsDetails from "../Pages/Products/ProductsDetails";
+import OurBusiness from "../Pages/OurBusiness/OurBusiness";
+import Blogs from "../Pages/Blogs/Blogs";
 
 
 
@@ -42,8 +43,12 @@ const router = createBrowserRouter([
                 }
             },
             {
-                path: '/wholesale-export',
-                element: <WholesaleExport />
+                path: '/our-business',
+                element: <OurBusiness />
+            },
+            {
+                path: '/blogs',
+                element: <Blogs />
             },
 
             {

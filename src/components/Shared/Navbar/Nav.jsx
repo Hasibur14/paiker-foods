@@ -115,45 +115,25 @@ const Nav = () => {
                                 </div>
                                 <div className="nav-item">
                                     <NavLink
-                                        to="/wholesale-export"
+                                        to="/our-business"
                                         className={({ isActive }) => isActive ? "block px-4 py-2  text-primary-light  active" :
                                             "block px-4 py-2   hover:text-primary-light"}
                                         onClick={handleLinkClick}
                                     >
-                                        Wholesale & Export
+                                        Our Business
+                                    </NavLink>
+                                </div>
+                                <div className="nav-item">
+                                    <NavLink
+                                        to="/blogs"
+                                        className={({ isActive }) => isActive ? "block px-4 py-2  text-primary-light  active" :
+                                            "block px-4 py-2   hover:text-primary-light"}
+                                        onClick={handleLinkClick}
+                                    >
+                                        Blogs
                                     </NavLink>
                                 </div>
 
-                                <div
-                                    className="relative group "
-                                    onMouseEnter={toggleServices}
-                                    onMouseLeave={() => setTimeout(() => setServicesOpen(false), 200)} >
-                                    <button className="nav-item  py-2 px-3 rounded  hover:text-primary-light flex items-center">
-                                        Private Label & Packaging
-                                        {servicesOpen ? <FiChevronUp className='ml-1 text-xl' /> : <FiChevronDown className='ml-1 text-xl' />}
-                                    </button>
-
-                                    {/* Mega menu */}
-                                    <div className={`mega-menu mt-3 ${servicesOpen ? 'show' : ''}`}>
-                                        {/* <NavLink to="/a" onClick={handleLinkClick} className={({ isActive }) =>
-                                                isActive ? "block px-4 py-1 rounded text-white bg-primary-base" :
-                                                    "block px-4 py-2  hover:bg-gradient-to-t from-primary-light to-primary-deep hover:text-white"}>
-                                                Our Products
-                                            </NavLink>
-                                            <NavLink to="/b" onClick={handleLinkClick} className={({ isActive }) =>
-                                                isActive ? "block px-4 py-1 rounded text-white bg-primary-base" :
-                                                    "block px-4 py-2  hover:bg-gradient-to-t from-primary-light to-primary-deep  hover:text-white"}>
-                                                Best Product
-                                            </NavLink>
-                                            <NavLink to="/c" onClick={handleLinkClick} className={({ isActive }) =>
-                                                isActive ? "block px-4 py-1 rounded text-white bg-primary-base" :
-                                                    "block px-4 py-2  hover:hover:bg-gradient-to-t from-primary-light to-primary-deep  hover:text-white"}>
-                                                Top Item
-                                            </NavLink> */}
-
-                                    </div>
-
-                                </div>
                                 <div className="nav-item">
                                     <NavLink
                                         to="/contact"
@@ -172,7 +152,7 @@ const Nav = () => {
                                     {[
                                         {
                                             url: "https://www.facebook.com/codeinnovior2020",
-                                            icon: <BsFacebook  />,
+                                            icon: <BsFacebook />,
                                             label: "Follow us on Facebook"
                                         },
                                         {

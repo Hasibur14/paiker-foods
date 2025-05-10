@@ -1,0 +1,166 @@
+[
+    {
+        "category": "WholeSale",
+        "featuredProduct": {
+            "id": "wh-0",
+            "img": "https://images.pexels.com/photos/209389/pexels-photo-209389.jpeg?auto=compress&cs=tinysrgb&w=600",
+            "title": "Wholesale Spices",
+            "des": "Premium spices available in large quantities."
+        },
+        "productList": [
+            {
+                "id": "wh-1",
+                "img": "https://images.pexels.com/photos/4110262/pexels-photo-4110262.jpeg?auto=compress&cs=tinysrgb&w=600",
+                "title": "Bulk Rice Packs",
+                "des": "High-quality rice in bulk packaging for wholesalers Refined sugar in 25kg and 50kg bags."
+            },
+            {
+                "id": "wh-2",
+                "img": "https://images.pexels.com/photos/209389/pexels-photo-209389.jpeg?auto=compress&cs=tinysrgb&w=600",
+                "title": "Oil Containers",
+                "des": "Large volume cooking oils for food service suppliers. Large volume cooking"
+            },
+            {
+                "id": "wh-3",
+                "img": "https://images.pexels.com/photos/4110262/pexels-photo-4110262.jpeg?auto=compress&cs=tinysrgb&w=600",
+                "title": "Wholesale Sugar Bags",
+                "des": "Refined sugar in 25kg and 50kg bags."
+            },
+            {
+                "id": "wh-4",
+                "img": "https://images.pexels.com/photos/4110262/pexels-photo-4110262.jpeg?auto=compress&cs=tinysrgb&w=600",
+                "title": "Lentils & Pulses",
+                "des": "Wholesale pulses for bulk buying."
+            },
+            {
+                "id": "wh-5",
+                "img": "https://images.pexels.com/photos/209389/pexels-photo-209389.jpeg?auto=compress&cs=tinysrgb&w=600",
+                "title": "Cleaning Supplies",
+                "des": "Bulk packaging of cleaning products for B2B supply."
+            }
+        ]
+    },
+    {
+        "category": "Export",
+        "featuredProduct": {
+            "id": "ex-0",
+            "img": "export-featured.jpg",
+            "title": "Handicrafts",
+            "des": "Locally made crafts ideal for global gifting."
+        },
+        "productList": [
+            {
+                "id": "ex-1",
+                "img": "export-1.jpg",
+                "title": "Export Quality Tea",
+                "des": "Finely processed tea for international markets."
+            },
+            {
+                "id": "ex-2",
+                "img": "export-2.jpg",
+                "title": "Organic Jute Bags",
+                "des": "Eco-friendly and stylish jute bags."
+            },
+            {
+                "id": "ex-3",
+                "img": "export-3.jpg",
+                "title": "Ceramic Pottery",
+                "des": "Handmade pottery with export-grade finish."
+            },
+            {
+                "id": "ex-4",
+                "img": "export-4.jpg",
+                "title": "Textile Rolls",
+                "des": "Fabric and garments for export vendors."
+            },
+            {
+                "id": "ex-5",
+                "img": "export-5.jpg",
+                "title": "Bamboo Furniture",
+                "des": "Lightweight and sustainable furniture sets."
+            }
+        ]
+    },
+    {
+        "category": "Retails",
+        "featuredProduct": {
+            "id": "rt-0",
+            "img": "retail-featured.jpg",
+            "title": "Household Items",
+            "des": "Affordable and useful items for daily needs."
+        },
+        "productList": [
+            {
+                "id": "rt-1",
+                "img": "retail-1.jpg",
+                "title": "Grocery Packs",
+                "des": "Everyday essentials available in convenient sizes."
+            },
+            {
+                "id": "rt-2",
+                "img": "retail-2.jpg",
+                "title": "Toiletries",
+                "des": "Personal care items like shampoo, soap, and toothpaste."
+            },
+            {
+                "id": "rt-3",
+                "img": "retail-3.jpg",
+                "title": "Stationery Kits",
+                "des": "Perfect for students and professionals."
+            },
+            {
+                "id": "rt-4",
+                "img": "retail-4.jpg",
+                "title": "Kitchen Tools",
+                "des": "Affordable cooking utensils for home use."
+            },
+            {
+                "id": "rt-5",
+                "img": "retail-5.jpg",
+                "title": "Ready-to-eat Snacks",
+                "des": "Tasty and instant snack options for retail."
+            }
+        ]
+    },
+    {
+        "category": "E-Commerce",
+        "featuredProduct": {
+            "id": "ec-0",
+            "img": "ecommerce-featured.jpg",
+            "title": "Fashion Collection",
+            "des": "Trendy outfits available through our online store."
+        },
+        "productList": [
+            {
+                "id": "ec-1",
+                "img": "ecommerce-1.jpg",
+                "title": "Online Gadgets",
+                "des": "Latest electronics delivered to your doorstep."
+            },
+            {
+                "id": "ec-2",
+                "img": "ecommerce-2.jpg",
+                "title": "Men’s Footwear",
+                "des": "Stylish and comfortable shoes for men."
+            },
+            {
+                "id": "ec-3",
+                "img": "ecommerce-3.jpg",
+                "title": "Beauty Products",
+                "des": "Top-rated skincare and cosmetics."
+            },
+            {
+                "id": "ec-4",
+                "img": "ecommerce-4.jpg",
+                "title": "Wireless Earbuds",
+                "des": "Crystal-clear sound with fast pairing."
+            },
+            {
+                "id": "ec-5",
+                "img": "ecommerce-5.jpg",
+                "title": "Smartwatches",
+                "des": "Track your health and stay connected."
+            }
+        ]
+    }
+]

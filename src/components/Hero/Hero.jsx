@@ -81,7 +81,7 @@ const Hero = () => {
                                 alt={slide.title}
                             />
                             <div className="absolute inset-0 bg-black bg-opacity-70 flex flex-col text-center items-center justify-center space-y-4 lg:space-y-10 px-6 sm:px-8 lg:px-20">
-                                <h2 className="font-shadows tracking-[5px] text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl text-white max-w-4xl mt-32">
+                                <h2 className="font-shadows tracking-[5px] text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl text-white max-w-4xl  lg:mt-32">
                                     {slide.title}
                                 </h2>
                                 <p className="font-mulish text-md sm:text-lg md:text-2xl text-gray-300 max-w-5xl animate__animated animate__fadeInUp">
@@ -99,7 +99,7 @@ const Hero = () => {
                 </div>
 
                 {/* Navigation Controls */}
-                <div className="absolute md:left-[6%] top-1/2 transform -translate-y-1/2 z-50">
+                <div className="absolute left-2 md:left-[6%] top-1/2 transform -translate-y-1/2 z-10">
                     <div className="flex flex-col space-y-4">
                         {sliderData.map((_, idx) => (
                             <button

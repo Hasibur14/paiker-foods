@@ -104,7 +104,7 @@ const OurTeam = () => {
                                         onMouseEnter={() => handleShareHover(item._id)}
                                         onMouseLeave={handleShareLeave}
                                     >
-                                        <div className="overflow-hidden rounded-lg shadow-lg h-full">
+                                        <div className="overflow-hidden shadow-lg h-full">
                                             <img
                                                 className="w-full h-72 sm:h-80 md:h-96 lg:h-[350px] xl:h-[370px] transition-transform duration-500 group-hover:scale-105 object-cover"
                                                 src={item.image}

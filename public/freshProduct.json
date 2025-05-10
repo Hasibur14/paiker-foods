@@ -1,25 +1,25 @@
 [
     {
         "_id": "1",
-        "title": "Red Apple",
-        "image": "https://i.postimg.cc/4Ndh0Vjb/67ed84fc5ba0a58e9455b45870dfc645146f4152.jpg",
-        "icon": "https://i.postimg.cc/bwZVqGS1/d22acc1aec47c78c93f2a2960a7d7cf202cc6236.png",
+        "title": "Fish",
+        "image": "https://i.postimg.cc/fbvYMBWV/89ebfed840d34dcabed979429f7a08ffed920859.jpg",
+        "icon": "https://res.cloudinary.com/dh34eqbhu/image/upload/v1746867595/0dcee37071924d1238e61d64966704943377ac0d_hurn4f.png",
         "productType": "Fruit",
         "description": "A fresh, juicy red apple rich in fiber and antioxidants. Perfect as a healthy snack."
     },
     {
         "_id": "2",
-        "title": "Banana",
-        "image": "https://i.postimg.cc/4Ndh0Vjb/67ed84fc5ba0a58e9455b45870dfc645146f4152.jpg",
-        "icon": "https://i.postimg.cc/bwZVqGS1/d22acc1aec47c78c93f2a2960a7d7cf202cc6236.png",
+        "title": "Fruits",
+        "image": "https://i.postimg.cc/zBXKvK30/f9f47bdabe053eddf1e21b1c824eeb6461aebe90.jpg",
+        "icon": "https://res.cloudinary.com/dh34eqbhu/image/upload/v1746867595/af22f05459aeaff87facd68e4569f494d2fe8020_bxtug2.png",
         "productType": "Fruit",
         "description": "A sweet and creamy fruit loaded with potassium, ideal for smoothies or on-the-go snacks."
     },
     {
         "_id": "3",
-        "title": "Bunch of Grapes",
-        "image": "https://i.postimg.cc/4Ndh0Vjb/67ed84fc5ba0a58e9455b45870dfc645146f4152.jpg",
-        "icon": "https://i.postimg.cc/bwZVqGS1/d22acc1aec47c78c93f2a2960a7d7cf202cc6236.png",
+        "title": "Vegetables",
+        "image": "https://i.postimg.cc/YS71cJ7c/59360e30ad600183849129d6aae9d4a13da16b20.jpg",
+        "icon": "https://res.cloudinary.com/dh34eqbhu/image/upload/v1746867595/8858d71e70224005694aed051f5beeb371651c8a_r73yiq.png",
         "productType": "Fruit",
         "description": "Seedless green grapes, naturally sweet and packed with vitamins and hydration."
     },
@@ -31,12 +31,14 @@
         "productType": "Fruit",
         "description": "Refreshing watermelon with juicy red flesh, perfect for summer days."
     },
+   
     {
         "_id": "5",
-        "title": "Strawberries",
+        "title": "Watermelon Slice",
         "image": "https://i.postimg.cc/4Ndh0Vjb/67ed84fc5ba0a58e9455b45870dfc645146f4152.jpg",
         "icon": "https://i.postimg.cc/bwZVqGS1/d22acc1aec47c78c93f2a2960a7d7cf202cc6236.png",
         "productType": "Fruit",
-        "description": "Fresh strawberries with a sweet-tart flavor, great for desserts and breakfast bowls."
+        "description": "Refreshing watermelon with juicy red flesh, perfect for summer days."
     }
+   
 ]

@@ -54,7 +54,7 @@ const FreshProduct = () => {
                                 className="flex justify-center h-80 pb-10">
                                 <div className="relative group overflow-visible">
                                     <img
-                                        className="object-center w-full h-72 rounded-xl lg:h-96 hover:scale-110 transition-all duration-500 cursor-pointer"
+                                        className="object-center w-full h-72 object-cover rounded-xl lg:h-96 hover:scale-105 transition-all duration-500 cursor-pointer"
                                         src={item.image}
                                         alt={item.title}
                                     />
@@ -71,7 +71,7 @@ const FreshProduct = () => {
                                         </h1>
                                         <Link
                                             to={`/product-details/${item._id}`}
-                                            className='font-rubik text-second-deep hover:text-orange-400 font-bold underline'>
+                                            className='font-rubik text-second-deep hover:text-orange-400  underline'>
                                             Read More
                                         </Link>
                                     </div>

@@ -1,26 +1,33 @@
 import React from 'react';
 import Container from '../../../components/Container/Container';
+import bg from '../../../assets/About/MDmessage.png'
 
 const MDMessage = () => {
     return (
         <div className='bg-base-100 my-8 md:my-16'>
             <Container>
-                <div className="lg:mt-48 bg-gradient-to-r from-green-700 to-emerald-700 rounded-xl lg:rounded-2xl px-5 lg:pl-[7%]">
+                <div className="lg:mt-48 bg-gradient-to-r from-green-700 to-emerald-700 rounded-xl lg:rounded-2xl px-5 lg:pl-[7%]"
+                    style={{
+                        backgroundImage: `url(${bg})`,
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center',
+                        backgroundRepeat: 'no-repeat'
+                    }}>
                     {mdData.map((item) => (
                         <div
                             key={item._id}
                             className="flex flex-col-reverse lg:flex-row justify-between gap-6 lg:gap-0"
                         >
                             {/* Text Content */}
-                            <div 
+                            <div
                                 className='flex items-center w-full lg:w-1/2 py-6 lg:py-10'
-                                data-aos="fade-up" 
+                                data-aos="fade-up"
                                 data-aos-duration="3000"
                             >
                                 <div className="text-center lg:text-left">
-                                    <img 
-                                        src={item.signature} 
-                                        alt="signature" 
+                                    <img
+                                        src={item.signature}
+                                        alt="signature"
                                         className="w-32 md:w-40 mx-auto lg:mx-0 mb-4"
                                     />
                                     <h3 className='text-lg md:text-xl font-bold text-white'>{item.honorific}</h3>
@@ -29,18 +36,18 @@ const MDMessage = () => {
                                         {item.designation}
                                     </h1>
                                     <p className="py-4 md:py-6 text-white text-sm md:text-base">
-                                        If you have a specific doctor in mind, select their name from the list of available doctors. 
-                                        If not, the system may assign you to the first available physician. 
-                                        Some portals may require you to provide a brief description of the reason for your visit. 
+                                        If you have a specific doctor in mind, select their name from the list of available doctors.
+                                        If not, the system may assign you to the first available physician.
+                                        Some portals may require you to provide a brief description of the reason for your visit.
                                         This helps the doctor prepare for your appointment.
                                     </p>
                                 </div>
                             </div>
 
                             {/* Image */}
-                            <div 
-                                className="w-full lg:w-1/2 flex justify-center lg:justify-end" 
-                                data-aos="fade-up" 
+                            <div
+                                className="w-full lg:w-1/2 flex justify-center lg:justify-end"
+                                data-aos="fade-up"
                                 data-aos-duration="3000"
                             >
                                 <img

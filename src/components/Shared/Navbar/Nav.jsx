@@ -105,7 +105,7 @@ const Nav = () => {
                     <nav className={`${scrolling ? 'lg:fixed top-2 py-2 px-4 w-full container mx-auto  bg-base-100 lg:shadow-xl border-t rounded-xl transition-all duration-300 lg:z-[9999]' : 'relative bg-transparent text-white'}`}>
                         <div className="flex justify-between shadow-xl lg:shadow-none">
                             {/* Menu for larger screens */}
-                            <div className="hidden md:flex space-x-4 items-center text-lg font-semibold">
+                            <div className="hidden lg:flex space-x-4 items-center text-lg font-semibold">
                                 {navItems.map((item) => (
                                     <div className="nav-item" key={item.path}>
                                         <NavLink

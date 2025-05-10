@@ -38,7 +38,7 @@ const WhyChooseUs = () => {
     return (
         <div className="grid grid-cols-1 md:grid-cols-2 bg-white pb-4">
             {/* Left Side */}
-            <div className="bg-gradient-to-tl from-[#3c8f51] to-primary-deep  text-white px-[12%]  flex flex-col justify-center">
+            <div className="bg-gradient-to-tl from-[#3c8f51] to-primary-deep  text-white px-[7%] md:px-[12%] py-10  flex flex-col justify-center">
                 {chooseUsData.features.map((item, index) => (
                     <div key={index} className="mb-6 flex items-start gap-3 ">
                         <span> <BiCheckCircle className="text-green-400 mt-1 text-2xl" /></span>
@@ -57,7 +57,7 @@ const WhyChooseUs = () => {
                     {chooseUsData.heading}
                 </h2>
 
-                <div className="flex justify-between">
+                <div className="md:flex justify-between">
                     <div className="items-center gap-12">
                         {chooseUsData.stats.map((stat, idx) => (
                             <div key={idx} className="items-center gap-4">

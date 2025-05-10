@@ -22,7 +22,7 @@ const FeatureDepartment = () => {
                         <img
                             src={data.images.left}
                             alt="Farmer 1"
-                            className="rounded-xl  max-w-xs md:max-w-sm h-[500px]" />
+                            className="rounded-xl  max-w-xs md:max-w-sm h-full lg:h-[500px]" />
                     </div>
 
                     {/* Center Text */}
@@ -46,7 +46,7 @@ const FeatureDepartment = () => {
                         <img
                             src={data.images.right}
                             alt="Farmer 2"
-                            className="rounded-xl  max-w-xs md:max-w-sm h-[500px]" />
+                            className="rounded-xl  max-w-xs md:max-w-sm  h-full lg:h-[500px]" />
                     </div>
                 </div>
             </Container>

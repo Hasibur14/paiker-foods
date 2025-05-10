@@ -70,7 +70,7 @@ const Timeline = () => {
                                 {/* Text */}
                                 <div className="text-center px-2">
                                     <motion.h3
-                                        className="text-3xl md:text-4xl lg:text-6xl font-bold text-green-700 mt-2"
+                                        className="text-lg md:text-4xl lg:text-6xl font-bold text-green-700 mt-2"
                                         initial={{ opacity: 0, y: 20 }}
                                         animate={isInView ? { opacity: 1, y: 0 } : {}}
                                         transition={{ delay: index * 0.5 + 0.6 }}
@@ -78,7 +78,7 @@ const Timeline = () => {
                                         {item.year}
                                     </motion.h3>
                                     <motion.p
-                                        className="text-md md:text-lg font-medium mt-2 text-gray-700"
+                                        className="text-xs md:text-lg font-medium mt-2 text-gray-700"
                                         initial={{ opacity: 0, y: 10 }}
                                         animate={isInView ? { opacity: 1, y: 0 } : {}}
                                         transition={{ delay: index * 0.5 + 0.7 }}

@@ -2,15 +2,19 @@ import React, { useState } from "react";
 import BannerTitle from "../../components/BannerTitle/BannerTitle";
 import banner from "../../assets/hero/banner1.png";
 import Container from "../../components/Container/Container";
-import { Link } from "react-router-dom";
 import { FaArrowRight } from "react-icons/fa6";
 import { IoShareSocialOutline } from "react-icons/io5";
 import { IoMdStar } from "react-icons/io";
 import { TiStarHalf } from "react-icons/ti";
+import Brands from "../../components/Brands/Brands";
+import BuyProductModal from "../../components/Modal/BuyProductModal";
+
 
 const Products = () => {
     const [activeTab, setActiveTab] = useState("All");
     const [activeFilterTab, setActiveFilterTab] = useState("All");
+    const [selectedProduct, setSelectedProduct] = useState(null);
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
     const FilterProducts = [
         { id: 1, name: "Agricultural Products" },
@@ -18,33 +22,6 @@ const Products = () => {
         { id: 3, name: "Dariy Productions" },
         { id: 4, name: "Sweet Exotic fruits" },
         { id: 5, name: "Fresh Vegetables" },
-    ];
-
-    const BrandLogo = [
-        {
-            id: 1,
-            img: "https://i.postimg.cc/cHKPbM2j/07aa1b75e382ba71b602481c259741fdd994b301.png",
-        },
-        {
-            id: 2,
-            img: "https://i.postimg.cc/xjNcKwxG/23f2ed0fe203219a38d9106970973fc76e599db6.png",
-        },
-        {
-            id: 3,
-            img: "https://i.postimg.cc/jdVCvMmp/8618d875a393f56249f9170218fe9bace5a54474.png",
-        },
-        {
-            id: 4,
-            img: "https://i.postimg.cc/Dwn03825/3ca82a2f16c19eb318ce1892bbecf72dd8c83ae9.png",
-        },
-        {
-            id: 5,
-            img: "https://i.postimg.cc/Wz0NQPCQ/c404c11df2cac635e26e1979da7e1395831a97c8.png",
-        },
-        {
-            id: 6,
-            img: "https://i.postimg.cc/7YMP9wgz/ad5dee151ba1b146baa0006759ea9f0cd41bf231.png",
-        },
     ];
 
     const ProductCard = [
@@ -137,13 +114,6 @@ const Products = () => {
         },
     ];
 
-    // const filteredProducts =
-    //   activeTab === "All"
-    //     ? ProductCard
-    //     : ProductCard.filter(
-    //         (product) => product.type === activeTab.toLowerCase()
-    //       );
-
     const filteredProducts = ProductCard.filter((product) => {
         const matchesType =
             activeTab === "All" || product.type === activeTab.toLowerCase();
@@ -153,12 +123,29 @@ const Products = () => {
         return matchesType && matchesFilter;
     });
 
+    const handleBuyClick = (product) => {
+        setSelectedProduct(product);
+        setIsModalOpen(true);
+    };
+
+    const handleCloseModal = () => {
+        setIsModalOpen(false);
+        setSelectedProduct(null);
+    };
+
+    const handleSubmitOrder = (formData) => {
+        // Here you would typically send the data to your backend
+        console.log("Order submitted:", formData);
+        alert(`Order submitted successfully for ${formData.quantity} ${formData.productName}`);
+        handleCloseModal();
+    };
+
     return (
         <div>
             <BannerTitle bannerImg={banner} subTitle="Products" title="Products" />
 
             <Container>
-                <div className="grid grid-cols-1 lg:grid-cols-4 gap-4">
+                <div className="grid grid-cols-1 lg:grid-cols-4 gap-10">
                     {/* Sidebar */}
                     <div className="col-span-1 bg-[#F8F8F8] h-auto md:h-[50%] lg:h-[28%] md:pb-10">
                         <div className="col-span-1 bg-[#F8F8F8]">
@@ -234,13 +221,9 @@ const Products = () => {
                         </div>
 
                         {/* Product Cards */}
-                        <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                             {filteredProducts.map((item) => (
-                                <Link
-
-                                    key={item.id}
-                                    className="w-full"
-                                >
+                                <div key={item.id} className="w-full">
                                     <img
                                         className="rounded-t-lg w-full h-60 object-cover"
                                         src={item.img}
@@ -268,31 +251,33 @@ const Products = () => {
                                         <p className="font-outfit text-sm mt-3 font-light text-[#444444]">
                                             {item.description}
                                         </p>
-                                        <div className="bg-second-light hover:bg-second-deep mt-4 rounded py-2 text-center">
-                                            <button className="font-outfit text-white">
+                                        <div className="bg-second-light hover:bg-second-deep mt-4 rounded py-2 text-center group">
+                                            <button
+                                                onClick={() => handleBuyClick(item)}
+                                                className="font-poppins group-hover:text-white w-full font-" 
+                                            >
                                                 Contact to buy
                                             </button>
                                         </div>
                                     </div>
-                                </Link>
+                                </div>
                             ))}
                         </div>
                     </div>
                 </div>
             </Container>
-            {/* brand logos */}
 
-            <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-6 w-full my-10">
-                {BrandLogo.map((item) => (
-                    <div key={item.id} className="flex items-center justify-center p-4">
-                        <img
-                            src={item.img}
-                            alt="Brand Logo"
-                            className="w-full max-w-[140px] h-16 object-contain opacity-70"
-                        />
-                    </div>
-                ))}
-            </div>
+            {/* Modal */}
+            {isModalOpen && selectedProduct && (
+                <BuyProductModal
+                    product={selectedProduct}
+                    onClose={handleCloseModal}
+                    onSubmit={handleSubmitOrder}
+                />
+            )}
+
+            {/* brand logos */}
+            <Brands />
         </div>
     );
 };

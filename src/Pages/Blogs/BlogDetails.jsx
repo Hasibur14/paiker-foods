@@ -28,7 +28,7 @@ const BlogDetails = () => {
     }
 
     return (
-        <div className="bg-gray-50">
+        <div className="bg-gray-50 pb-10">
             <BannerTitle
                 bannerImg={banner}
                 subTitle="Blog Details"
@@ -136,7 +136,7 @@ const BlogDetails = () => {
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                             {/* You would map through related articles here */}
                             <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-                                <div className="h-48 bg-gray-200">dfgh</div>
+                                <div className="h-48 bg-gray-200"></div>
                                 <div className="p-6">
                                     <span className="text-sm text-primary-light font-medium">Interior Design</span>
                                     <h4 className="text-xl font-bold text-gray-800 mt-2 mb-3">10 Ways to Refresh Your Living Room</h4>

@@ -26,10 +26,10 @@ const infoData = [
 
 const Info = () => {
     return (
-        <div className='pt-16'>
+        <div className='lg:pt-16'>
             <Container>
-                <div className='md:flex gap-16 justify-between w-full'>
-                    <h2 className='text-2xl w-1/2'>
+                <div className='md:flex gap-16 justify-between w-full space-y-7 lg:space-y-0'>
+                    <h2 className='text-xl md:text-2xl w-full lg:w-1/2'>
                         We are confident that we are the leading farm in providing agricultural products that ensure food hygiene and safety!
                     </h2>
                     <div className='flex justify-between md:w-1/2 gap-4'>
@@ -38,7 +38,7 @@ const Info = () => {
                                 {iconMap[icon]}
                                 <div>
                                     <h4 className="font-semibold">{title}</h4>
-                                    <h2 className='text-6xl font-bold text-second-light'>
+                                    <h2 className='text-2xl lg:text-6xl font-bold text-second-light'>
                                         <CountUp start={0} end={count} duration={3} delay={0.5} /> +
                                     </h2>
                                 </div>

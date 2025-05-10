@@ -1,12 +1,19 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Container from "../../components/Container/Container";
 import BannerTitle from "../../components/BannerTitle/BannerTitle";
 import banner from "../../assets/hero/banner1.png";
 import { Link, useNavigate } from "react-router-dom";
-import blog from "../../../public/blogs";
 import { FaArrowRightLong } from "react-icons/fa6";
 
 const Blogs = () => {
+
+    const [isBlogs, setIsBlogs] = useState([]);
+
+    useEffect(() => {
+        fetch('./blogs.json')
+            .then(res => res.json())
+            .then(data => setIsBlogs(data))
+    }, [])
 
 
 
@@ -19,7 +26,7 @@ const Blogs = () => {
                 {/* <h2 className='text-rose-600 animate-pulse text-center'>Comming...</h2> */}
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-2">
-                    {blog.map((item) => (
+                    {isBlogs?.map((item) => (
                         <div key={item._id} className="bg-white shadow-sm">
                             <div className="relative overflow-hidden group">
                                 <img

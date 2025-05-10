@@ -10,6 +10,7 @@ import { TiStarHalf } from "react-icons/ti";
 
 const Products = () => {
     const [activeTab, setActiveTab] = useState("All");
+    const [activeFilterTab, setActiveFilterTab] = useState("All");
 
     const FilterProducts = [
         { id: 1, name: "Agricultural Products" },
@@ -55,6 +56,7 @@ const Products = () => {
                 "A staple food crop grown in flooded fields, essential in the diets of billions worldwide, especially in Asia.",
             img: "https://i.postimg.cc/x8Lz1LrF/5329ab7f912dddd66367575e3087a698a469bac8.jpg",
             type: "best seller",
+            filterType: "agricultural products",
         },
         {
             id: 2,
@@ -64,6 +66,7 @@ const Products = () => {
                 " A cereal grain used to produce flour for bread, pasta, and other foods; widely grown in temperate regions.",
             img: "https://i.postimg.cc/XvJ4858G/d438fac10a18636a26f8f3558201faa82d55cad5.jpg",
             type: "new products",
+            filterType: "organic products",
         },
         {
             id: 3,
@@ -73,6 +76,7 @@ const Products = () => {
                 "A versatile crop used for human consumption, animal feed, and biofuel production.",
             img: "https://i.postimg.cc/50Q1cMDf/f4366b42a556696e69292d13de12d3f94c2dfc44.jpg",
             type: "best seller",
+            filterType: "dariy productions",
         },
         {
             id: 4,
@@ -81,7 +85,8 @@ const Products = () => {
             description:
                 "A staple food crop grown in flooded fields, essential in the diets of billions worldwide, especially in Asia.",
             img: "https://i.postimg.cc/x8Lz1LrF/5329ab7f912dddd66367575e3087a698a469bac8.jpg",
-            type: "",
+            type: "best seller",
+            filterType: "fresh vegetables",
         },
         {
             id: 5,
@@ -91,6 +96,7 @@ const Products = () => {
                 " A cereal grain used to produce flour for bread, pasta, and other foods; widely grown in temperate regions.",
             img: "https://i.postimg.cc/XvJ4858G/d438fac10a18636a26f8f3558201faa82d55cad5.jpg",
             type: "best seller",
+            filterType: "sweet exotic fruits",
         },
         {
             id: 6,
@@ -100,6 +106,7 @@ const Products = () => {
                 "A versatile crop used for human consumption, animal feed, and biofuel production.",
             img: "https://i.postimg.cc/x8Lz1LrF/5329ab7f912dddd66367575e3087a698a469bac8.jpg",
             type: "best seller",
+            filterType: "organic products",
         },
         {
             id: 7,
@@ -130,33 +137,54 @@ const Products = () => {
         },
     ];
 
-    const filteredProducts =
-        activeTab === "All"
-            ? ProductCard
-            : ProductCard.filter(
-                (product) => product.type === activeTab.toLowerCase()
-            );
+    // const filteredProducts =
+    //   activeTab === "All"
+    //     ? ProductCard
+    //     : ProductCard.filter(
+    //         (product) => product.type === activeTab.toLowerCase()
+    //       );
+
+    const filteredProducts = ProductCard.filter((product) => {
+        const matchesType =
+            activeTab === "All" || product.type === activeTab.toLowerCase();
+        const matchesFilter =
+            activeFilterTab === "All" ||
+            product.filterType === activeFilterTab.toLowerCase();
+        return matchesType && matchesFilter;
+    });
 
     return (
         <div>
             <BannerTitle bannerImg={banner} subTitle="Products" title="Products" />
 
             <Container>
-                <div className="grid grid-cols-1 lg:grid-cols-4 gap-2">
+                <div className="grid grid-cols-1 lg:grid-cols-4 gap-4">
                     {/* Sidebar */}
                     <div className="col-span-1 bg-[#F8F8F8] h-auto md:h-[50%] lg:h-[28%] md:pb-10">
-                        <div className="flex flex-col gap-4 py-6 md:py-8 lg:my-10">
-                            {FilterProducts.map((item) => (
-                                <Link
-                                    key={item.id}
-                                    className="flex items-center justify-between px-4 py-3 mx-2 md:mx-4 hover:bg-primary-light hover:text-white transition-all duration-300"
+                        <div className="col-span-1 bg-[#F8F8F8]">
+                            <div className="flex flex-col gap-4 py-6">
+                                <button
+                                    onClick={() => setActiveFilterTab("All")}
+                                    className={`flex items-center justify-between px-4 py-3 mx-2 font-outfit hover:bg-primary-light hover:text-white ${activeFilterTab === "All" ? "bg-primary-light text-white" : ""
+                                        }`}
                                 >
-                                    <h3 className="text-base md:text-lg font-semibold font-outfit">
-                                        {item.name}
-                                    </h3>
-                                    <FaArrowRight className="text-sm md:text-base" />
-                                </Link>
-                            ))}
+                                    <h3 className="text-base font-semibold">All Categories</h3>
+                                    <FaArrowRight />
+                                </button>
+                                {FilterProducts.map((item) => (
+                                    <button
+                                        key={item.id}
+                                        onClick={() => setActiveFilterTab(item.name.toLowerCase())}
+                                        className={`flex items-center justify-between px-4 py-3 mx-2 font-outfit hover:bg-primary-light hover:text-white ${activeFilterTab === item.name.toLowerCase()
+                                                ? "bg-primary-light text-white"
+                                                : ""
+                                            }`}
+                                    >
+                                        <h3 className="text-base font-semibold">{item.name}</h3>
+                                        <FaArrowRight />
+                                    </button>
+                                ))}
+                            </div>
                         </div>
 
                         <div className="relative w-full h-[400px] flex items-center justify-center text-white lg:mt-[248%]">
@@ -209,7 +237,7 @@ const Products = () => {
                         <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                             {filteredProducts.map((item) => (
                                 <Link
-                                    to={`/product-details/${item.id}`}
+
                                     key={item.id}
                                     className="w-full"
                                 >

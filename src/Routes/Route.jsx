@@ -50,6 +50,16 @@ const router = createBrowserRouter([
                 path: '/blogs',
                 element: <Blogs />
             },
+            {
+                path: '/blog-details/:id',
+                element: <ProductsDetails />,
+                loader: async ({ params }) => {
+                    const response = await fetch(`/blogs.json`);
+                    const products = await response.json();
+                    const product = products.find(p => p._id === params.id);
+                    return product;
+                }
+            },
 
             {
                 path: '/contact',

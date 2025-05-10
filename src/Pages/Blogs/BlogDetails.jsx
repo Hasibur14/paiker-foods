@@ -6,6 +6,7 @@ import Container from "../../components/Container/Container";
 import banner from "../../assets/hero/banner1.png";
 
 const BlogDetails = () => {
+    
     const { id } = useParams();
     const { state } = useLocation();
 

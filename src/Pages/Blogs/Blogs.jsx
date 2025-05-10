@@ -25,9 +25,9 @@ const Blogs = () => {
             <Container>
                 {/* <h2 className='text-rose-600 animate-pulse text-center'>Comming...</h2> */}
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-2">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-4 gap-8 mb-2">
                     {isBlogs?.map((item) => (
-                        <div key={item._id} className="bg-white shadow-sm">
+                        <div key={item._id} className="bg-white shadow ">
                             <div className="relative overflow-hidden group">
                                 <img
                                     className="w-full h-[230px] object-cover transition-all duration-300 ease-out group-hover:scale-110"
@@ -56,7 +56,9 @@ const Blogs = () => {
                             </div>
 
                             <p className="mt-2 text-2xl tracking-wide font-bold font-outfit">{item.description}</p>
-                            <Link to={`/blog-details/${item.id}`} state={{ blog: item }} element className="mt-4 text-lg uppercase font-semibold flex items-center gap-2 mb-3 hover:text-primary-light">
+                            <Link
+                                to={`/blog-details/${item._id}`}
+                                className="mt-4 text-lg uppercase font-semibold flex items-center gap-2 mb-3 hover:text-primary-light">
                                 Continue Reading
                                 <FaArrowRightLong />
                             </Link>

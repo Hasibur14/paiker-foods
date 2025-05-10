@@ -8,6 +8,7 @@ import Products from "../Pages/Products/Products";
 import ProductsDetails from "../Pages/Products/ProductsDetails";
 import OurBusiness from "../Pages/OurBusiness/OurBusiness";
 import Blogs from "../Pages/Blogs/Blogs";
+import BlogDetails from "../Pages/Blogs/BlogDetails";
 
 
 
@@ -52,12 +53,12 @@ const router = createBrowserRouter([
             },
             {
                 path: '/blog-details/:id',
-                element: <ProductsDetails />,
+                element: <BlogDetails />,
                 loader: async ({ params }) => {
                     const response = await fetch(`/blogs.json`);
-                    const products = await response.json();
-                    const product = products.find(p => p._id === params.id);
-                    return product;
+                    const blogs = await response.json();
+                    const blog = blogs.find(p => p._id.toString() === params.id);
+                    return blog;
                 }
             },
 

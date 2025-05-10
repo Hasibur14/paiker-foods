@@ -3,100 +3,133 @@
         "_id": 1,
         "image": "https://i.postimg.cc/vHd2h82M/pexels-mahmoudramadan-31622907.jpg",
         "number": "01",
-        "date": "Jan 10",
-        "name": "By Admin",
+        "date": "Jan 10, 2023",
+        "name": "By Sarah Johnson",
+        "role": "Interior Designer",
         "comments": "3 Comments",
-        "description": "How to choose the perfect furniture for your home",
-        "id": "how-to-choose-perfect-furniture"
+        "title": "How to Choose the Perfect Furniture for Your Home",
+        "description": "Selecting the right furniture can transform your living space. This guide covers key considerations like room measurements, style coordination, and material durability to help you make informed decisions.",
+        "content": [
+            "Furniture shopping can be overwhelming with so many options available. Start by measuring your space to ensure proper scale and proportion.",
+            "Consider your lifestyle - households with kids or pets might prioritize durable, stain-resistant fabrics.",
+            "Mix and match styles for an eclectic look or stick to one design theme for cohesion.",
+            "Quality over quantity - invest in key pieces that will last for years rather than trendy items that may date quickly."
+        ],
+        "tags": ["Furniture", "Home Decor", "Interior Design"],
+        "readTime": "5 min read"
     },
     {
         "_id": 2,
         "image": "https://i.postimg.cc/vHd2h82M/pexels-mahmoudramadan-31622907.jpg",
         "number": "02",
-        "date": "Feb 15",
-        "name": "By Designer",
+        "date": "Feb 15, 2023",
+        "name": "By Michael Chen",
+        "role": "Design Consultant",
         "comments": "5 Comments",
-        "description": "Latest trends in interior design for 2023",
-        "id": "latest-interior-design-trends-2023"
+        "title": "Latest Trends in Interior Design for 2023",
+        "description": "Discover the top interior design trends shaping homes this year, from bold color palettes to sustainable materials and multifunctional spaces.",
+        "content": [
+            "Biophilic design continues to dominate, bringing nature indoors through organic materials and abundant greenery.",
+            "Warm neutrals are replacing cool grays, creating cozy, inviting atmospheres.",
+            "Multifunctional furniture is essential as homes serve as offices, gyms, and classrooms.",
+            "Sustainable materials like bamboo, cork, and recycled fabrics are gaining popularity among eco-conscious homeowners."
+        ],
+        "tags": ["Trends", "2023", "Modern Design"],
+        "readTime": "7 min read"
     },
     {
         "_id": 3,
         "image": "https://i.postimg.cc/vHd2h82M/pexels-mahmoudramadan-31622907.jpg",
         "number": "03",
-        "date": "Mar 22",
-        "name": "By Architect",
+        "date": "Mar 22, 2023",
+        "name": "By David Rodriguez",
+        "role": "Space Planning Expert",
         "comments": "2 Comments",
-        "description": "Space-saving solutions for small apartments",
-        "id": "space-saving-small-apartments"
+        "title": "Space-Saving Solutions for Small Apartments",
+        "description": "Maximize your compact living space with these innovative storage solutions and layout strategies that create both function and style.",
+        "content": [
+            "Vertical storage utilizes wall space with floating shelves and tall cabinets.",
+            "Convertible furniture like sofa beds and expandable tables adapt to different needs.",
+            "Mirrors strategically placed can make rooms appear larger and brighter.",
+            "Light color palettes and consistent flooring create visual continuity that expands spaces."
+        ],
+        "tags": ["Small Spaces", "Organization", "Apartment Living"],
+        "readTime": "6 min read"
     },
     {
         "_id": 4,
         "image": "https://i.postimg.cc/vHd2h82M/pexels-mahmoudramadan-31622907.jpg",
         "number": "04",
-        "date": "Apr 05",
-        "name": "By Admin",
+        "date": "Apr 5, 2023",
+        "name": "By Emily Wilson",
+        "role": "Color Specialist",
         "comments": "7 Comments",
-        "description": "The psychology of colors in home decoration",
-        "id": "psychology-colors-home-decoration"
+        "title": "The Psychology of Colors in Home Decoration",
+        "description": "Learn how different colors affect mood and perception, and how to use color theory to create your desired atmosphere in each room.",
+        "content": [
+            "Blue promotes calmness and is ideal for bedrooms and bathrooms.",
+            "Yellow energizes and works well in kitchens and home offices.",
+            "Green balances and restores, perfect for living rooms and reading nooks.",
+            "Neutrals provide flexibility and allow artwork or furniture to stand out."
+        ],
+        "tags": ["Color Theory", "Psychology", "Decor Tips"],
+        "readTime": "8 min read"
     },
     {
         "_id": 5,
         "image": "https://i.postimg.cc/vHd2h82M/pexels-mahmoudramadan-31622907.jpg",
         "number": "05",
-        "date": "May 18",
-        "name": "By Designer",
+        "date": "May 18, 2023",
+        "name": "By James Peterson",
+        "role": "Sustainable Design Advocate",
         "comments": "4 Comments",
-        "description": "Eco-friendly materials for sustainable homes",
-        "id": "eco-friendly-sustainable-homes"
+        "title": "Eco-Friendly Materials for Sustainable Homes",
+        "description": "Explore environmentally conscious material alternatives that reduce your carbon footprint without compromising on style or quality.",
+        "content": [
+            "Bamboo grows rapidly and makes excellent flooring and furniture.",
+            "Recycled glass countertops offer unique aesthetics and durability.",
+            "Reclaimed wood adds character while preserving forests.",
+            "Low-VOC paints improve indoor air quality and are safer for families."
+        ],
+        "tags": ["Sustainability", "Green Living", "Eco Design"],
+        "readTime": "9 min read"
     },
     {
         "_id": 6,
         "image": "https://i.postimg.cc/vHd2h82M/pexels-mahmoudramadan-31622907.jpg",
         "number": "06",
-        "date": "Jun 30",
-        "name": "By Architect",
+        "date": "Jun 30, 2023",
+        "name": "By Olivia Martinez",
+        "role": "Lighting Designer",
         "comments": "1 Comment",
-        "description": "Maximizing natural light in your living space",
-        "id": "maximizing-natural-light-living-space"
+        "title": "Maximizing Natural Light in Your Living Space",
+        "description": "Techniques to enhance natural illumination in your home, reducing energy costs while creating a brighter, more welcoming environment.",
+        "content": [
+            "Sheer window treatments allow light while maintaining privacy.",
+            "Strategic mirror placement reflects and amplifies sunlight.",
+            "Light-colored walls and ceilings bounce light more effectively.",
+            "Skylights and solar tubes bring light to interior spaces without windows."
+        ],
+        "tags": ["Lighting", "Natural Light", "Energy Efficiency"],
+        "readTime": "5 min read"
     },
     {
         "_id": 7,
         "image": "https://i.postimg.cc/vHd2h82M/pexels-mahmoudramadan-31622907.jpg",
         "number": "07",
-        "date": "Jul 12",
-        "name": "By Admin",
+        "date": "Jul 12, 2023",
+        "name": "By Robert Kim",
+        "role": "Renovation Specialist",
         "comments": "6 Comments",
-        "description": "Budget-friendly home renovation ideas",
-        "id": "budget-friendly-home-renovation"
-    },
-    {
-        "_id": 8,
-        "image": "https://i.postimg.cc/vHd2h82M/pexels-mahmoudramadan-31622907.jpg",
-        "number": "08",
-        "date": "Aug 25",
-        "name": "By Designer",
-        "comments": "3 Comments",
-        "description": "Creating a cozy bedroom atmosphere",
-        "id": "creating-cozy-bedroom-atmosphere"
-    },
-    {
-        "_id": 9,
-        "image": "https://i.postimg.cc/vHd2h82M/pexels-mahmoudramadan-31622907.jpg",
-        "number": "09",
-        "date": "Sep 14",
-        "name": "By Architect",
-        "comments": "8 Comments",
-        "description": "Smart home technology integration tips",
-        "id": "smart-home-technology-integration"
-    },
-    {
-        "_id": 10,
-        "image": "https://i.postimg.cc/vHd2h82M/pexels-mahmoudramadan-31622907.jpg",
-        "number": "10",
-        "date": "Oct 03",
-        "name": "By Admin",
-        "comments": "2 Comments",
-        "description": "Mixing modern and vintage decor styles",
-        "id": "mixing-modern-vintage-decor"
+        "title": "Budget-Friendly Home Renovation Ideas",
+        "description": "Transform your space without breaking the bank with these cost-effective renovation strategies that deliver maximum impact.",
+        "content": [
+            "Paint is the most affordable way to dramatically change a room's look.",
+            "Updating hardware on cabinets and doors provides a fresh appearance.",
+            "Refacing rather than replacing kitchen cabinets saves thousands.",
+            "DIY projects like installing backsplashes or shelving add personality."
+        ],
+        "tags": ["Renovation", "Budget Tips", "DIY"],
+        "readTime": "7 min read"
     }
 ]

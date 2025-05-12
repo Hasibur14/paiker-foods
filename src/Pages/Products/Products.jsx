@@ -4,16 +4,18 @@ import banner from "../../assets/hero/banner1.png";
 import Container from "../../components/Container/Container";
 import { FaArrowRight } from "react-icons/fa6";
 import { IoShareSocialOutline } from "react-icons/io5";
-import { IoMdStar } from "react-icons/io";
+import { IoMdClose, IoMdStar } from "react-icons/io";
 import { TiStarHalf } from "react-icons/ti";
 import Brands from "../../components/Brands/Brands";
 import BuyProductModal from "../../components/Modal/BuyProductModal";
+import { CiMaximize2 } from "react-icons/ci";
 
 const Products = () => {
     const [activeTab, setActiveTab] = useState("All Products");
     const [activeFilterTab, setActiveFilterTab] = useState("All Products");
     const [selectedProduct, setSelectedProduct] = useState(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [zoomedImg, setZoomedImg] = useState(null);
 
     const FilterProducts = [
         { id: 1, name: "Agricultural Products" },
@@ -50,7 +52,7 @@ const Products = () => {
     };
 
     return (
-        <div className="overflow-x-hidden border border-rose-500">
+        <div className="overflow-x-hidden ">
             <BannerTitle bannerImg={banner} subTitle="Products" title="Our Products" />
 
             <Container>
@@ -130,13 +132,19 @@ const Products = () => {
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                             {filteredProducts.map((item) => (
                                 <div key={item.id} className="w-full bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
-                                    <div className="h-48 md:h-56 w-full overflow-hidden">
+                                    <div className="relative h-48 md:h-56 w-full overflow-hidden">
                                         <img
                                             className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                                             src={item.img}
                                             alt={item.name}
                                             loading="lazy"
                                         />
+                                        <button
+                                            onClick={() => setZoomedImg(item.img)}
+                                            className="absolute top-3 right-3 p-2 bg-black/30 backdrop-blur-sm rounded-lg hover:bg-black/50 transition-colors"
+                                        >
+                                            <CiMaximize2 className="h-5 w-5 text-white" />
+                                        </button>
                                     </div>
                                     <div className="p-4">
                                         <div className="flex items-center justify-between mb-2">
@@ -173,6 +181,25 @@ const Products = () => {
                     </div>
                 </div>
             </Container>
+
+            {/* Image Zoom Modal */}
+            {zoomedImg && (
+                <div className="fixed inset-0 z-[9999] bg-black/90 flex items-center justify-center p-4">
+                    <div className="relative max-w-6xl w-full">
+                        <button
+                            onClick={() => setZoomedImg(null)}
+                            className="absolute -top-12 right-0 text-white hover:text-gray-300"
+                        >
+                            <IoMdClose className="h-8 w-8" />
+                        </button>
+                        <img
+                            src={zoomedImg}
+                            alt="Zoomed"
+                            className="w-full max-h-[80vh] object-contain rounded-lg"
+                        />
+                    </div>
+                </div>
+            )}
 
             {/* Modal */}
             {isModalOpen && selectedProduct && (

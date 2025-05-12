@@ -5,53 +5,56 @@ import icon3 from '../../../assets/home/leaves 3.png'
 import Container from '../../../components/Container/Container'
 
 const About = () => {
-
     const aboutData = [
         {
             _id: 1,
             image: icon1,
             title: "Environmentally Friendly",
-            descrtiption: "Appropriately actualize error-free niches via efficient alignments. Professionally evolve inexpensive."
+            description: "Appropriately actualize error-free niches via efficient alignments. Professionally evolve inexpensive."
         },
         {
             _id: 2,
             image: icon2,
             title: "100% Organic Products",
-            descrtiption: "Appropriately actualize error-free niches via efficient alignments. Professionally evolve inexpensive."
+            description: "Appropriately actualize error-free niches via efficient alignments. Professionally evolve inexpensive."
         },
         {
             _id: 3,
             image: icon3,
             title: "Absolute Quality",
-            descrtiption: "Appropriately actualize error-free niches via efficient alignments. Professionally evolve inexpensive."
+            description: "Appropriately actualize error-free niches via efficient alignments. Professionally evolve inexpensive."
         }
     ]
 
     return (
-        <Container>
-            <div className='bg-gradient-to-t from-[#0D421D] to-[#1C6831] rounded-2xl p-4 md:p-8'>
-                <div className="lg:flex justify-center items-center md:space-x-10 space-y-8 md:space-y-0 border border-dashed rounded-2xl px-3 md:px-8 py-14">
-                    {aboutData.map((item, index) => (
-                        <div key={item._id} className="flex items-center">
-                            <div className="flex flex-col items-center text-center max-w-md space-y-4">
-                                <img
-                                    className="bg-white p-8 rounded-full"
-                                    src={item.image}
-                                    alt={item.title}
-                                />
-                                <h2 className="font-shadows text-xl lg:text-4xl text-second-light">{item.title}</h2>
-                                <p className="text-white text-md">{item.descrtiption}</p>
-                            </div>
+        <div className="md:pt- lg:pt-16">
+            <Container>
+                <div className='bg-gradient-to-t from-[#0D421D] to-[#1C6831] rounded-2xl p-4 md:p-8'>
+                    <div className="flex flex-col md:flex-row justify-center items-center md:items-stretch gap-8 md:gap-4 lg:gap-10 border border-dashed rounded-2xl px-3 md:px-8 py-8 md:py-14">
+                        {aboutData.map((item, index) => (
+                            <div key={item._id} className="flex flex-col md:flex-row items-center w-full md:w-auto">
+                                <div className="flex flex-col items-center text-center max-w-md space-y-4 px-4 md:px-0">
+                                    <img
+                                        className="bg-white p-6 md:p-8 rounded-full w-24 h-24 md:w-32 md:h-32 lg:w-40 lg:h-40"
+                                        src={item.image}
+                                        alt={item.title}
+                                    />
+                                    <h2 className="font-shadows text-xl md:text-2xl lg:text-4xl text-second-light">{item.title}</h2>
+                                    <p className="text-white text-sm md:text-md">{item.description}</p>
+                                </div>
 
-                            {/* Divider except for last item */}
-                            {index !== aboutData.length - 1 && (
-                                <div className="border-l border-dashed border-gray-300 h-60 mx-5 hidden md:block"></div>
-                            )}
-                        </div>
-                    ))}
+                                {/* Divider - shows only between items in tablet+ view */}
+                                {index !== aboutData.length - 1 && (
+                                    <div className="hidden md:flex items-center">
+                                        <div className="border-l md:border-l-0 md:border-t border-dashed border-gray-300 h-20 md:h-full md:w-0 mx-4 md:mx-0 md:my-4"></div>
+                                    </div>
+                                )}
+                            </div>
+                        ))}
+                    </div>
                 </div>
-            </div>
-        </Container>
+            </Container>
+        </div>
     )
 }
 

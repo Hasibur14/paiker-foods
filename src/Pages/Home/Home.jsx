@@ -13,7 +13,7 @@ import Timeline from "./Section/Timeline";
 
 const Home = () => {
   return (
-    <div className="w-full h-full  lg:space-y-20">
+    <div className="w-full h-full space-y-10 lg:space-y-20">
       <div className="h-[55vh] sm:h-[50vh] md:h-[105vh] lg:h-[85vh] ">
         <Hero />
       </div>

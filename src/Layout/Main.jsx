@@ -7,10 +7,10 @@ import Nav from "../components/Shared/Navbar/Nav";
 const Main = () => {
     return (
         <div className="font-outfit">
-            <div className="h-28">
+            <div className="h-16">
                 <Nav />
             </div>
-            <div className="min-h-[calc(100vh-285px)] mt-5">
+            <div className="min-h-[calc(100vh-285px)]">
                 <Outlet></Outlet>
             </div>
             <div>

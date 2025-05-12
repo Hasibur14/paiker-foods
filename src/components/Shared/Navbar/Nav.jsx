@@ -112,7 +112,7 @@ const Nav = () => {
                                             to={item.path}
                                             className={({ isActive }) =>
                                                 isActive
-                                                    ? "block px-4 py-2 text-primary-light active"
+                                                    ? "block px-4 py-2  text-[#2cc631] active"
                                                     : "block px-4 py-2 hover:text-primary-light"
                                             }
                                             onClick={handleLinkClick}
@@ -142,7 +142,7 @@ const Nav = () => {
                                     </div>
                                     <LanguageToggle />
                                 </div>
-                                <h2 className="lg:hidden text-2xl font-bold font-shadows text-second-deep">Paiker Foods</h2>
+                                <h2 className="lg:hidden text-2xl font-bold font-shadows text-second-deep ml-4">Paiker Foods</h2>
 
                                 {/* Mobile Menu Icon */}
                                 <div className="lg:hidden flex gap-2 items-center mx-4">

@@ -58,13 +58,14 @@ const Products = () => {
             <Container>
                 <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 lg:gap-10">
                     {/* Sidebar */}
-                    <div className="lg:col-span-1 ">
-                        <div className="flex flex-col gap-5 p-6 py-5 bg-stone-200 shadow-lg h-auto">
+                    <div className="lg:col-span-1 flex flex-col">
+                        {/* Categories Section */}
+                        <div className="flex flex-col gap-5 p-6 py-5 bg-stone-100 shadow-lg border rounded">
                             <button
                                 onClick={() => setActiveFilterTab("All Products")}
-                                className={`flex items-center justify-between px-4 py-3  rounded font-outfit transition-colors ${activeFilterTab === "All Products"
-                                    ? "bg-primary-light text-white"
-                                    : "bg-white hover:bg-primary-light hover:text-white "
+                                className={`flex items-center justify-between px-4 py-3 rounded font-outfit transition-colors ${activeFilterTab === "All Products"
+                                        ? "bg-primary-light text-white"
+                                        : "bg-white hover:bg-primary-light hover:text-white"
                                     }`}
                             >
                                 <h3 className="text-base font-semibold">All Categories</h3>
@@ -75,8 +76,8 @@ const Products = () => {
                                     key={item.id}
                                     onClick={() => setActiveFilterTab(item.name.toLowerCase())}
                                     className={`flex items-center justify-between px-4 py-3 rounded font-outfit transition-colors ${activeFilterTab === item.name.toLowerCase()
-                                        ? "bg-primary-light text-white"
-                                        : "bg-white hover:bg-primary-light hover:text-white"
+                                            ? "bg-primary-light text-white"
+                                            : "bg-white hover:bg-primary-light hover:text-white"
                                         }`}
                                 >
                                     <h3 className="text-base font-semibold">{item.name}</h3>
@@ -85,27 +86,26 @@ const Products = () => {
                             ))}
                         </div>
 
-                        <div className="relative w-full h-[300px] md:h-[400px] lg:h-[300px] mt-6 lg:mt-[70%] rounded-lg overflow-hidden">
-                            <img
-                                src="https://i.postimg.cc/FzXdfG4X/7111db1edda88be8d90b2c36f835e12dc6d871d3.jpg"
-                                alt="Help Background"
-                                className="absolute inset-0 w-full h-full object-cover"
-                            />
-                            <div className="absolute inset-0 bg-black bg-opacity-50" />
-                            <div className="relative z-10 p-6 h-full flex flex-col justify-center items-center text-center text-white">
-                                <h2 className="text-2xl font-bold mb-2 font-outfit">
-                                    Need Help?
-                                </h2>
-                                <p className="text-sm mb-4 font-outfit">
-                                    Speak with a human to fill out a form? Call our office and we will connect you with a team member.
-                                </p>
-                                <p className="text-lg font-bold mb-1 font-outfit">
-                                    +(012) 6679545
-                                </p>
-                                <p className="mb-4 font-outfit">info@paikerfoods.com</p>
-                                <button className="bg-second-light hover:bg-second-deep text-black font-semibold py-2 px-6 rounded-full font-outfit transition-colors">
-                                    CONTACT US
-                                </button>
+                        {/* Contact Info - Sticky Bottom */}
+                        <div className="sticky bottom-0 mt-auto pt-6">
+                            <div className="relative w-full h-[300px] md:h-[400px] lg:h-[300px] rounded-lg overflow-hidden">
+                                <img
+                                    src="https://i.postimg.cc/FzXdfG4X/7111db1edda88be8d90b2c36f835e12dc6d871d3.jpg"
+                                    alt="Help Background"
+                                    className="absolute inset-0 w-full h-full object-cover"
+                                />
+                                <div className="absolute inset-0 bg-black bg-opacity-50" />
+                                <div className="relative z-10 p-6 h-full flex flex-col justify-center items-center text-center text-white">
+                                    <h2 className="text-2xl font-bold mb-2 font-outfit">Need Help?</h2>
+                                    <p className="text-sm mb-4 font-outfit">
+                                        Speak with a human to fill out a form? Call our office and we will connect you with a team member.
+                                    </p>
+                                    <p className="text-lg font-bold mb-1 font-outfit">+(012) 6679545</p>
+                                    <p className="mb-4 font-outfit">info@paikerfoods.com</p>
+                                    <button className="bg-second-light hover:bg-second-deep text-black font-semibold py-2 px-6 rounded-full font-outfit transition-colors">
+                                        CONTACT US
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>

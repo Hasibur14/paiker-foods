@@ -107,7 +107,7 @@ const OurTeam = () => {
                                     >
                                         <div className="overflow-hidden shadow-lg h-full">
                                             <img
-                                                className="w-full h-72 sm:h-80 md:h-96 lg:h-[350px] xl:h-[370px] transition-transform duration-500 group-hover:scale-105 object-cover"
+                                                className="w-full h-96 lg:h-[350px] xl:h-[370px] transition-transform duration-500 group-hover:scale-105 object-cover"
                                                 src={item.image}
                                                 alt={item.name}
                                             />

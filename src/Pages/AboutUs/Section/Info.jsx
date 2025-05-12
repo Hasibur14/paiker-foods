@@ -26,7 +26,7 @@ const infoData = [
 
 const Info = () => {
     return (
-        <div className='lg:pt-16'>
+        <div>
             <Container>
                 <div className='md:flex gap-16 justify-between w-full space-y-7 lg:space-y-0'>
                     <h2 className='text-xl md:text-2xl w-full lg:w-1/2'>

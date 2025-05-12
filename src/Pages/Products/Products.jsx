@@ -147,12 +147,12 @@ const Products = () => {
             <Container>
                 <div className="grid grid-cols-1 lg:grid-cols-4 gap-10">
                     {/* Sidebar */}
-                    <div className="col-span-1 bg-[#F8F8F8] h-auto md:h-[50%] lg:h-[28%] md:pb-10">
+                    <div className="col-span-1 bg-[#F8F8F8] shadow h-auto md:h-[50%] lg:h-[28%] md:pb-10">
                         <div className="col-span-1 bg-[#F8F8F8]">
                             <div className="flex flex-col gap-4 py-6">
                                 <button
                                     onClick={() => setActiveFilterTab("All")}
-                                    className={`flex items-center justify-between px-4 py-3 mx-2 font-outfit hover:bg-primary-light hover:text-white ${activeFilterTab === "All" ? "bg-primary-light text-white" : ""
+                                    className={`flex items-center justify-between px-4 py-3 mx-5 font-outfit hover:bg-primary-light hover:text-white ${activeFilterTab === "All" ? "bg-primary-light text-white" : ""
                                         }`}
                                 >
                                     <h3 className="text-base font-semibold">All Categories</h3>
@@ -162,7 +162,7 @@ const Products = () => {
                                     <button
                                         key={item.id}
                                         onClick={() => setActiveFilterTab(item.name.toLowerCase())}
-                                        className={`flex items-center justify-between px-4 py-3 mx-2 font-outfit hover:bg-primary-light hover:text-white ${activeFilterTab === item.name.toLowerCase()
+                                        className={`flex items-center justify-between px-5 py-3 mx-5 font-outfit bg-base-100 hover:bg-primary-light hover:text-white ${activeFilterTab === item.name.toLowerCase()
                                                 ? "bg-primary-light text-white"
                                                 : ""
                                             }`}
@@ -210,7 +210,7 @@ const Products = () => {
                                 <button
                                     key={tab}
                                     onClick={() => setActiveTab(tab)}
-                                    className={`px-6 py-2 rounded border transition duration-300 flex-shrink-0 ${activeTab === tab
+                                    className={`px-6 py-2 rounded border transition duration-300 flex-shrink-0 hover:text-primary-light ${activeTab === tab
                                             ? "bg-white text-primary-light border-b-2 border-primary-light shadow-lg mx-2"
                                             : "bg-white text-black mx-2"
                                         } transition duration-300 shadow-sm`}
@@ -251,10 +251,10 @@ const Products = () => {
                                         <p className="font-outfit text-sm mt-3 font-light text-[#444444]">
                                             {item.description}
                                         </p>
-                                        <div className="bg-second-light hover:bg-second-deep mt-4 rounded py-2 text-center group">
+                                        <div className="bg-second-light hover:bg-second-deep mt-4 rounded py-2 text-center group ">
                                             <button
                                                 onClick={() => handleBuyClick(item)}
-                                                className="font-poppins group-hover:text-white w-full font-" 
+                                                className="font-poppins group-hover:text-white w-full font-semibold group-transition-all group-duration-500" 
                                             >
                                                 Contact to buy
                                             </button>

@@ -26,7 +26,6 @@ const Home = () => {
       <Timeline />
       <Gallery />
       <BuildBest />
-      <Blogs />
       <GetTauch />
     </div>
   );

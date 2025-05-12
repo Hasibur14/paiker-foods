@@ -6,6 +6,7 @@ import slider2 from '../../assets/hero/banner1.png'
 import slider3 from '../../assets/hero/banner4.png'
 import { Link } from "react-router-dom";
 import { LiaSquareFullSolid } from "react-icons/lia";
+import Button from "../Button/Button";
 
 const Hero = () => {
     const sliderData = [
@@ -87,12 +88,11 @@ const Hero = () => {
                                 <p className="font-mulish text-md sm:text-lg md:text-2xl text-gray-300 max-w-5xl animate__animated animate__fadeInUp">
                                     {slide.description}
                                 </p>
-                                <Link to='/products'>
-                                    <button className="rounded relative inline-flex group items-center justify-center px-3 lg:px-8 py-2 lg:py-3 m-1 cursor-pointer border-b-4 border-l-2 active:border-second-light active:shadow-none shadow-lg bg-gradient-to-tr from-second-light to-second-light border-second-deep text-gray-900 font-semibold text-md">
-                                        <span className="absolute w-0 h-0 transition-all duration-300 ease-out bg-white rounded-full group-hover:w-32 group-hover:h-32 opacity-10"></span>
-                                        <span className="relative uppercase">Explore Our Products</span>
-                                    </button>
-                                </Link>
+                                <Button
+                                    to="/products"
+                                    text="Explore Our Products"
+                                    className=""
+                                />
                             </div>
                         </div>
                     ))}

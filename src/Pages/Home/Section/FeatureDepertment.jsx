@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Container from '../../../components/Container/Container';
+import Button from '../../../components/Button/Button';
 
 const FeatureDepartment = () => {
     const [data, setData] = useState(null);
@@ -11,42 +12,51 @@ const FeatureDepartment = () => {
             .then((json) => setData(json));
     }, []);
 
-    if (!data) return <div className="text-center py-20">Loading...</div>;
+    if (!data) return (
+        <div className="text-center py-20">
+            <div className="animate-pulse flex flex-col items-center space-y-4">
+                <div className="h-6 w-1/3 bg-gray-200 rounded"></div>
+                <div className="h-12 w-3/4 bg-gray-200 rounded"></div>
+                <div className="h-4 w-full bg-gray-200 rounded"></div>
+                <div className="h-4 w-5/6 bg-gray-200 rounded"></div>
+            </div>
+        </div>
+    );
 
     return (
-        <div>
+        <div className="py-8 md:py-12">
             <Container>
-                <div className="flex flex-col items-center justify-center py-12 mb-10 lg:flex-row lg:gap-12">
+                <div className="flex flex-col items-center justify-center lg:flex-row lg:gap-8 xl:gap-12">
                     {/* Left Image */}
-                    <div className="mb-8 lg:mb-0 transform md:rotate-[-10deg]">
+                    <div className="mb-6 lg:mb-0 transform md:rotate-[-10deg] hover:rotate-0 transition-all duration-300">
                         <img
                             src={data.images.left}
                             alt="Farmer 1"
-                            className="rounded-xl  max-w-xs md:max-w-sm h-full lg:h-[500px]" />
+                            className="rounded-xl w-full max-w-xs sm:max-w-sm md:max-w-md h-auto object-cover lg:h-[400px] xl:h-[500px]" />
                     </div>
 
                     {/* Center Text */}
-                    <div className="text-center max-w-4xl text-[#01312C] text-md">
-                        <p className="text-second-deep font-medium text-lg mb-2">{data.tagline}</p>
-                        <h2 className="font-poppins text-3xl md:text-5xl font-extrabold text-[#01312C] mb-4 whitespace-pre-line">
+                    <div className="text-center px-4 sm:px-6 max-w-2xl lg:max-w-3xl xl:max-w-4xl text-[#01312C]">
+                        <p className="text-second-deep font-medium text-base sm:text-lg mb-2">{data.tagline}</p>
+                        <h2 className="font-poppins text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-extrabold text-[#01312C] mb-4 whitespace-pre-line">
                             {data.heading}
                         </h2>
-                        <p className="font-shadows mb-4">{data.description1}</p>
-                        <p className="mb-6">{data.description2}</p>
-                        <Link to='/products'>
-                            <button class="rounded relative inline-flex group items-center justify-center px-3 lg:px-8 py-2 lg:py-3 m-1 cursor-pointer border-b-4 border-l-2 active:border-second-light active:shadow-none shadow-lg bg-gradient-to-tr from-second-light to-second-light border-second-deep text-gray-900 font-semibold text-md">
-                                <span class="absolute w-0 h-0 transition-all duration-300 ease-out bg-white rounded-full group-hover:w-32 group-hover:h-32 opacity-10"></span>
-                                <span class="relative uppercase">Explore Our Products</span>
-                            </button>
-                        </Link>
+                        <p className="font-shadows mb-4 text-sm sm:text-base">{data.description1}</p>
+                        <p className="mb-6 sm:mb-10 text-sm sm:text-base">{data.description2}</p>
+
+                        <Button
+                            to='/products'
+                            text='Explore Our Products'
+                            className="text-sm sm:text-base"
+                        />
                     </div>
 
                     {/* Right Image */}
-                    <div className="mt-8 lg:mt-0 transform  md:rotate-[10deg]">
+                    <div className="mt-6 lg:mt-0 transform md:rotate-[10deg] hover:rotate-0 transition-all duration-300">
                         <img
                             src={data.images.right}
                             alt="Farmer 2"
-                            className="rounded-xl  max-w-xs md:max-w-sm  h-full lg:h-[500px]" />
+                            className="rounded-xl w-full max-w-xs sm:max-w-sm md:max-w-md h-auto object-cover lg:h-[400px] xl:h-[500px]" />
                     </div>
                 </div>
             </Container>

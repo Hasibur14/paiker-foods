@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Container from '../../../components/Container/Container';
 import { BiCheckCircle } from 'react-icons/bi';
 import Button from '../../../components/Button/Button';
@@ -75,7 +75,7 @@ const BestOrganic = () => {
                             <img
                                 src={tabs[activeTab].image}
                                 alt={tabs[activeTab].title}
-                                className="w-full md:w-[40%] h-auto object-cover "
+                                className="w-full md:w-[40%] h-auto object-cover hover:scale-105 transition-all duration-1000 hover:rounded"
                             />
                         )}
                         <div className="md:w-2/3 space-y-6">
@@ -112,7 +112,9 @@ const BestOrganic = () => {
                                     className={`p-3 w-full rounded cursor-pointer transition duration-300 ${activeTab === index ? 'bg-green-100 border-l-4 border-green-600' : 'bg-white hover:bg-gray-50'}`}
                                 >
                                     <div className='flex gap-5 text-center items-center '>
-                                        <img src={tab.icon} alt="icon" />
+                                        <img 
+                                        src={tab.icon}
+                                         alt="icon" />
                                         <h2 className="font-shadows text-xl tracking-[3px] font-semibold text-gray-800">
                                             {tab.title}
                                         </h2>

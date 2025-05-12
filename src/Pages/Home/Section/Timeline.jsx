@@ -18,14 +18,18 @@ const Timeline = () => {
         <div ref={ref} className="py-16">
             <Container>
                 {/* Header */}
-                <div className='md:flex justify-between mb-16'>
-                    <h2 className='text-4xl md:text-5xl font-bold mb-6 md:mb-0'>
+                <div className="md:flex md:items-start md:justify-between gap-8 mb-16">
+                    {/* Left - Heading */}
+                    <h2 className="text-4xl md:text-5xl font-bold mb-6 md:mb-0 md:w-1/2">
                         Farming have been<br />since 1866
                     </h2>
-                    <p className='md:w-1/2 text-gray-600 text-lg'>
+
+                    {/* Right - Description */}
+                    <p className="md:w-1/2 text-gray-600 text-lg">
                         Assertively formulate cross-platform sources rather than virtual results. Efficiently innovate revolutionary process improvements before distinctive "outside the box" thinking. Monotonectally conceptualize market.
                     </p>
                 </div>
+
 
                 {/* Timeline */}
                 <div className="relative">

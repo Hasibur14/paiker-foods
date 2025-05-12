@@ -1,15 +1,13 @@
-import React from 'react'
 import banner from '../../assets/titleBG.png'
 import BannerTitle from '../../components/BannerTitle/BannerTitle'
 import Info from './Section/Info'
 import ProvidingProduct from './Section/ProvidingProduct'
 import MissionVision from './Section/MissionVision'
-import About from '../Home/Section/About'
 import FreshnessCommitment from './Section/FreshnessCommitment'
 import Timeline from '../Home/Section/Timeline'
-import GetTauch from '../Home/Section/GetTauch'
 import MDMessage from './Section/MDMessage'
 import OurTeam from './Section/OurTeam'
+import Brands from '../../components/Brands/Brands'
 
 const AboutUs = () => {
     return (
@@ -21,13 +19,12 @@ const AboutUs = () => {
 
             <Info />
             <ProvidingProduct />
+            <Timeline />
             <MissionVision />
             <MDMessage />
             <OurTeam />
-            <About />
             <FreshnessCommitment />
-            <Timeline />
-            <GetTauch />
+            <Brands />
         </div>
     )
 }

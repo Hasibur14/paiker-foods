@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Container from "../../components/Container/Container";
 import BannerTitle from "../../components/BannerTitle/BannerTitle";
 import banner from "../../assets/hero/banner1.png";
 import { Link } from "react-router-dom";
 import { FaArrowRightLong } from "react-icons/fa6";
+
 
 const Blogs = () => {
 
@@ -43,7 +44,7 @@ const Blogs = () => {
             <Container>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-4 gap-8 mb-2 pb-16">
                     {isBlogs.map((item) => (
-                        <div key={item._id} className="bg-white shadow hover:shadow-lg transition-shadow duration-300">
+                        <div key={item._id} className="bg-white shadow hover:shadow-lg transition-shadow duration-300 flex flex-col h-full">
                             <div className="relative overflow-hidden group">
                                 <img
                                     className="w-full h-[230px] object-cover transition-all duration-300 ease-out group-hover:scale-110"
@@ -57,28 +58,25 @@ const Blogs = () => {
                             <p className="w-[106px] bg-primary-light text-white text-center text-md font-normal px-2 py-1">
                                 {item.date}
                             </p>
-                            <div className="mx-4">
 
-                                <div className="flex items-center space-x-2 mt-6">
-                                    <h2 className="text-sm font-medium font-outfit text-gray-500 hover:text-primary-light">
-                                        {item.name}
-                                    </h2>
-                                    <span className="text-sm font-bold leading-none mt-1 mx-4">·</span>
-                                    <p className="text-sm text-gray-500 hover:text-primary-light font-outfit">
-                                        {item.comments}
-                                    </p>
-                                </div>
-
-                                <p className="mt-2 text-xl tracking-wide font-bold font-outfit line-clamp-2">
+                            <div className="p-5 flex flex-col flex-grow">
+                                <h3 className="text-xl font-bold text-gray-800 mb-3 line-clamp-2">
                                     {item.title}
+                                </h3>
+
+                                <p className="text-gray-600 mb-4 line-clamp-2 flex-grow">
+                                    {item.description}
                                 </p>
-                                <Link
-                                    to={`/blog-details/${item._id}`}
-                                    className="mt-4 text-sm uppercase font-semibold flex items-center gap-2 mb-3 hover:text-primary-light hover:underline"
-                                >
-                                    Continue Reading
-                                    <FaArrowRightLong />
-                                </Link>
+
+                                <div className="mt-auto">
+                                    <Link
+                                        to={`/blog-details/${item._id}`}
+                                        className="inline-flex items-center text-primary-light font-medium hover:text-green-500 transition-colors font-poppins hover:underline"
+                                    >
+                                        Read More
+                                        <FaArrowRightLong className="ml-2" />
+                                    </Link>
+                                </div>
                             </div>
                         </div>
                     ))}

@@ -7,6 +7,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/autoplay';
+import Button from '../../../components/Button/Button';
 
 const OurTeam = () => {
     const [hoveredCard, setHoveredCard] = useState(null);
@@ -54,10 +55,10 @@ const OurTeam = () => {
                     <div className='w-full lg:w-[40%] xl:w-[35%] space-y-5'>
                         <h4 className='font-shadows text-xl text-primary-light'>Our Team</h4>
                         <h2 className='text-3xl md:text-4xl lg:text-5xl font-semibold'>Meet our professional Team Members</h2>
-                        <p className='text-gray-600'>Our dedicated team of agricultural experts brings years of experience to ensure the best quality products.</p>
-                        <button className='bg-primary-light hover:bg-primary-deep px-6 py-3 rounded-lg text-white transition-colors duration-300'>
-                            Meet All Team Members
-                        </button>
+                        <p className='text-gray-600 pb-7'>Our dedicated team of agricultural experts brings years of experience to ensure the best quality products.</p>
+                        <Button
+                            text='Meet All Team Members'
+                        />
                     </div>
 
                     {/* Right Slider - Adjusted width and breakpoints */}
@@ -67,25 +68,25 @@ const OurTeam = () => {
                             spaceBetween={20}
                             slidesPerView={1}
                             breakpoints={{
-                                640: { 
+                                640: {
                                     slidesPerView: 1,
-                                    spaceBetween: 20 
+                                    spaceBetween: 20
                                 },
-                                768: { 
+                                768: {
                                     slidesPerView: 1.5,
-                                    spaceBetween: 25 
+                                    spaceBetween: 25
                                 },
-                                1024: { 
+                                1024: {
                                     slidesPerView: 2,
-                                    spaceBetween: 30 
+                                    spaceBetween: 30
                                 },
-                                1280: { 
+                                1280: {
                                     slidesPerView: 2.5,
-                                    spaceBetween: 30 
+                                    spaceBetween: 30
                                 },
-                                1536: { 
+                                1536: {
                                     slidesPerView: 3,
-                                    spaceBetween: 30 
+                                    spaceBetween: 30
                                 },
                             }}
                             loop={true}

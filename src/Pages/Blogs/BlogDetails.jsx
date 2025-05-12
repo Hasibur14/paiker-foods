@@ -3,11 +3,100 @@ import { Link, useLoaderData } from "react-router-dom";
 import BannerTitle from "../../components/BannerTitle/BannerTitle";
 import Container from "../../components/Container/Container";
 import banner from "../../assets/hero/banner1.png";
-import { FaRegClock, FaRegComment, FaShareAlt } from "react-icons/fa";
+import { FaRegClock, FaShareAlt } from "react-icons/fa";
 import { IoMdArrowRoundBack } from "react-icons/io";
 
 const BlogDetails = () => {
+
     const blog = useLoaderData();
+
+    const handleShare = () => {
+        const currentUrl = window.location.href;
+        const title = blog.title;
+        const text = blog.description.substring(0, 100) + "...";
+
+
+
+        // Native Share API (works on mobile and some desktop browsers)
+        if (navigator.share) {
+            navigator.share({
+                title: title,
+                text: text,
+                url: currentUrl,
+            })
+                .catch(err => console.log('Error sharing:', err));
+        }
+        // Fallback for browsers that don't support native share
+        else {
+            // Open a popup with social sharing options
+            const shareWindow = window.open(
+                '',
+                'Share this article',
+                'width=600,height=400,menubar=no,toolbar=no'
+            );
+
+            // If popup was blocked, fallback to new tab
+            if (!shareWindow || shareWindow.closed || typeof shareWindow.closed === 'undefined') {
+                window.open(
+                    `https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(currentUrl)}`,
+                    '_blank'
+                );
+            } else {
+                // Create HTML for the share popup
+                shareWindow.document.write(`
+                    <!DOCTYPE html>
+                    <html>
+                    <head>
+                        <title>Share this article</title>
+                        <style>
+                            body { font-family: Arial, sans-serif; padding: 20px; }
+                            .share-option { 
+                                display: flex; 
+                                align-items: center; 
+                                padding: 10px; 
+                                margin: 10px 0; 
+                                border-radius: 5px; 
+                                cursor: pointer;
+                                transition: background 0.2s;
+                            }
+                            .share-option:hover { background: #f0f0f0; }
+                            .share-icon { margin-right: 10px; font-size: 24px; }
+                            .twitter { color: #1DA1F2; }
+                            .facebook { color: #4267B2; }
+                            .linkedin { color: #0077b5; }
+                            .whatsapp { color: #25D366; }
+                            .copy-link { color: #666; }
+                        </style>
+                    </head>
+                    <body>
+                        <h2>Share this article</h2>
+                        <div class="share-option twitter" onclick="window.open('https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(currentUrl)}', '_blank')">
+                            <span class="share-icon">𝕏</span>
+                            <span>Share on Twitter</span>
+                        </div>
+                        <div class="share-option facebook" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(currentUrl)}', '_blank')">
+                            <span class="share-icon">f</span>
+                            <span>Share on Facebook</span>
+                        </div>
+                        <div class="share-option linkedin" onclick="window.open('https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(currentUrl)}', '_blank')">
+                            <span class="share-icon">in</span>
+                            <span>Share on LinkedIn</span>
+                        </div>
+                        <div class="share-option whatsapp" onclick="window.open('https://wa.me/?text=${encodeURIComponent(title + ' ' + currentUrl)}', '_blank')">
+                            <span class="share-icon">WhatsApp</span>
+                            <span>Share via WhatsApp</span>
+                        </div>
+                        <div class="share-option copy-link" onclick="navigator.clipboard.writeText('${currentUrl}').then(() => alert('Link copied to clipboard!'))">
+                            <span class="share-icon">📋</span>
+                            <span>Copy link</span>
+                        </div>
+                    </body>
+                    </html>
+                `);
+                shareWindow.document.close();
+            }
+        }
+    };
 
     if (!blog) {
         return (
@@ -28,7 +117,7 @@ const BlogDetails = () => {
     }
 
     return (
-        <div className="bg-gray-50 pb-10">
+        <div className="pb-10">
             <BannerTitle
                 bannerImg={banner}
                 subTitle="Blog Details"
@@ -66,18 +155,16 @@ const BlogDetails = () => {
                         <div className="p-6 md:p-8 lg:p-12">
                             {/* Meta Information */}
                             <div className="flex flex-wrap items-center justify-between gap-4 mb-8">
-                                <div className="flex items-center space-x-4">
-                                    <div className="flex items-center text-gray-500">
-                                        <FaRegClock className="mr-2" />
-                                        <span>{blog.readTime}</span>
-                                    </div>
-                                    <div className="flex items-center text-gray-500">
-                                        <FaRegComment className="mr-2" />
-                                        <span>{blog.comments}</span>
-                                    </div>
+                                <div className="flex items-center text-gray-500">
+                                    <FaRegClock className="mr-2" />
+                                    <span>{blog.readTime}</span>
                                 </div>
                                 <div className="flex items-center space-x-2">
-                                    <button className="p-2 text-gray-500 hover:text-primary-light rounded-full hover:bg-gray-100">
+                                    <button
+                                        onClick={handleShare}
+                                        className="p-2 text-gray-500 hover:text-primary-light rounded-full bg-gray-100 transition-colors"
+                                        aria-label="Share this article"
+                                    >
                                         <FaShareAlt />
                                     </button>
                                 </div>
@@ -127,27 +214,6 @@ const BlogDetails = () => {
                                     </div>
                                 </div>
                             )}
-                        </div>
-                    </div>
-
-                    {/* Related Articles */}
-                    <div className="mt-16">
-                        <h3 className="text-2xl font-bold text-gray-800 mb-8">Related Articles</h3>
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                            {/* You would map through related articles here */}
-                            <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-                                <div className="h-48 bg-gray-200"></div>
-                                <div className="p-6">
-                                    <span className="text-sm text-primary-light font-medium">Interior Design</span>
-                                    <h4 className="text-xl font-bold text-gray-800 mt-2 mb-3">10 Ways to Refresh Your Living Room</h4>
-                                    <div className="flex items-center text-sm text-gray-500">
-                                        <span>Jul 28, 2023</span>
-                                        <span className="mx-2">•</span>
-                                        <span>5 min read</span>
-                                    </div>
-                                </div>
-                            </div>
-                            {/* Repeat for other related articles */}
                         </div>
                     </div>
                 </div>

@@ -6,7 +6,6 @@
         "date": "Jan 10, 2023",
         "name": "By Sarah Johnson",
         "role": "Interior Designer",
-        "comments": "3 Comments",
         "title": "How to Choose the Perfect Furniture for Your Home",
         "description": "Selecting the right furniture can transform your living space. This guide covers key considerations like room measurements, style coordination, and material durability to help you make informed decisions.",
         "content": [
@@ -25,7 +24,6 @@
         "date": "Feb 15, 2023",
         "name": "By Michael Chen",
         "role": "Design Consultant",
-        "comments": "5 Comments",
         "title": "Latest Trends in Interior Design for 2023",
         "description": "Discover the top interior design trends shaping homes this year, from bold color palettes to sustainable materials and multifunctional spaces.",
         "content": [
@@ -44,7 +42,6 @@
         "date": "Mar 22, 2023",
         "name": "By David Rodriguez",
         "role": "Space Planning Expert",
-        "comments": "2 Comments",
         "title": "Space-Saving Solutions for Small Apartments",
         "description": "Maximize your compact living space with these innovative storage solutions and layout strategies that create both function and style.",
         "content": [
@@ -63,7 +60,6 @@
         "date": "Apr 5, 2023",
         "name": "By Emily Wilson",
         "role": "Color Specialist",
-        "comments": "7 Comments",
         "title": "The Psychology of Colors in Home Decoration",
         "description": "Learn how different colors affect mood and perception, and how to use color theory to create your desired atmosphere in each room.",
         "content": [
@@ -82,7 +78,7 @@
         "date": "May 18, 2023",
         "name": "By James Peterson",
         "role": "Sustainable Design Advocate",
-        "comments": "4 Comments",
+    
         "title": "Eco-Friendly Materials for Sustainable Homes",
         "description": "Explore environmentally conscious material alternatives that reduce your carbon footprint without compromising on style or quality.",
         "content": [
@@ -101,7 +97,7 @@
         "date": "Jun 30, 2023",
         "name": "By Olivia Martinez",
         "role": "Lighting Designer",
-        "comments": "1 Comment",
+     
         "title": "Maximizing Natural Light in Your Living Space",
         "description": "Techniques to enhance natural illumination in your home, reducing energy costs while creating a brighter, more welcoming environment.",
         "content": [
@@ -120,7 +116,7 @@
         "date": "Jul 12, 2023",
         "name": "By Robert Kim",
         "role": "Renovation Specialist",
-        "comments": "6 Comments",
+       
         "title": "Budget-Friendly Home Renovation Ideas",
         "description": "Transform your space without breaking the bank with these cost-effective renovation strategies that deliver maximum impact.",
         "content": [

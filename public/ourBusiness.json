@@ -1,165 +1,91 @@
 [
     {
+        "_id": "1",
         "category": "WholeSale",
-        "featuredProduct": {
-            "id": "wh-0",
-            "img": "https://images.pexels.com/photos/209389/pexels-photo-209389.jpeg?auto=compress&cs=tinysrgb&w=600",
-            "title": "Wholesale Spices",
-            "des": "Premium spices available in large quantities."
-        },
+        "img": "https://images.pexels.com/photos/209389/pexels-photo-209389.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "title": "Wholesale Spices",
+        "des": "Holisticly reinvent cross-unit deliverables for exceptional leadership. Energistically reinvent efficient synergy and emerging catalysts for change. Dramatically customize leveraged communities without worldwide platforms. Globally customize multidisciplinary strategic ",
         "productList": [
             {
-                "id": "wh-1",
-                "img": "https://images.pexels.com/photos/4110262/pexels-photo-4110262.jpeg?auto=compress&cs=tinysrgb&w=600",
-                "title": "Bulk Rice Packs",
-                "des": "High-quality rice in bulk packaging for wholesalers Refined sugar in 25kg and 50kg bags."
+                "_id": "11",
+                "image": "https://images.pexels.com/photos/4110262/pexels-photo-4110262.jpeg?auto=compress&cs=tinysrgb&w=600",
+                "productName": "Bulk Rice Packs",
+                "description": "High-quality rice in bulk packaging for wholesalers Refined sugar in 25kg and 50kg bags."
             },
             {
-                "id": "wh-2",
-                "img": "https://images.pexels.com/photos/209389/pexels-photo-209389.jpeg?auto=compress&cs=tinysrgb&w=600",
-                "title": "Oil Containers",
-                "des": "Large volume cooking oils for food service suppliers. Large volume cooking"
+                "_id": "12",
+                "image": "https://images.pexels.com/photos/209389/pexels-photo-209389.jpeg?auto=compress&cs=tinysrgb&w=600",
+                "productName": "Oil Containers",
+                "description": "Large volume cooking oils for food service suppliers. Large volume cooking"
             },
             {
-                "id": "wh-3",
-                "img": "https://images.pexels.com/photos/4110262/pexels-photo-4110262.jpeg?auto=compress&cs=tinysrgb&w=600",
-                "title": "Wholesale Sugar Bags",
-                "des": "Refined sugar in 25kg and 50kg bags."
-            },
-            {
-                "id": "wh-4",
-                "img": "https://images.pexels.com/photos/4110262/pexels-photo-4110262.jpeg?auto=compress&cs=tinysrgb&w=600",
-                "title": "Lentils & Pulses",
-                "des": "Wholesale pulses for bulk buying."
-            },
-            {
-                "id": "wh-5",
-                "img": "https://images.pexels.com/photos/209389/pexels-photo-209389.jpeg?auto=compress&cs=tinysrgb&w=600",
-                "title": "Cleaning Supplies",
-                "des": "Bulk packaging of cleaning products for B2B supply."
+                "_id": "13",
+                "image": "https://images.pexels.com/photos/4110262/pexels-photo-4110262.jpeg?auto=compress&cs=tinysrgb&w=600",
+                "productName": "Wholesale Sugar Bags",
+                "description": "Refined sugar in 25kg and 50kg bags."
             }
         ]
     },
     {
+        "_id": "2",
         "category": "Export",
-        "featuredProduct": {
-            "id": "ex-0",
-            "img": "export-featured.jpg",
-            "title": "Handicrafts",
-            "des": "Locally made crafts ideal for global gifting."
-        },
+        "img": "https://images.pexels.com/photos/4482903/pexels-photo-4482903.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "title": "Export Quality Goods",
+        "des": "Premium products meeting international standards for global markets. Professionally optimize worldwide imperatives through sustainable leadership skills.",
         "productList": [
             {
-                "id": "ex-1",
-                "img": "export-1.jpg",
-                "title": "Export Quality Tea",
-                "des": "Finely processed tea for international markets."
+                "_id": "21",
+                "image": "https://images.pexels.com/photos/4482903/pexels-photo-4482903.jpeg?auto=compress&cs=tinysrgb&w=600",
+                "productName": "Premium Coffee Beans",
+                "description": "Specialty grade coffee beans for international markets"
             },
             {
-                "id": "ex-2",
-                "img": "export-2.jpg",
-                "title": "Organic Jute Bags",
-                "des": "Eco-friendly and stylish jute bags."
-            },
-            {
-                "id": "ex-3",
-                "img": "export-3.jpg",
-                "title": "Ceramic Pottery",
-                "des": "Handmade pottery with export-grade finish."
-            },
-            {
-                "id": "ex-4",
-                "img": "export-4.jpg",
-                "title": "Textile Rolls",
-                "des": "Fabric and garments for export vendors."
-            },
-            {
-                "id": "ex-5",
-                "img": "export-5.jpg",
-                "title": "Bamboo Furniture",
-                "des": "Lightweight and sustainable furniture sets."
+                "_id": "22",
+                "image": "https://images.pexels.com/photos/912110/pexels-photo-912110.jpeg?auto=compress&cs=tinysrgb&w=600",
+                "productName": "Organic Spices",
+                "description": "Certified organic spices for health-conscious markets"
             }
         ]
     },
     {
-        "category": "Retails",
-        "featuredProduct": {
-            "id": "rt-0",
-            "img": "retail-featured.jpg",
-            "title": "Household Items",
-            "des": "Affordable and useful items for daily needs."
-        },
+        "_id": "3",
+        "category": "Retail",
+        "img": "https://images.pexels.com/photos/3965557/pexels-photo-3965557.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "title": "Retail Products",
+        "des": "Consumer-ready products for everyday shoppers. Convenient packaging and competitive pricing for retail markets.",
         "productList": [
             {
-                "id": "rt-1",
-                "img": "retail-1.jpg",
-                "title": "Grocery Packs",
-                "des": "Everyday essentials available in convenient sizes."
+                "_id": "31",
+                "image": "https://images.pexels.com/photos/3965557/pexels-photo-3965557.jpeg?auto=compress&cs=tinysrgb&w=600",
+                "productName": "Grocery Packs",
+                "description": "Family-sized packs of daily essentials"
             },
             {
-                "id": "rt-2",
-                "img": "retail-2.jpg",
-                "title": "Toiletries",
-                "des": "Personal care items like shampoo, soap, and toothpaste."
-            },
-            {
-                "id": "rt-3",
-                "img": "retail-3.jpg",
-                "title": "Stationery Kits",
-                "des": "Perfect for students and professionals."
-            },
-            {
-                "id": "rt-4",
-                "img": "retail-4.jpg",
-                "title": "Kitchen Tools",
-                "des": "Affordable cooking utensils for home use."
-            },
-            {
-                "id": "rt-5",
-                "img": "retail-5.jpg",
-                "title": "Ready-to-eat Snacks",
-                "des": "Tasty and instant snack options for retail."
+                "_id": "32",
+                "image": "https://images.pexels.com/photos/4207707/pexels-photo-4207707.jpeg?auto=compress&cs=tinysrgb&w=600",
+                "productName": "Snack Items",
+                "description": "Popular snack foods in consumer-friendly packaging"
             }
         ]
     },
     {
-        "category": "E-Commerce",
-        "featuredProduct": {
-            "id": "ec-0",
-            "img": "ecommerce-featured.jpg",
-            "title": "Fashion Collection",
-            "des": "Trendy outfits available through our online store."
-        },
+        "_id": "4",
+        "category": "E-commerce",
+        "img": "https://images.pexels.com/photos/5632402/pexels-photo-5632402.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "title": "Online Store Products",
+        "des": "Products optimized for online sales with e-commerce friendly packaging and shipping requirements.",
         "productList": [
             {
-                "id": "ec-1",
-                "img": "ecommerce-1.jpg",
-                "title": "Online Gadgets",
-                "des": "Latest electronics delivered to your doorstep."
+                "_id": "41",
+                "image": "https://images.pexels.com/photos/5632402/pexels-photo-5632402.jpeg?auto=compress&cs=tinysrgb&w=600",
+                "productName": "Subscription Boxes",
+                "description": "Curated monthly subscription packages"
             },
             {
-                "id": "ec-2",
-                "img": "ecommerce-2.jpg",
-                "title": "Men’s Footwear",
-                "des": "Stylish and comfortable shoes for men."
-            },
-            {
-                "id": "ec-3",
-                "img": "ecommerce-3.jpg",
-                "title": "Beauty Products",
-                "des": "Top-rated skincare and cosmetics."
-            },
-            {
-                "id": "ec-4",
-                "img": "ecommerce-4.jpg",
-                "title": "Wireless Earbuds",
-                "des": "Crystal-clear sound with fast pairing."
-            },
-            {
-                "id": "ec-5",
-                "img": "ecommerce-5.jpg",
-                "title": "Smartwatches",
-                "des": "Track your health and stay connected."
+                "_id": "42",
+                "image": "https://images.pexels.com/photos/3736390/pexels-photo-3736390.jpeg?auto=compress&cs=tinysrgb&w=600",
+                "productName": "Gift Sets",
+                "description": "Specialty gift packages for online shoppers"
             }
         ]
     }

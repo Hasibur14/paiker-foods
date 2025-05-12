@@ -50,7 +50,7 @@ const Products = () => {
     };
 
     return (
-        <div className="overflow-x-hidden">
+        <div className="overflow-x-hidden border border-rose-500">
             <BannerTitle bannerImg={banner} subTitle="Products" title="Our Products" />
 
             <Container>
@@ -127,7 +127,7 @@ const Products = () => {
                         </div>
 
                         {/* Product Cards */}
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                             {filteredProducts.map((item) => (
                                 <div key={item.id} className="w-full bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
                                     <div className="h-48 md:h-56 w-full overflow-hidden">

@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
 import BannerTitle from '../../components/BannerTitle/BannerTitle';
 import banner from '../../assets/hero/banner1.png';
-import { BsArrowRight } from 'react-icons/bs';
+import { FaArrowRight } from 'react-icons/fa6';
 import { CiMaximize2 } from 'react-icons/ci';
+import { IoMdClose } from 'react-icons/io';
 import Container from '../../components/Container/Container';
-
 
 const OurBusiness = () => {
     const [categoriesData, setCategoriesData] = useState([]);
@@ -36,7 +36,7 @@ const OurBusiness = () => {
     };
 
     return (
-        <div className="bg-gray-100 overflow-x-hidden">
+        <div className="overflow-x-hidden">
             <BannerTitle
                 bannerImg={banner}
                 subTitle="our business"
@@ -44,44 +44,50 @@ const OurBusiness = () => {
             />
 
             <Container>
-                <div className="flex flex-col md:flex-row gap-8 max-w-full mx-auto overflow-x-hidden">
-                    {/* SideNavBar inlined */}
-                    <div className="md:w-[400px] flex-shrink-0">
-                        <div className="w-full max-w-xl bg-gray-50 p-6 rounded-lg shadow-sm">
-                            <nav className="flex flex-col">
-                                {categoriesData.map((categoryData) => (
-                                    <button
-                                        key={categoryData.category}
-                                        onClick={() => setActiveCategory(categoryData.category)}
-                                        className={`flex items-center justify-between py-4 px-5 transition-colors w-full text-left ${activeCategory === categoryData.category
-                                            ? 'bg-[#34A853] text-white'
-                                            : 'text-gray-700 hover:bg-gray-100'
-                                            }`}
-                                    >
-                                        <span className="font-medium">{categoryData.category}</span>
-                                        <BsArrowRight className="h-5 w-5" />
-                                    </button>
-                                ))}
-                            </nav>
+                <div className="flex flex-col lg:flex-row gap-6 lg:gap-10 pb-16">
+                    {/* Sidebar */}
+                    <div className="lg:w-[350px] flex-shrink-0 bg-[#F8F8F8] shadow-lg">
+                        <div className="flex flex-col gap-4 p-4 lg:p-6">
+                            {categoriesData.map((categoryData) => (
+                                <button
+                                    key={categoryData._id}
+                                    onClick={() => setActiveCategory(categoryData.category)}
+                                    className={`flex items-center justify-between px-4 py-3 rounded font-outfit transition-colors ${activeCategory === categoryData.category
+                                        ? 'bg-primary-light text-white'
+                                        : 'bg-white hover:bg-primary-light hover:text-white'
+                                        }`}
+                                >
+                                    <h3 className="text-base font-semibold">{categoryData.category}</h3>
+                                    <FaArrowRight />
+                                </button>
+                            ))}
                         </div>
                     </div>
 
                     {/* Main Content */}
                     <div className="flex-1 space-y-8">
-                        {/* FeaturedProduct inlined */}
-                        {activeCategoryData?.featuredProduct && (
-                            <div className="bg-white rounded-lg shadow-md overflow-hidden">
-                                <div className="flex flex-col">
-                                    <div className="w-full relative h-60 md:h-auto">
+
+                        {/* Category Info */}
+                        {activeCategoryData && (
+                            <div className="bg-white rounded-xl shadow-md overflow-hidden">
+                                <div className="">
+                                    <div className="w-full relative">
                                         <img
-                                            src={activeCategoryData.featuredProduct.img}
-                                            alt={activeCategoryData.featuredProduct.title}
-                                            className="object-cover w-full h-80"
+                                            src={activeCategoryData.img}
+                                            alt={activeCategoryData.title}
+                                            className="w-full h-64 lg:h-[420px] object-cover"
                                         />
+                                        <h2 className="absolute top-[40%] left-[40%] text-3xl  lg:text-6xl font-bold text-white mb-3 font-poppins text-center backdrop-blur p-3">
+                                            {activeCategoryData.category}
+                                        </h2>
                                     </div>
-                                    <div className="md:w-2/3 p-6">
-                                        <h2 className="text-2xl font-bold text-gray-800 mb-2">{activeCategoryData.featuredProduct.title}</h2>
-                                        <p className="text-gray-600">{activeCategoryData.featuredProduct.des}</p>
+                                    <div className="p-6">
+                                        <h2 className="text-2xl font-bold text-gray-800 mb-3 font-poppins">
+                                            {activeCategoryData.title}
+                                        </h2>
+                                        <p className="text-gray-600 font-outfit">
+                                            {activeCategoryData.des}
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -90,73 +96,53 @@ const OurBusiness = () => {
                         {/* Product List */}
                         {activeCategoryData?.productList && (
                             <div>
-                                <h2 className="text-2xl font-bold mb-4">Product List</h2>
+                                <h2 className="text-2xl font-bold mb-6 font-poppins">Product List</h2>
                                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                                     {activeCategoryData.productList.map((product) => {
-                                        const isExpanded = expandedDescriptions[product.id];
-                                        const words = product.des.split(" ");
-                                        const shouldTruncate = words.length > 10;
-                                        const shortText = words.slice(0, 10).join(" ") + "...";
-                                        const displayText = shouldTruncate && !isExpanded
-                                            ? shortText
-                                            : product.des;
+                                        const isExpanded = expandedDescriptions[product._id];
+                                        const displayText = isExpanded
+                                            ? product.description
+                                            : `${product.description.split(' ').slice(0, 20).join(' ')}...`;
 
                                         return (
-                                            <div key={product.id} className="max-w-lg h-[450px]">
-                                                <div className="h-full bg-white rounded-[2rem] shadow-sm overflow-hidden flex flex-col">
-                                                    {/* Top image section */}
-                                                    <div className="relative">
+                                            <div key={product._id} className="h-full">
+                                                <div className="h-full bg-white rounded-2xl shadow-sm overflow-hidden flex flex-col">
+                                                    {/* Image with zoom button */}
+                                                    <div className="relative h-48 w-full overflow-hidden">
                                                         <img
-                                                            src={product.img || "/placeholder.svg"}
-                                                            alt={product.title}
-                                                            className="w-full h-[280px] object-cover"
+                                                            src={product.image}
+                                                            alt={product.productName}
+                                                            className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                                                         />
                                                         <button
-                                                            className="absolute top-4 right-4 p-2 bg-gray-700/40 backdrop-blur-sm rounded-lg"
-                                                            onClick={() => setZoomedImg(product.img || "/placeholder.svg")}
+                                                            onClick={() => setZoomedImg(product.image)}
+                                                            className="absolute top-3 right-3 p-2 bg-black/30 backdrop-blur-sm rounded-lg hover:bg-black/50 transition-colors"
                                                         >
                                                             <CiMaximize2 className="h-5 w-5 text-white" />
                                                         </button>
                                                     </div>
 
-                                                    {/* Fullscreen Image Overlay */}
-                                                    {zoomedImg && (
-                                                        <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center">
-                                                            <div className="relative w-full max-w-5xl px-4">
-                                                                <button
-                                                                    onClick={() => setZoomedImg(null)}
-                                                                    className="absolute bottom-4 right-4 md:bottom-6 md:right-6 bg-white p-2 rounded-full shadow-lg z-50"
-                                                                >
-                                                                    <X className="w-5 h-5 text-black" />
-                                                                </button>
-                                                                <img
-                                                                    src={zoomedImg}
-                                                                    alt="Zoomed"
-                                                                    className="w-full max-h-[70vh] object-contain rounded-2xl"
-                                                                />
-                                                            </div>
-                                                        </div>
-                                                    )}
-
-                                                    {/* Content section */}
-                                                    <div className="p-6 pt-4 bg-white rounded-t-3xl -mt-5 flex flex-col justify-between flex-1">
-                                                        <div>
-                                                            <h3 className="text-[24px] text-[#04000B] font-bold leading-tight mt-1">
-                                                                {product.title}
+                                                    {/* Content */}
+                                                    <div className="p-5 flex flex-col flex-1">
+                                                        <div className="mb-2">
+                                                            <h3 className="text-xl font-bold text-gray-800 font-poppins">
+                                                                {product.productName}
                                                             </h3>
-                                                            <p className="text-sm text-gray-600 mb-2">{product.category}</p>
-                                                            <p className={`text-gray-700 mb-6 text-base leading-relaxed ${!isExpanded ? 'line-clamp-3' : ''}`}>
-                                                                {displayText}
-                                                                {shouldTruncate && (
-                                                                    <button
-                                                                        onClick={() => toggleDescription(product.id)}
-                                                                        className="text-[#34A853] text-sm underline ml-1"
-                                                                    >
-                                                                        {isExpanded ? "See less" : "See more"}
-                                                                    </button>
-                                                                )}
+                                                            <p className="text-sm text-gray-500 font-outfit">
+                                                                {activeCategoryData.category}
                                                             </p>
                                                         </div>
+                                                        <p className="text-gray-600 mb-4 font-outfit flex-1">
+                                                            {displayText}
+                                                            {product.description.split(' ').length > 20 && (
+                                                                <button
+                                                                    onClick={() => toggleDescription(product._id)}
+                                                                    className="text-primary-light ml-1 font-medium"
+                                                                >
+                                                                    {isExpanded ? 'Show less' : 'Show more'}
+                                                                </button>
+                                                            )}
+                                                        </p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -168,10 +154,27 @@ const OurBusiness = () => {
                     </div>
                 </div>
             </Container>
+
+            {/* Image Zoom Modal */}
+            {zoomedImg && (
+                <div className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4">
+                    <div className="relative max-w-6xl w-full">
+                        <button
+                            onClick={() => setZoomedImg(null)}
+                            className="absolute -top-12 right-0 text-white hover:text-gray-300"
+                        >
+                            <IoMdClose className="h-8 w-8" />
+                        </button>
+                        <img
+                            src={zoomedImg}
+                            alt="Zoomed"
+                            className="w-full max-h-[80vh] object-contain rounded-lg"
+                        />
+                    </div>
+                </div>
+            )}
         </div>
     );
 };
 
 export default OurBusiness;
-
-

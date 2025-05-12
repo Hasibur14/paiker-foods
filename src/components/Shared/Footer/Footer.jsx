@@ -136,7 +136,7 @@ const Footer = () => {
             </div>
 
             {/* Copyright section */}
-            <div className="text-center text-base mt-4 mx-4 font-poppins">
+            <div className="text-center text-sm lg:text-base mt-4 mx-4 font-poppins">
                 © {currentYear} All Rights Reserved by Paiker Foods || Design & Developed By{' '}
                 <a
                     className="font-semibold hover:text-[#00D8A1] transition-colors duration-500"

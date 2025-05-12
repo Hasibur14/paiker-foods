@@ -3,19 +3,15 @@ import { CgMenuRightAlt } from "react-icons/cg";
 import { FiChevronDown, FiChevronUp, FiMenu, FiX } from 'react-icons/fi';
 import { NavLink } from 'react-router-dom';
 import "./navbar.css";
-import logo from "../../../assets/Logo_SSF.png"
 import NavbarTop from './NavbarTop';
 import LanguageToggle from '../../Language/LanguageToggle';
 import { FaInstagram, FaLinkedinIn } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
 import { BsFacebook } from 'react-icons/bs';
 
-
-
 const Nav = () => {
 
     const [menuOpen, setMenuOpen] = useState(false);
-    const [servicesOpen, setServicesOpen] = useState(false);
     const [isClosing, setIsClosing] = useState(false);
     const [scrolling, setScrolling] = useState(false);
 
@@ -31,20 +27,11 @@ const Nav = () => {
         }
     };
 
-    //  mega menu open 
-    const toggleServices = () => {
-        setServicesOpen(!servicesOpen);
-    };
 
-
-
-    // small device sub menu item  click after close sidebar
     const handleLinkClick = () => {
         setMenuOpen(false);
     };
 
-
-    // Scroll event handler to make navbar fixed
     useEffect(() => {
         const handleScroll = () => {
             if (window.scrollY > 50) {
@@ -59,7 +46,6 @@ const Nav = () => {
             window.removeEventListener('scroll', handleScroll);
         };
     }, []);
-
 
     const navItems = [
         { path: "/", label: "Home" },
@@ -94,16 +80,18 @@ const Nav = () => {
     ]
 
     return (
+        <div className={`fixed w-full z-50 ${scrolling ? 'bg-transparent' : 'bg-transparent'}`}>
+            <div className="mx-[5%] lg:mx-[8%] xl:mx-[7%] 2xl:mx-[10%]">
+                <div className='lg:space-y-3 lg:mt-5 font-outfit'>
+                    <span className={`hidden lg:flex ${scrolling ? 'hidden' : 'block'}`}>
+                        <NavbarTop />
+                    </span>
+                    <div className={` ${scrolling ? 'hidden' : ''}`}>
+                        <div className='border-b-2 border-dashed border-gray-500 hidden lg:flex'></div>
+                    </div>
 
-        <div className={` ${scrolling ? 'shadow-md w-full' : 'fixed z-50 w-full'}`}>
-            <div className='container mx-auto lg:space-y-3 lg:mt-5 font-outfit'>
-                <span className='hidden lg:block'>
-                    <NavbarTop />
-                </span>
-                <div className='border-b-2 border-dashed border-gray-500 hidden lg:block'></div>
-                <div>
-                    <nav className={`${scrolling ? 'lg:fixed top-2 py-2 px-4 w-full container mx-auto  bg-base-100 lg:shadow-xl border-t rounded-xl transition-all duration-300 lg:z-[9999]' : 'relative bg-transparent text-white'}`}>
-                        <div className="flex justify-between shadow-xl lg:shadow-none">
+                    <nav className={`${scrolling ? 'lg:fixed top-0 py-0.5 lg:py-2 px-4 w-full lg:w-[84%] xl:w-[86%] 2xl:w-[80%] bg-base-100 shadow-xl border-t rounded-xl transition-all duration-300' : 'relative bg-transparent text-white'}`}>
+                        <div className="flex justify-between ">
                             {/* Menu for larger screens */}
                             <div className="hidden lg:flex space-x-4 items-center text-lg font-semibold">
                                 {navItems.map((item) => (
@@ -112,7 +100,7 @@ const Nav = () => {
                                             to={item.path}
                                             className={({ isActive }) =>
                                                 isActive
-                                                    ? "block px-4 py-2  text-[#2cc631] active"
+                                                    ? "block px-4 py-2 text-primary-light active"
                                                     : "block px-4 py-2 hover:text-primary-light"
                                             }
                                             onClick={handleLinkClick}
@@ -142,7 +130,7 @@ const Nav = () => {
                                     </div>
                                     <LanguageToggle />
                                 </div>
-                                <h2 className="lg:hidden text-2xl font-bold font-shadows text-second-deep ml-4">Paiker Foods</h2>
+                                <h2 className="lg:hidden text-2xl font-bold font-shadows text-second-deep">Paikerddd Foods</h2>
 
                                 {/* Mobile Menu Icon */}
                                 <div className="lg:hidden flex gap-2 items-center mx-4">
@@ -159,16 +147,11 @@ const Nav = () => {
                             </div>
                         </div>
 
-                        {/* 
-            ------------------------------------------------------------
-                                     MOBILE DEVICE NAVBAR
-            ------------------------------------------------------------ */}
-
+                        {/* Mobile Menu */}
                         {(menuOpen && !isClosing) && (
                             <div className="side-menu z-50" >
                                 <div className="side-menu-2">
                                     <div className="flex justify-between items-center ">
-                                        {/* <img className='w-52' src={logo} alt="shabuj" /> */}
                                         <h2 className="text-2xl font-bold font-shadows text-second-deep">Paiker Foods</h2>
                                         <button onClick={toggleMenu}>
                                             <FiX className="text-2xl text-rose-600 border border-rose-600" />
@@ -210,7 +193,6 @@ const Nav = () => {
                     </nav>
                 </div>
             </div>
-
         </div>
     );
 };

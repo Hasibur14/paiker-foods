@@ -95,7 +95,7 @@ const Footer = () => {
                 backgroundColor: '#1F4E3D'
             }}
         >
-            <div className="container flex flex-col justify-between py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0">
+            <div className="mx-[5%] lg:mx-[8%] xl:mx-[7%] 2xl:mx-[10%] flex flex-col justify-between py-10 space-y-8 lg:flex-row lg:space-y-0">
                 {/* Brand info section */}
                 <div className="lg:w-1/3 space-y-3">
                     <Link to="/">

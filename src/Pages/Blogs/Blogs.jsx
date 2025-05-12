@@ -10,30 +10,15 @@ const Blogs = () => {
 
 
     const [isBlogs, setIsBlogs] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
+
 
     useEffect(() => {
-        const fetchBlogs = async () => {
-            try {
-                const response = await fetch('./blogs.json');
-                if (!response.ok) {
-                    throw new Error('Failed to fetch blogs');
-                }
-                const data = await response.json();
-                setIsBlogs(data);
-            } catch (err) {
-                setError(err.message);
-            } finally {
-                setLoading(false);
-            }
-        };
-
-        fetchBlogs();
+        
+        fetch('./blogs.json')
+            .then(res => res.json())
+            .then(data => setIsBlogs(data))
     }, []);
 
-    if (loading) return <div className="text-center py-8">Loading...</div>;
-    if (error) return <div className="text-center text-red-500 py-8">{error}</div>;
 
     return (
         <div>

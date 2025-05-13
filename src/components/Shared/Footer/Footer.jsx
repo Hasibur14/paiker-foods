@@ -5,6 +5,7 @@ import { IoLogoYoutube } from 'react-icons/io5';
 import { PiDotOutlineThin } from 'react-icons/pi';
 import { Link, NavLink } from 'react-router-dom';
 import footerBg from '../../../assets/Footer.png';
+import logo from '../../../assets/logo.png'
 
 const Footer = () => {
     const currentYear = new Date().getFullYear();
@@ -99,9 +100,7 @@ const Footer = () => {
                 {/* Brand info section */}
                 <div className="lg:w-1/3 space-y-3">
                     <Link to="/">
-                        <h2 className="text-5xl font-extrabold font-shadows bg-gradient-to-t from-second-light to-second-deep text-transparent bg-clip-text">
-                            Paiker Foods
-                        </h2>
+                        <img src={logo} alt="logo" className='w-44' />
                     </Link>
                     <p className="w-full lg:w-2/3 text-justify">
                         Conveniently monetize covalent data vis-a-vis scalable vortals. Uniquely facilitate

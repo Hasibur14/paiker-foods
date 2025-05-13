@@ -8,6 +8,7 @@ import LanguageToggle from '../../Language/LanguageToggle';
 import { FaInstagram, FaLinkedinIn } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
 import { BsFacebook } from 'react-icons/bs';
+import logo from '../../../assets/logo.png'
 
 const Nav = () => {
 
@@ -130,7 +131,10 @@ const Nav = () => {
                                     </div>
                                     <LanguageToggle />
                                 </div>
-                                <h2 className="lg:hidden text-2xl font-bold font-shadows text-second-deep">Paikerddd Foods</h2>
+                                
+                                <div className='lg:hidden'>
+                                       <img src={logo} alt="logo" className='w-32 p-3' />
+                                </div>
 
                                 {/* Mobile Menu Icon */}
                                 <div className="lg:hidden flex gap-2 items-center mx-4">

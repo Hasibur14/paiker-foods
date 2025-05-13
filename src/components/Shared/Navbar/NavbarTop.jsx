@@ -1,6 +1,7 @@
 import { GrLocation } from 'react-icons/gr';
 import { PiPhoneCallBold } from 'react-icons/pi';
 import { Link } from 'react-router-dom';
+import logo from '../../../assets/logo.png'
 
 const NavbarTop = () => {
     return (
@@ -8,7 +9,7 @@ const NavbarTop = () => {
             <div className='w-1/2 flex gap-2 md:gap-5 text-gray-900 uppercase'>
                 <div className="flex gap-3">
                     <Link to='/'>
-                        <h2 className="text-5xl font-extrabold font-shadows bg-gradient-to-t from-[#52db64] via-primary-light to-[#016524] text-transparent bg-clip-text">Paiker Foods</h2>
+                      <img src={logo} alt="logo" className='w-40' />
                     </Link>
                 </div>
             </div>

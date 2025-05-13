@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Gallery = () => {
-    // Furniture items matching the exact layout of the screenshot
+    // Furniture items
     const furnitureItems = [
         {
             id: 1,
@@ -61,48 +61,45 @@ const Gallery = () => {
 
     return (
         <div className="w-full bg-white">
-            {/* Main heading */}
+            {/* Heading */}
             <div className="w-full text-center py-8">
                 <h1 className="text-4xl md:text-5xl font-bold text-gray-800">#FuniroFurniture</h1>
             </div>
 
-            {/* Custom image grid layout to match the screenshot exactly */}
-            <div className="container mx-auto px-4">
+            {/* Grid layout */}
+            <div className=" px-4">
                 <div className="grid grid-cols-12 gap-4">
-                    {/* Left column - bookshelf */}
+                    {/* Left - tall image (id:1) */}
                     <div className="col-span-12 md:col-span-1 h-full">
-                        <div className="h-full">
-                            <img
-                                src="https://i.postimg.cc/7hp6K3j4/67ed84fc5ba0a58e9455b45870dfc645146f4152.jpg"
-                                alt="Bookshelf with decorative items"
-                                className="h-full w-full object-cover rounded-md"
-                            />
-                        </div>
+                        <img
+                            src={furnitureItems[0].imageUrl}
+                            alt={furnitureItems[0].alt}
+                            className="h-full w-full object-cover rounded-md"
+                        />
                     </div>
 
-                    {/* Middle large section */}
+                    {/* Middle section */}
                     <div className="col-span-12 md:col-span-7 grid grid-cols-1 md:grid-cols-6 gap-4">
-                        {/* Top row - workspace */}
+                        {/* Large workspace (id:2) */}
                         <div className="col-span-1 md:col-span-6">
                             <img
-                                 src="https://i.postimg.cc/7hp6K3j4/67ed84fc5ba0a58e9455b45870dfc645146f4152.jpg"
-                                alt="Modern workspace with laptop and vintage radio"
+                                src={furnitureItems[1].imageUrl}
+                                alt={furnitureItems[1].alt}
                                 className="w-full h-full object-cover rounded-md"
                             />
                         </div>
-
-                        {/* Bottom row - two small items */}
+                        {/* Two small items (id:6 and id:7) */}
                         <div className="col-span-1 md:col-span-3">
                             <img
-                                  src="https://i.postimg.cc/7hp6K3j4/67ed84fc5ba0a58e9455b45870dfc645146f4152.jpg"
-                                alt="Vintage armchair with leather upholstery"
+                                src={furnitureItems[5].imageUrl}
+                                alt={furnitureItems[5].alt}
                                 className="w-full h-full object-cover rounded-md"
                             />
                         </div>
                         <div className="col-span-1 md:col-span-3">
                             <img
-                                 src="https://i.postimg.cc/7hp6K3j4/67ed84fc5ba0a58e9455b45870dfc645146f4152.jpg"
-                                alt="Side tables with decorative items"
+                                src={furnitureItems[6].imageUrl}
+                                alt={furnitureItems[6].alt}
                                 className="w-full h-full object-cover rounded-md"
                             />
                         </div>
@@ -110,46 +107,46 @@ const Gallery = () => {
 
                     {/* Right section */}
                     <div className="col-span-12 md:col-span-4 grid grid-cols-1 md:grid-cols-4 gap-4">
-                        {/* Top row - dining area */}
+                        {/* Dining area (id:3) */}
                         <div className="col-span-1 md:col-span-2">
                             <img
-                                  src="https://i.postimg.cc/7hp6K3j4/67ed84fc5ba0a58e9455b45870dfc645146f4152.jpg"
-                                alt="Dining area with table and chairs"
+                                src={furnitureItems[2].imageUrl}
+                                alt={furnitureItems[2].alt}
                                 className="w-full h-full object-cover rounded-md"
                             />
                         </div>
 
-                        {/* Top right items */}
+                        {/* Bedroom + Wall decor (id:4 & id:8) */}
                         <div className="col-span-1 md:col-span-2 grid grid-cols-1 gap-4">
                             <div>
                                 <img
-                                     src="https://i.postimg.cc/7hp6K3j4/67ed84fc5ba0a58e9455b45870dfc645146f4152.jpg"
-                                    alt="Bedroom with upholstered headboard"
+                                    src={furnitureItems[3].imageUrl}
+                                    alt={furnitureItems[3].alt}
                                     className="w-full h-full object-cover rounded-md"
                                 />
                             </div>
                             <div>
                                 <img
-                                    src="https://i.postimg.cc/7hp6K3j4/67ed84fc5ba0a58e9455b45870dfc645146f4152.jpg"
-                                    alt="Minimalist wall decor"
+                                    src={furnitureItems[7].imageUrl}
+                                    alt={furnitureItems[7].alt}
                                     className="w-full h-full object-cover rounded-md"
                                 />
                             </div>
                         </div>
 
-                        {/* Bottom row - kitchen area */}
+                        {/* Kitchen bar + Shelf (id:5 & id:9) */}
                         <div className="col-span-1 md:col-span-4 grid grid-cols-1 md:grid-cols-6 gap-4">
                             <div className="col-span-1 md:col-span-4">
                                 <img
-                                     src="https://i.postimg.cc/7hp6K3j4/67ed84fc5ba0a58e9455b45870dfc645146f4152.jpg"
-                                    alt="Rustic kitchen bar with wooden countertop"
+                                    src={furnitureItems[4].imageUrl}
+                                    alt={furnitureItems[4].alt}
                                     className="w-full h-full object-cover rounded-md"
                                 />
                             </div>
                             <div className="col-span-1 md:col-span-2">
                                 <img
-                                     src="https://i.postimg.cc/7hp6K3j4/67ed84fc5ba0a58e9455b45870dfc645146f4152.jpg"
-                                    alt="Kitchen shelving with geometric pattern"
+                                    src={furnitureItems[8].imageUrl}
+                                    alt={furnitureItems[8].alt}
                                     className="w-full h-full object-cover rounded-md"
                                 />
                             </div>
@@ -159,6 +156,6 @@ const Gallery = () => {
             </div>
         </div>
     );
-}
+};
 
 export default Gallery;

@@ -35,7 +35,7 @@ const About = () => {
                             <div key={item._id} className="flex flex-col md:flex-row items-center w-full md:w-auto">
                                 <div className="flex flex-col items-center text-center max-w-md space-y-4 px-4 md:px-0">
                                     <img
-                                        className="bg-white p-6 md:p-8 rounded-full w-24 h-24 md:w-28 md:h-28 lg:w-40 lg:h-40"
+                                        className="bg-white p-5 md:p-7 rounded-full w-24 h-24 md:w-28 md:h-28 "
                                         src={item.image}
                                         alt={item.title}
                                     />

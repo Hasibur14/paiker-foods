@@ -31,13 +31,13 @@ const FeatureDepartment = () => {
                         <img
                             src={data.images.left}
                             alt="Farmer 1"
-                            className="rounded-xl w-full max-w-xs sm:max-w-sm md:max-w-md h-auto object-cover lg:h-[400px] xl:h-[500px]" />
+                            className="rounded-xl w-full max-w-xs sm:max-w-sm md:max-w-lg h-auto object-cover lg:h-[400px] xl:h-[500px]" />
                     </div>
 
                     {/* Center Text */}
                     <div className="text-center px-4 sm:px-6 max-w-2xl lg:max-w-3xl xl:max-w-4xl text-[#01312C]">
                         <p className="text-second-deep font-medium text-base sm:text-lg mb-2">{data.tagline}</p>
-                        <h2 className="font-poppins text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-extrabold text-[#01312C] mb-4 whitespace-pre-line">
+                        <h2 className="font-poppins text-2xl sm:text-2xl md:text-3xl xl:text-4xl font-extrabold text-[#01312C] mb-4 whitespace-pre-line">
                             {data.heading}
                         </h2>
                         <p className="font-shadows mb-4 text-sm sm:text-base">{data.description1}</p>
@@ -55,7 +55,7 @@ const FeatureDepartment = () => {
                         <img
                             src={data.images.right}
                             alt="Farmer 2"
-                            className="rounded-xl w-full max-w-xs sm:max-w-sm md:max-w-md h-auto object-cover lg:h-[400px] xl:h-[500px]" />
+                            className="rounded-xl w-full max-w-xs sm:max-w-sm md:max-w-lg h-auto object-cover lg:h-[400px] xl:h-[500px]" />
                     </div>
                 </div>
             </Container>

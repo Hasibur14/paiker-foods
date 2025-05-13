@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "size": "tall",
+    "imageUrl": "https://i.postimg.cc/7hp6K3j4/67ed84fc5ba0a58e9455b45870dfc645146f4152.jpg",
+    "alt": "Bookshelf with decorative items"
+  },
+  {
+    "id": 2,
+    "size": "large",
+    "imageUrl": "https://i.postimg.cc/7hp6K3j4/67ed84fc5ba0a58e9455b45870dfc645146f4152.jpg",
+    "alt": "Modern workspace with laptop and vintage radio"
+  },
+  {
+    "id": 3,
+    "size": "medium",
+    "imageUrl": "https://i.postimg.cc/7hp6K3j4/67ed84fc5ba0a58e9455b45870dfc645146f4152.jpg",
+    "alt": "Dining area with table and chairs"
+  },
+  {
+    "id": 4,
+    "size": "medium",
+    "imageUrl": "https://i.postimg.cc/7hp6K3j4/67ed84fc5ba0a58e9455b45870dfc645146f4152.jpg",
+    "alt": "Bedroom with upholstered headboard"
+  },
+  {
+    "id": 5,
+    "size": "large",
+    "imageUrl": "https://i.postimg.cc/7hp6K3j4/67ed84fc5ba0a58e9455b45870dfc645146f4152.jpg",
+    "alt": "Rustic kitchen bar with wooden countertop"
+  },
+  {
+    "id": 6,
+    "size": "small",
+    "imageUrl": "https://i.postimg.cc/7hp6K3j4/67ed84fc5ba0a58e9455b45870dfc645146f4152.jpg",
+    "alt": "Vintage armchair with leather upholstery"
+  },
+  {
+    "id": 7,
+    "size": "small",
+    "imageUrl": "https://i.postimg.cc/7hp6K3j4/67ed84fc5ba0a58e9455b45870dfc645146f4152.jpg",
+    "alt": "Side tables with decorative items"
+  },
+  {
+    "id": 8,
+    "size": "small",
+    "imageUrl": "https://i.postimg.cc/7hp6K3j4/67ed84fc5ba0a58e9455b45870dfc645146f4152.jpg",
+    "alt": "Minimalist wall decor"
+  },
+  {
+    "id": 9,
+    "size": "small",
+    "imageUrl": "https://i.postimg.cc/7hp6K3j4/67ed84fc5ba0a58e9455b45870dfc645146f4152.jpg",
+    "alt": "Kitchen shelving with geometric pattern"
+  }
+]

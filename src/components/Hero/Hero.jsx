@@ -71,7 +71,7 @@ const Hero = () => {
                     ref={sliderRef}
                     className="relative keen-slider h-auto"
                 >
-                    {sliderData.map((slide, index) => (
+                    {sliderData.map((slide) => (
                         <div
                             key={slide._id}
                             className={`keen-slider__slide number-slide relative inset-0`}
@@ -81,7 +81,7 @@ const Hero = () => {
                                 src={slide.image}
                                 alt={slide.title}
                             />
-                            <div className="absolute inset-0 bg-black bg-opacity-70 flex flex-col text-center items-center justify-center space-y-10 px-10 md:px-10 lg:px-20">
+                            <div className="absolute inset-0 bg-black bg-opacity-70 flex flex-col text-center items-center justify-center space-y-10 px-10 md:px-14 lg:px-20">
                                 <h2 className="font-shadows tracking-[5px] text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl text-white max-w-4xl  lg:mt-32">
                                     {slide.title}
                                 </h2>

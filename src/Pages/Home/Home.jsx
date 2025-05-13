@@ -9,6 +9,7 @@ import GetTauch from "./Section/GetTauch";
 import BestOrganic from "./Section/BestOrganic";
 import FreshProduct from "./Section/FreshProduct";
 import Timeline from "./Section/Timeline";
+import Projects from "./Section/Projects";
 
 
 const Home = () => {
@@ -23,9 +24,10 @@ const Home = () => {
       <WhyChooseUs />
       <FreshProduct />
       <Timeline />
-      <Gallery />
+      <Projects />
       <BuildBest />
       <GetTauch />
+      <Gallery />
     </div>
   );
 };

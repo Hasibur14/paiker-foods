@@ -7,7 +7,7 @@ import bg from '../../../assets/home/getTauchBg.png'
 
 const GetTauch = () => {
     return (
-        <div id="getInTauch" className="py-16 ">
+        <div id="getInTauch" className="">
             <Container>
                 {/* Grid Layout */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">

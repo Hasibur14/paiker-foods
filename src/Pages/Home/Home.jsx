@@ -26,8 +26,8 @@ const Home = () => {
       <Timeline />
       <Projects />
       <BuildBest />
-      <GetTauch />
       <Gallery />
+      <GetTauch />
     </div>
   );
 };

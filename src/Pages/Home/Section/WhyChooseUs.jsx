@@ -3,8 +3,10 @@ import CountUp from 'react-countup';
 import { BiCheckCircle } from 'react-icons/bi';
 
 const WhyChooseUs = () => {
+
     const chooseUsData = {
         heading: 'Growing crops and raising livestock.',
+        image: 'https://res.cloudinary.com/dh34eqbhu/image/upload/v1746264661/wnselevi9tahsnhhponq.jpg',
         stats: [
             {
                 value: '38 K',
@@ -15,7 +17,7 @@ const WhyChooseUs = () => {
                 label: 'Growth Tonns of Harvest'
             }
         ],
-        image: 'https://res.cloudinary.com/dh34eqbhu/image/upload/v1746264661/wnselevi9tahsnhhponq.jpg',
+
         features: [
             {
                 title: 'Always Fresh',
@@ -36,7 +38,7 @@ const WhyChooseUs = () => {
     };
 
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 bg-white pb-4">
+        <div className="grid grid-cols-1 lg:grid-cols-2 bg-white pb-4">
             {/* Left Side */}
             <div className="bg-gradient-to-tl from-[#3c8f51] to-primary-deep  text-white px-[7%] md:px-[12%] py-10  flex flex-col justify-center">
                 {chooseUsData.features.map((item, index) => (

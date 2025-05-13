@@ -70,7 +70,7 @@ const BestOrganic = () => {
             <Container>
                 <div className="w-full lg:flex flex-col md:flex-row gap-14">
                     {/* Left side - Content */}
-                    <div className="md:w-2/3 flex flex-col md:flex-row gap-16">
+                    <div className="w-full lg:w-2/3 flex flex-col md:flex-row gap-16">
                         {tabs[activeTab].image && (
                             <img
                                 src={tabs[activeTab].image}
@@ -82,7 +82,7 @@ const BestOrganic = () => {
                             <h1 className="text-3xl lg:text-5xl font-semibold text-gray-800 mt-5">
                                 {tabs[activeTab].content.heading}
                             </h1>
-                            <p className="text-gray-600 mb-6">
+                            <p className="text-gray-600 mb-6 text-justify">
                                 {tabs[activeTab].content.description}
                             </p>
 
@@ -103,7 +103,7 @@ const BestOrganic = () => {
                     </div>
 
                     {/* Right side - Tabs */}
-                    <div className="md:w-1/3 bg-white p-10 rounded shadow-2xl mt-5 lg:mt-0">
+                    <div className="lg:w-1/3 bg-white p-10 rounded shadow-2xl mt-5 lg:mt-0">
                         <div className="grid grid-cols-1 gap-4 w-full">
                             {tabs?.map((tab, index) => (
                                 <div

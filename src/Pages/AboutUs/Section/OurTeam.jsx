@@ -10,6 +10,7 @@ import 'swiper/css/autoplay';
 import Button from '../../../components/Button/Button';
 
 const OurTeam = () => {
+
     const [hoveredCard, setHoveredCard] = useState(null);
 
     const farmers = [
@@ -73,7 +74,7 @@ const OurTeam = () => {
                                     spaceBetween: 20
                                 },
                                 768: {
-                                    slidesPerView: 1.5,
+                                    slidesPerView: 2,
                                     spaceBetween: 25
                                 },
                                 1024: {

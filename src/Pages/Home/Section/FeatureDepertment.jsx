@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 import Container from '../../../components/Container/Container';
 import Button from '../../../components/Button/Button';
 
@@ -28,7 +27,7 @@ const FeatureDepartment = () => {
             <Container>
                 <div className="flex flex-col items-center justify-center lg:flex-row lg:gap-8 xl:gap-12">
                     {/* Left Image */}
-                    <div className="mb-6 lg:mb-0 transform md:rotate-[-10deg] hover:rotate-0 transition-all duration-300">
+                    <div className="mb-6 lg:mb-0 transform lg:rotate-[-10deg] hover:rotate-0 transition-all duration-300">
                         <img
                             src={data.images.left}
                             alt="Farmer 1"
@@ -52,7 +51,7 @@ const FeatureDepartment = () => {
                     </div>
 
                     {/* Right Image */}
-                    <div className="mt-6 lg:mt-0 transform md:rotate-[10deg] hover:rotate-0 transition-all duration-300">
+                    <div className="mt-6 lg:mt-0 transform lg:rotate-[10deg] hover:rotate-0 transition-all duration-300">
                         <img
                             src={data.images.right}
                             alt="Farmer 2"

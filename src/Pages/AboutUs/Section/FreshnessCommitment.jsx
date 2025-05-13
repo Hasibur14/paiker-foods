@@ -16,7 +16,7 @@ const FreshnessCommitment = () => {
         <div className="w-full text-center relative">
             <Container>
                 <div className="py-16 bg-white">
-                    <h2 className="font-shadows text-4xl md:text-7xl tracking-[5px] leading-10 text-center text-transparent bg-gradient-to-t from-primary-deep to-second-deep  bg-clip-text">
+                    <h2 className="font-shadows text-4xl md:text-6xl lg:text-7xl tracking-[5px] leading-10 text-center text-transparent bg-gradient-to-t from-primary-deep to-second-deep  bg-clip-text">
                         Committed to Freshness!
                     </h2>
                     <p className="text-gray-700 mb-12 text-sm md:text-lg mt-5">

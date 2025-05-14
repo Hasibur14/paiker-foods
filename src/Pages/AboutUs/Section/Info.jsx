@@ -38,7 +38,7 @@ const Info = () => {
                                 {iconMap[icon]}
                                 <div>
                                     <h4 className="font-semibold">{title}</h4>
-                                    <h2 className='text-2xl lg:text-6xl font-bold text-second-light'>
+                                    <h2 className='text-2xl lg:text-5xl font-bold text-second-light'>
                                         <CountUp start={0} end={count} duration={3} delay={0.5} /> +
                                     </h2>
                                 </div>

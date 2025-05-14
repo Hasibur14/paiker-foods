@@ -130,7 +130,7 @@ const Nav = () => {
                                     </div>
                                     <LanguageToggle />
                                 </div>
-                                <h2 className="lg:hidden text-2xl font-bold font-shadows text-second-deep">Paikerddd Foods</h2>
+                                <h2 className="lg:hidden text-2xl font-bold font-shadows text-second-deep">Paiker Foods</h2>
 
                                 {/* Mobile Menu Icon */}
                                 <div className="lg:hidden flex gap-2 items-center mx-4">

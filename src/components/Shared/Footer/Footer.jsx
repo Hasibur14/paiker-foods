@@ -100,12 +100,12 @@ const Footer = () => {
                 {/* Brand info section */}
                 <div className="lg:w-1/3 space-y-3">
                     <Link to="/">
-                        <img src={logo} alt="logo" className='w-44' />
+                        <img src={logo} alt="logo" className='w-44 ' />
                     </Link>
-                    <p className="w-full lg:w-2/3 text-justify">
+                    <p className="w-full lg:w-2/3 ">
                         Conveniently monetize covalent data vis-a-vis scalable vortals. Uniquely facilitate
                         cost effective ideas vis-a-vis collaborative e-tailers. Completely morph progressive
-                        action items and maintainable channels. Competently brand effective collaboration.
+                        
                     </p>
                 </div>
 

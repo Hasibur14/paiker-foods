@@ -100,7 +100,7 @@ const Footer = () => {
                 {/* Brand info section */}
                 <div className="lg:w-1/3 space-y-3">
                     <Link to="/">
-                        <img src={logo} alt="logo" className='w-44 ' />
+                        <img src={logo} alt="logo" className='w-2 lg:w-32' />
                     </Link>
                     <p className="w-full lg:w-2/3 ">
                         Conveniently monetize covalent data vis-a-vis scalable vortals. Uniquely facilitate

@@ -26,9 +26,9 @@ const FreshProduct = () => {
             <Container>
                 <div className="space-y-4 mb-16 relative z-10">
                     <h2 className="font-shadows text-4xl md:text-7xl tracking-[5px] leading-10 text-center font-semibold">
-                        <span className='text-transparent bg-gradient-to-t from-primary-deep via-second-deep to-yellow-500 bg-clip-text'>  Healthy Life With</span>
+                        <span className='text-transparent bg-gradient-to-tl from-primary-deep via-second-deep to-primary-light bg-clip-text'>  Healthy Life With</span>
                         <br />
-                        <span className='text-transparent bg-gradient-to-t from-primary-deep via-primary-deep to-yellow-500 bg-clip-text'>Fresh Products</span>
+                        <span className='text-transparent bg-gradient-to-t from-primary-deep via-primary-base to-second-light bg-clip-text'>Fresh Products</span>
                     </h2>
                 </div>
 

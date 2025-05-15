@@ -65,7 +65,7 @@ const WhyChooseUs = () => {
                             <div key={idx} className="items-center gap-4">
                                 {idx > 0 && <div className="border-b-2 border-gray-600 h-5 w-32 mb-3"></div>}
                                 <div>
-                                    <h3 className="text-4xl font-bold text-yellow-600">
+                                    <h3 className="text-4xl font-bold text-second-deep">
                                         <CountUp start={0} end={parseFloat(stat.value)} duration={3} delay={0.5} />
                                         <span>{stat.value.replace(/[0-9.]/g, '')}</span>+
                                     </h3>

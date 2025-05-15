@@ -84,7 +84,7 @@ const Nav = () => {
         <div className={`fixed w-full z-50 ${scrolling ? 'bg-transparent' : 'bg-transparent'}`}>
             <div className="mx-[5%] lg:mx-[8%] xl:mx-[7%] 2xl:mx-[10%]">
                 <div className='lg:mt-4 font-outfit'>
-                    <div className='hidden lg:flex'>
+                    <div className='hidden lg:block w-full'>
                         <div className={`${scrolling ? 'hidden' : ''}`}>
                             <NavbarTop />
                             <div className='border-b-2  mt-4 border-dashed border-gray-500 hidden lg:flex'></div>
@@ -123,7 +123,8 @@ const Nav = () => {
                                                 target="_blank"
                                                 rel="noopener noreferrer"
                                                 aria-label={link.label}
-                                                className='text-xl hover:text-[#05B689] transition duration-500'
+                                                className={`text-xl  hover:text-[#05B689] transition duration-500 ${scrolling ? 'text-second-deep' : 'text-white'}`}
+
                                             >
                                                 {link.icon}
                                             </a>

@@ -4,67 +4,67 @@ const Gallery = () => {
     // Furniture items with different placeholder images
     const furnitureItems = [
         {
-            id: 1,
+            _id: 1,
             size: 'tall',
             imageUrl: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&h=1200&auto=format&fit=crop',
             alt: 'Bookshelf with decorative items'
         },
         {
-            id: 2,
+            _id: 2,
             size: 'large',
             imageUrl: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1600&h=900&auto=format&fit=crop',
             alt: 'Modern workspace with laptop and vintage radio'
         },
         {
-            id: 3,
+            _id: 3,
             size: 'medium',
             imageUrl: 'https://images.unsplash.com/photo-1565538810643-b5bdb714032a?w=800&h=600&auto=format&fit=crop',
             alt: 'Dining area with table and chairs'
         },
         {
-            id: 4,
+            _id: 4,
             size: 'medium',
             imageUrl: 'https://i.postimg.cc/7hp6K3j4/67ed84fc5ba0a58e9455b45870dfc645146f4152.jpg',
             alt: 'Bedroom with upholstered headboard'
         },
         {
-            id: 5,
+            _id: 5,
             size: 'large',
             imageUrl: 'https://images.unsplash.com/photo-1556911220-bff31c812dba?w=1200&h=800&auto=format&fit=crop',
             alt: 'Rustic kitchen bar with wooden countertop'
         },
         {
-            id: 6,
+            _id: 6,
             size: 'small',
             imageUrl: 'https://images.unsplash.com/photo-1592078615290-033ee584e267?w=500&h=750&auto=format&fit=crop',
             alt: 'Vintage armchair with leather upholstery'
         },
         {
-            id: 7,
+            _id: 7,
             size: 'small',
             imageUrl: 'https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=500&h=750&auto=format&fit=crop',
             alt: 'Side tables with decorative items'
         },
         {
-            id: 8,
+            _id: 8,
             size: 'small',
             imageUrl: 'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=500&h=500&auto=format&fit=crop',
             alt: 'Minimalist wall decor'
         },
         {
-            id: 9,
+            _id: 9,
             size: 'small',
             imageUrl: 'https://images.unsplash.com/photo-1600585152220-90363fe7e115?w=500&h=500&auto=format&fit=crop',
             alt: 'Kitchen shelving with geometric pattern'
         },
         {
-            id: 10,
+            _id: 10,
             size: 'medium',
             imageUrl: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=800&h=600&auto=format&fit=crop',
             alt: 'Living room with modern furniture'
         },
         {
-            id: 11,
+            _id: 11,
             size: 'small',
             imageUrl: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=500&h=500&auto=format&fit=crop',
             alt: 'Coffee table with books'
@@ -107,7 +107,7 @@ const Gallery = () => {
                                 />
                             </div>
                         </div>
-                        {/* Two small items (id:6 and id:7) */}
+                        {/* Two small items (id:6 and _id:7) */}
                         <div className="md:col-span-3 group">
                             <div className="aspect-w-2 aspect-h-3 overflow-hidden rounded-md">
                                 <img
@@ -144,7 +144,7 @@ const Gallery = () => {
                             </div>
                         </div>
 
-                        {/* Bedroom + Wall decor (id:4 & id:8) */}
+                        {/* Bedroom + Wall decor (id:4 & _id:8) */}
                         <div className="md:col-span-2 grid grid-cols-1 gap-4">
                             <div className="group">
                                 <div className="aspect-w-4 aspect-h-3 overflow-hidden rounded-md">
@@ -168,7 +168,7 @@ const Gallery = () => {
                             </div>
                         </div>
 
-                        {/* Kitchen bar + Shelf (id:5 & id:9) */}
+                        {/* Kitchen bar + Shelf (id:5 & _id:9) */}
                         <div className="md:col-span-4 grid grid-cols-1 md:grid-cols-6 gap-4">
                             <div className="md:col-span-4 group">
                                 <div className="aspect-w-3 aspect-h-2 overflow-hidden rounded-md">
@@ -192,7 +192,7 @@ const Gallery = () => {
                             </div>
                         </div>
 
-                        {/* Additional row to fill empty space (id:10 & id:11) */}
+                        {/* Additional row to fill empty space (id:10 & _id:11) */}
                         <div className="md:col-span-4 grid grid-cols-1 md:grid-cols-4 gap-4">
                             <div className="md:col-span-2 group">
                                 <div className="aspect-w-4 aspect-h-3 overflow-hidden rounded-md">

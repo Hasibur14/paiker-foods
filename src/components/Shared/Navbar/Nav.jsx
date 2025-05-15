@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { CgMenuRightAlt } from "react-icons/cg";
-import { FiChevronDown, FiChevronUp, FiMenu, FiX } from 'react-icons/fi';
+import { FiMenu, FiX } from 'react-icons/fi';
 import { NavLink } from 'react-router-dom';
 import "./navbar.css";
 import NavbarTop from './NavbarTop';
@@ -8,6 +8,7 @@ import LanguageToggle from '../../Language/LanguageToggle';
 import { FaInstagram, FaLinkedinIn } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
 import { BsFacebook } from 'react-icons/bs';
+import logo from '../../../assets/logo.png'
 
 const Nav = () => {
 
@@ -82,16 +83,16 @@ const Nav = () => {
     return (
         <div className={`fixed w-full z-50 ${scrolling ? 'bg-transparent' : 'bg-transparent'}`}>
             <div className="mx-[5%] lg:mx-[8%] xl:mx-[7%] 2xl:mx-[10%]">
-                <div className='lg:space-y-3 lg:mt-5 font-outfit'>
-                    <span className={`hidden lg:flex ${scrolling ? 'hidden' : 'block'}`}>
-                        <NavbarTop />
-                    </span>
-                    <div className={` ${scrolling ? 'hidden' : ''}`}>
-                        <div className='border-b-2 border-dashed border-gray-500 hidden lg:flex'></div>
-                    </div>
+                <div className='lg:mt-4 font-outfit'>
+                    <div className='hidden lg:flex'>
+                        <div className={`${scrolling ? 'hidden' : ''}`}>
+                            <NavbarTop />
+                            <div className='border-b-2  mt-4 border-dashed border-gray-500 hidden lg:flex'></div>
+                        </div>
 
+                    </div>
                     <nav className={`${scrolling ? 'lg:fixed top-0 py-0.5 lg:py-2 px-4 w-full lg:w-[84%] xl:w-[86%] 2xl:w-[80%] bg-base-100 shadow-xl border-t rounded-xl transition-all duration-300' : 'relative bg-transparent text-white'}`}>
-                        <div className="flex justify-between ">
+                        <div className="flex justify-between">
                             {/* Menu for larger screens */}
                             <div className="hidden lg:flex space-x-4 items-center text-lg font-semibold">
                                 {navItems.map((item) => (
@@ -130,7 +131,10 @@ const Nav = () => {
                                     </div>
                                     <LanguageToggle />
                                 </div>
-                                <h2 className="lg:hidden text-2xl font-bold font-shadows text-second-deep">Paiker Foods</h2>
+                                <img
+                                    src={logo}
+                                    alt="Paiker Foods"
+                                    className='lg:hidden w-16' />
 
                                 {/* Mobile Menu Icon */}
                                 <div className="lg:hidden flex gap-2 items-center mx-4">
@@ -152,7 +156,10 @@ const Nav = () => {
                             <div className="side-menu z-50" >
                                 <div className="side-menu-2">
                                     <div className="flex justify-between items-center ">
-                                        <h2 className="text-2xl font-bold font-shadows text-second-deep">Paiker Foods</h2>
+                                        <img
+                                            src={logo}
+                                            alt="Paiker Foods"
+                                            className='w-20' />
                                         <button onClick={toggleMenu}>
                                             <FiX className="text-2xl text-rose-600 border border-rose-600" />
                                         </button>

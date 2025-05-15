@@ -1,14 +1,18 @@
 import { GrLocation } from 'react-icons/gr';
 import { PiPhoneCallBold } from 'react-icons/pi';
 import { Link } from 'react-router-dom';
+import logo from '../../../assets/logo.png'
 
 const NavbarTop = () => {
     return (
-        <div className='w-full flex gap-16 justify-between items-center mx-3 py-4 text-white'>
+        <div className='w-full flex gap-16 justify-between items-center mx-3 text-white '>
             <div className='w-1/2 flex gap-2 md:gap-5 text-gray-900 uppercase'>
                 <div className="flex gap-3">
                     <Link to='/'>
-                        <h2 className="text-5xl font-extrabold font-shadows bg-gradient-to-t from-[#52db64] via-primary-light to-[#016524] text-transparent bg-clip-text">Paiker Foods</h2>
+                      <img
+                         src={logo} 
+                         alt="Paiker Foods"
+                         className='w-28' />
                     </Link>
                 </div>
             </div>
@@ -16,7 +20,7 @@ const NavbarTop = () => {
                 {/* Head Office */}
                 <div className="flex gap-3 items-center ">
                     <div>
-                        <GrLocation className="text-5xl text-gray-900 bg-second-light p-3 rounded-full" />
+                        <GrLocation className="text-5xl text-black bg-second-light p-3 rounded-full" />
                     </div>
                     <div>
                         <h2 className="text-lg font-semibold">Head Office</h2>
@@ -27,7 +31,7 @@ const NavbarTop = () => {
                 {/* Marketing Office */}
                 <div className="flex gap-3 items-center ">
                     <div>
-                        <GrLocation className="text-5xl text-gray-900 bg-second-light p-3 rounded-full" />
+                        <GrLocation className="text-5xl text-black bg-second-light p-3 rounded-full" />
                     </div>
                     <div>
                         <h2 className="text-lg font-semibold">Marketing Office</h2>
@@ -37,7 +41,7 @@ const NavbarTop = () => {
 
                 {/* Call Us */}
                 <div className="flex gap-3 items-center ">
-                    <PiPhoneCallBold className="text-5xl text-gray-900 bg-second-light p-3 rounded-full" />
+                    <PiPhoneCallBold className="text-5xl text-black bg-second-light p-3 rounded-full" />
                     <div>
                         <h2 className="text-lg font-semibold">Contact </h2>
                         <h3 className="text-xs">+8801755690256</h3>

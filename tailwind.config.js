@@ -13,12 +13,12 @@ export default {
       },
       colors: {
         primary: {
-          light: "#49A760",
+          light: "#49a75e",
           deep: "#1F4E3D",
         },
         second: {
-          light: "#F7C35F",
-          deep: "#cc9b41"
+          light: "#f4c517",
+          deep: "#e47125"
         },
       },
 

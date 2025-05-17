@@ -42,7 +42,7 @@ const WhatsappCall = () => {
     }, []);
 
     return (
-        <div className="fixed bottom-4 right-4 z-50">
+        <div className="fixed bottom-4 right-4 z-[9999]">
             {/* Ripple effect circles */}
             <div className="absolute inset-0 flex items-center justify-center">
                 <div className={`absolute rounded-full opacity-70 ${isPulsing ? 'animate-ping' : ''}`}
@@ -86,7 +86,7 @@ const WhatsappCall = () => {
                         className={`text-white font-medium whitespace-nowrap transition-opacity duration-300 ${isExpanded ? 'opacity-100' : 'opacity-0 w-0'}`}
                         style={{ transform: isExpanded ? 'translateX(0)' : 'translateX(-20px)' }}
                     >
-                        WhatsApp Us
+                        Call Us
                     </span>
                 </div>
             </button>

@@ -91,7 +91,7 @@ const Nav = () => {
                         </div>
 
                     </div>
-                    <nav className={`${scrolling ? 'lg:fixed top-0 py-0.5 lg:py-2 px-4 w-full lg:w-[84%] xl:w-[86%] 2xl:w-[80%] bg-base-100 shadow-xl border-t rounded-xl transition-all duration-300' : 'relative bg-transparent text-white'}`}>
+                    <nav className={`${scrolling ? 'lg:fixed top-3 py-0.5 lg:py-2 px-4 w-full lg:w-[84%] xl:w-[86%] 2xl:w-[80%] bg-base-100 shadow-xl border-t rounded-xl transition-all duration-300 ' : 'relative bg-transparent text-white'}`}>
                         <div className="flex justify-between">
                             {/* Menu for larger screens */}
                             <div className="hidden lg:flex space-x-4 items-center text-lg font-semibold">

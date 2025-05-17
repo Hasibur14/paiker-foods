@@ -6,6 +6,7 @@ import { PiDotOutlineThin } from 'react-icons/pi';
 import { Link, NavLink } from 'react-router-dom';
 import footerBg from '../../../assets/Footer.png';
 import logo from '../../../assets/logo.png'
+import WhatsappCall from '../../Call/WhatsappCall';
 
 const Footer = () => {
     const currentYear = new Date().getFullYear();
@@ -105,7 +106,7 @@ const Footer = () => {
                     <p className="w-full lg:w-2/3 ">
                         Conveniently monetize covalent data vis-a-vis scalable vortals. Uniquely facilitate
                         cost effective ideas vis-a-vis collaborative e-tailers. Completely morph progressive
-                        
+
                     </p>
                 </div>
 
@@ -145,6 +146,11 @@ const Footer = () => {
                 >
                     Goinnovior
                 </a>
+            </div>
+
+            {/* Whatsapp call  popup*/}
+            <div>
+                <WhatsappCall />
             </div>
         </footer>
     );

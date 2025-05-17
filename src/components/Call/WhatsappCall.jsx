@@ -5,7 +5,7 @@ const WhatsappCall = () => {
     const [isExpanded, setIsExpanded] = useState(false);
     const [isPulsing, setIsPulsing] = useState(true);
 
-    // Color theme (WhatsApp green colors)
+    // Color theme
     const colors = {
         light: "#f4c517",
         deep: "#e47125"

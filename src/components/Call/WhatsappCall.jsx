@@ -79,7 +79,7 @@ const WhatsappCall = () => {
                 <div className={`flex items-center justify-center transition-all duration-300 ${isExpanded ? 'gap-2' : 'gap-0'}`}>
                     <Phone
                         size={24}
-                        className="text-white animate-bounce"
+                        className="text-white "
                         style={{ animationDuration: '1s', animationIterationCount: 'infinite' }}
                     />
                     <span

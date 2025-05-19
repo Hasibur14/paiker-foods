@@ -1,5 +1,5 @@
 import React from 'react';
-import icon from '../../../assets/home/getTauch-1.png';
+import icon from '../../../assets/contact/getTauch-1.png';
 import Container from '../../../components/Container/Container';
 
 // JSON data for the component

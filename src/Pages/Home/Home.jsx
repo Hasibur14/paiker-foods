@@ -1,4 +1,3 @@
-
 import Hero from "../../components/Hero/Hero";
 import About from "./Section/About";
 import FeatureDepertment from "./Section/FeatureDepertment";
@@ -6,10 +5,11 @@ import WhyChooseUs from "./Section/WhyChooseUs";
 import Gallery from "./Section/Gallery";
 import BuildBest from "./Section/BuildBest";
 import GetTauch from "./Section/GetTauch";
-import BestOrganic from "./Section/BestOrganic";
+
 import FreshProduct from "./Section/FreshProduct";
 import Timeline from "./Section/Timeline";
 import Projects from "./Section/Projects";
+import FoodCategory from "./Section/FoodCategory";
 
 
 const Home = () => {
@@ -20,7 +20,7 @@ const Home = () => {
       </div>
       <About />
       <FeatureDepertment />
-      <BestOrganic />
+      <FoodCategory />
       <WhyChooseUs />
       <FreshProduct />
       <Timeline />

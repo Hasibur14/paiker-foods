@@ -5,7 +5,7 @@ import Button from '../../../components/Button/Button';
 import { useQuery } from '@tanstack/react-query';
 import useAxiosPublic from '../../../hooks/useAxiosPublic';
 
-const BestOrganic = () => {
+const FoodCategory = () => {
 
     const [activeTab, setActiveTab] = useState(0);
     const axiosPublic = useAxiosPublic()
@@ -21,6 +21,7 @@ const BestOrganic = () => {
     });
 
     if (isLoading) return
+
     return (
         <div className="bg-gray-50 py-16 ">
             <Container>
@@ -85,4 +86,4 @@ const BestOrganic = () => {
     );
 };
 
-export default BestOrganic;
+export default FoodCategory;

@@ -1,19 +1,23 @@
-import React from 'react';
+import { useQuery } from '@tanstack/react-query';
 import BestBuildBrands from '../../../components/BestBuildBrands/BestBuildBrands';
+import useAxiosPublic from '../../../hooks/useAxiosPublic';
 
-
-
-const buildBestData = {
-    title: "Built the best agriculture market",
-    description:
-        "Give lady of they such they sure it. Me contained explained my education. Vulgar as hearts by garret. Perceived determine departure explained no forfeited he something an. Contrasted dissimilar get joy you instrument out reasonably. Again keeps at no meant stuff. To perpetual do existence northward as difficult.",
-    linkText: "DISCOVER MORE",
-    imageUrl:
-        "https://res.cloudinary.com/dh34eqbhu/image/upload/v1746350833/8af2784290ac9e0b2e90166ea6d007ee4b3dce95_iyds75.png",
-};
 
 const BuildBest = () => {
-    const { title, description, linkText, imageUrl } = buildBestData;
+
+    const axiosPublic = useAxiosPublic();
+
+    const { data: buildBestData = [], isLoading } = useQuery({
+        queryKey: ["buildBest"],
+        queryFn: async () => {
+            const res = await axiosPublic.get("/build-best");
+            return res.data[0];
+        },
+    });
+
+    const { title, description, imageUrl } = buildBestData;
+
+    if (isLoading) return
 
     return (
         <div className="relative">
@@ -26,7 +30,7 @@ const BuildBest = () => {
                         <h2 className="text-2xl lg:text-4xl font-bold mb-4">{title}</h2>
                         <p className="text-md mb-6">{description}</p>
                         <a href="#" className="underline font-semibold text-sm">
-                            {linkText}
+                            DISCOVER MORE
                         </a>
                     </div>
 

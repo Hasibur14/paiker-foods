@@ -41,8 +41,8 @@ const Gallery = () => {
                 alt={item.title}
                 className="w-full h-full rounded object-cover transition-transform duration-1000 group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
-                <div className="translate-y-4 group-hover:translate-y-0 transition-transform duration-500 bg-primary-base p-5 bg-opacity-40">
+              <div className="absolute w-full inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
+                <div className="translate-y-4 w-4/5 group-hover:translate-y-0 transition-transform duration-500 bg-primary-base p-5 bg-opacity-40">
                   <h3 className="text-xl text-second-light mb-2">{item.title}</h3>
                   <p className="text-gray-200 font-shadows">{item.description}</p>
                 </div>

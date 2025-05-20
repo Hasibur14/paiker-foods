@@ -70,7 +70,7 @@ const Hero = () => {
                     ref={sliderRef}
                     className="relative keen-slider h-auto"
                 >
-                    {sliderData.map((slide) => (
+                    {sliderData?.map((slide) => (
                         <div
                             key={slide._id}
                             className={`keen-slider__slide number-slide relative inset-0`}

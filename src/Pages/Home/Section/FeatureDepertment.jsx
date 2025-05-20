@@ -16,7 +16,6 @@ const FeatureDepartment = () => {
         },
     });
 
-    console.log(fetureData)
 
     if (isLoading) return <LoadingSpinner />
 

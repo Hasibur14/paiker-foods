@@ -1,41 +1,22 @@
-import React from 'react';
+import { useQuery } from '@tanstack/react-query';
 import CountUp from 'react-countup';
 import { BiCheckCircle } from 'react-icons/bi';
+import useAxiosPublic from '../../../hooks/useAxiosPublic';
 
 const WhyChooseUs = () => {
 
-    const chooseUsData = {
-        heading: 'Growing crops and raising livestock.',
-        image: 'https://res.cloudinary.com/dh34eqbhu/image/upload/v1746264661/wnselevi9tahsnhhponq.jpg',
-        stats: [
-            {
-                value: '38 K',
-                label: 'Trusted Customers'
-            },
-            {
-                value: '28 M',
-                label: 'Growth Tonns of Harvest'
-            }
-        ],
+    const axiosPublic = useAxiosPublic();
 
-        features: [
-            {
-                title: 'Always Fresh',
-                description:
-                    'Continued at up to zealously necessary breakfast. Surrounded sir motionless she end literature. Gay direction neglected but supported yet her reprehenderit quaerat deleniti eaque similique id.'
-            },
-            {
-                title: 'All organic',
-                description:
-                    'Continued at up to zealously necessary breakfast. Surrounded sir motionless she end literature. Gay direction neglected but supported.'
-            },
-            {
-                title: 'Eco friendly',
-                description:
-                    'Montinued at up to zealously necessary breakfas is motionless she end literature. Gay direction neglected but supported yet her.'
-            }
-        ]
-    };
+    // Fetch data using react-query
+    const { data: chooseUsData = {}, isLoading } = useQuery({
+        queryKey: ['chooseUs'],
+        queryFn: async () => {
+            const res = await axiosPublic.get("/choose-us");
+            return res.data[0] || {};
+        }
+    });
+
+    if (isLoading) return
 
     return (
         <div className="grid grid-cols-1 lg:grid-cols-2 bg-white pb-4">

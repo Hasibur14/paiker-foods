@@ -4,7 +4,6 @@ import useAxiosPublic from '../../../hooks/useAxiosPublic';
 import { useQuery } from '@tanstack/react-query';
 
 const Gallery = () => {
-
   const axiosPublic = useAxiosPublic();
   const [showAll, setShowAll] = useState(false);
 
@@ -19,7 +18,7 @@ const Gallery = () => {
 
   const visibleProjects = showAll ? projectData : projectData.slice(0, 5);
 
-  if (isLoading) return
+  if (isLoading) return <div>Loading...</div>;
 
   return (
     <section className="py-16">
@@ -33,16 +32,15 @@ const Gallery = () => {
           {visibleProjects?.map((item, index) => (
             <div
               key={item._id}
-              className={`group relative overflow-hidden transition-all duration-500 hover:shadow-2xl ${index === 1 ? 'lg:row-span-1 lg:col-span-2 h-[450px]' : ''
-                }`}
+              className={`group relative overflow-hidden transition-all duration-500 hover:shadow-2xl h-[450px] ${index === 1 ? 'lg:col-span-2' : ''}`}
             >
               <img
                 src={item.image}
                 alt={item.title}
                 className="w-full h-full rounded object-cover transition-transform duration-1000 group-hover:scale-105"
               />
-              <div className="absolute w-full inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
-                <div className="translate-y-4 w-4/5 group-hover:translate-y-0 transition-transform duration-500 bg-primary-base p-5 bg-opacity-40">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
+                <div className="translate-y-4 group-hover:translate-y-0 w-4/5 transition-transform duration-500 bg-primary-base p-5 bg-opacity-40">
                   <h3 className="text-xl text-second-light mb-2">{item.title}</h3>
                   <p className="text-gray-200 font-shadows">{item.description}</p>
                 </div>
@@ -61,7 +59,6 @@ const Gallery = () => {
             </button>
           </div>
         )}
-
       </Container>
     </section>
   );

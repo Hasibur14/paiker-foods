@@ -7,28 +7,23 @@ import slider3 from '../../assets/hero/banner4.png'
 import { Link } from "react-router-dom";
 import { LiaSquareFullSolid } from "react-icons/lia";
 import Button from "../Button/Button";
+import useAxiosPublic from "../../hooks/useAxiosPublic";
+import { useQuery } from "@tanstack/react-query";
+import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
 
 const Hero = () => {
-    const sliderData = [
-        {
-            _id: 1,
-            image: slider1,
-            title: "Fresh Fruits, Straight from the Orchard!",
-            description: "Enjoy nature's sweetness with our handpicked apples, juicy mangoes, and ripe bananas delivered fresh from trusted local farms to your table.",
+
+    const axiosPublic = useAxiosPublic();
+
+
+    const { data: sliderData = [], isLoading } = useQuery({
+        queryKey: ["hero"],
+        queryFn: async () => {
+            const res = await axiosPublic.get("/hero");
+            return res.data;
         },
-        {
-            _id: 2,
-            image: slider2,
-            title: "Organic Goodness in Every Bite!",
-            description: "Savor the taste of health with our chemical-free fruits and vegetables, grown sustainably to nourish your body and delight your senses.",
-        },
-        {
-            _id: 3,
-            image: slider3,
-            title: "Global Taste, Local Roots!",
-            description: "From tropical pineapples to Mediterranean olives, we bring you a world of fresh flavors sourced ethically and delivered with care.",
-        },
-    ];
+    });
+
 
 
     // Slider with auto-play
@@ -62,6 +57,10 @@ const Hero = () => {
             },
         ]
     );
+
+
+
+    if (isLoading) return <LoadingSpinner />
 
     return (
         <div className="absolute w-full mx-auto lg:top-0">

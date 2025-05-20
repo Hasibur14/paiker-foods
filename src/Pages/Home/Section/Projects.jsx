@@ -32,6 +32,12 @@ const Gallery = () => {
       imageUrl: 'https://res.cloudinary.com/dh34eqbhu/image/upload/v1746264661/wnselevi9tahsnhhponq.jpg',
       title: 'Wanderlust',
       description: 'Discover the world through breathtaking destinations.',
+    },
+    {
+      id: 6,
+      imageUrl: 'https://res.cloudinary.com/dh34eqbhu/image/upload/v1746264661/wnselevi9tahsnhhponq.jpg',
+      title: 'Wanderlust',
+      description: 'Discover the world through breathtaking destinations.',
     }
 
   ];
@@ -66,11 +72,11 @@ const Gallery = () => {
           ))}
         </div>
 
-        {/* <div className="text-center mt-12">
-          <button className="px-8 py-3 bg-indigo-600 text-white font-medium rounded-lg hover:bg-indigo-700 transition-colors duration-300 shadow-md hover:shadow-lg">
+        <div className="text-center mt-12">
+          <button className="px-8 py-3 bg-transparent border border-primary-light text-primary-light hover:text-white font-medium rounded hover:bg-primary-light transition-colors duration-500 shadow">
             View Full Gallery
           </button>
-        </div> */}
+        </div>
 
       </Container>
     </section>

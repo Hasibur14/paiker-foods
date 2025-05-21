@@ -1,104 +1,70 @@
 import React from "react";
-import { Link, useLoaderData } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import BannerTitle from "../../components/BannerTitle/BannerTitle";
 import Container from "../../components/Container/Container";
 import banner from "../../assets/hero/banner1.png";
-import { FaRegClock, FaShareAlt } from "react-icons/fa";
+import { FaRegClock, FaShareAlt, FaFacebook, FaTwitter, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 import { IoMdArrowRoundBack } from "react-icons/io";
+import { useQuery } from "@tanstack/react-query";
+import useAxiosPublic from "../../hooks/useAxiosPublic";
+import LoadingSpinner from "../../components/LoadingSpinner/LoadingSpinner";
 
 const BlogDetails = () => {
+    const { id } = useParams();
+    const axiosPublic = useAxiosPublic();
 
-    const blog = useLoaderData();
+    const { data: blog = {}, isLoading } = useQuery({
+        queryKey: ['blog', id],
+        queryFn: async () => {
+            const { data } = await axiosPublic.get(`/blog/${id}`);
+            return data;
+        },
+    });
 
-    const handleShare = () => {
+    const calculateReadTime = (text) => {
+        const wordsPerMinute = 200;
+        const wordCount = text?.split(/\s+/)?.length || 0;
+        return Math.max(1, Math.ceil(wordCount / wordsPerMinute));
+    };
+
+    const handleShare = (platform) => {
+        if (!blog.title) return;
+
         const currentUrl = window.location.href;
-        const title = blog.title;
-        const text = blog.description.substring(0, 100) + "...";
+        const text = blog.description?.[0]?.substring(0, 100) || blog.describe?.substring(0, 100) || "";
 
-
-
-        // Native Share API (works on mobile and some desktop browsers)
-        if (navigator.share) {
-            navigator.share({
-                title: title,
-                text: text,
-                url: currentUrl,
-            })
-                .catch(err => console.log('Error sharing:', err));
-        }
-        // Fallback for browsers that don't support native share
-        else {
-            // Open a popup with social sharing options
-            const shareWindow = window.open(
-                '',
-                'Share this article',
-                'width=600,height=400,menubar=no,toolbar=no'
-            );
-
-            // If popup was blocked, fallback to new tab
-            if (!shareWindow || shareWindow.closed || typeof shareWindow.closed === 'undefined') {
-                window.open(
-                    `https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(currentUrl)}`,
-                    '_blank'
-                );
-            } else {
-                // Create HTML for the share popup
-                shareWindow.document.write(`
-                    <!DOCTYPE html>
-                    <html>
-                    <head>
-                        <title>Share this article</title>
-                        <style>
-                            body { font-family: Arial, sans-serif; padding: 20px; }
-                            .share-option { 
-                                display: flex; 
-                                align-items: center; 
-                                padding: 10px; 
-                                margin: 10px 0; 
-                                border-radius: 5px; 
-                                cursor: pointer;
-                                transition: background 0.2s;
-                            }
-                            .share-option:hover { background: #f0f0f0; }
-                            .share-icon { margin-right: 10px; font-size: 24px; }
-                            .twitter { color: #1DA1F2; }
-                            .facebook { color: #4267B2; }
-                            .linkedin { color: #0077b5; }
-                            .whatsapp { color: #25D366; }
-                            .copy-link { color: #666; }
-                        </style>
-                    </head>
-                    <body>
-                        <h2>Share this article</h2>
-                        <div class="share-option twitter" onclick="window.open('https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(currentUrl)}', '_blank')">
-                            <span class="share-icon">𝕏</span>
-                            <span>Share on Twitter</span>
-                        </div>
-                        <div class="share-option facebook" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(currentUrl)}', '_blank')">
-                            <span class="share-icon">f</span>
-                            <span>Share on Facebook</span>
-                        </div>
-                        <div class="share-option linkedin" onclick="window.open('https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(currentUrl)}', '_blank')">
-                            <span class="share-icon">in</span>
-                            <span>Share on LinkedIn</span>
-                        </div>
-                        <div class="share-option whatsapp" onclick="window.open('https://wa.me/?text=${encodeURIComponent(title + ' ' + currentUrl)}', '_blank')">
-                            <span class="share-icon">WhatsApp</span>
-                            <span>Share via WhatsApp</span>
-                        </div>
-                        <div class="share-option copy-link" onclick="navigator.clipboard.writeText('${currentUrl}').then(() => alert('Link copied to clipboard!'))">
-                            <span class="share-icon">📋</span>
-                            <span>Copy link</span>
-                        </div>
-                    </body>
-                    </html>
-                `);
-                shareWindow.document.close();
-            }
+        switch (platform) {
+            case 'facebook':
+                window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(currentUrl)}`, '_blank');
+                break;
+            case 'twitter':
+                window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(blog.title)}&url=${encodeURIComponent(currentUrl)}`, '_blank');
+                break;
+            case 'linkedin':
+                window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(currentUrl)}`, '_blank');
+                break;
+            case 'whatsapp':
+                window.open(`https://wa.me/?text=${encodeURIComponent(`${blog.title} - ${currentUrl}`)}`, '_blank');
+                break;
+            case 'copy':
+                navigator.clipboard.writeText(currentUrl)
+                    .then(() => alert('Link copied to clipboard!'))
+                    .catch(err => console.error('Failed to copy:', err));
+                break;
+            default:
+                if (navigator.share) {
+                    navigator.share({
+                        title: blog.title,
+                        text: text,
+                        url: currentUrl,
+                    }).catch(err => console.log('Error sharing:', err));
+                }
         }
     };
 
-    if (!blog) {
+    if (isLoading) return <LoadingSpinner />;
+
+    if (!blog || !blog._id) {
         return (
             <div className="min-h-screen flex items-center justify-center bg-gray-50">
                 <div className="text-center py-20 max-w-md mx-auto">
@@ -116,8 +82,11 @@ const BlogDetails = () => {
         );
     }
 
+    const readTimeText = [...(blog.description || []), blog.describe || ""].join(" ");
+    const readTime = calculateReadTime(readTimeText);
+
     return (
-        <div className="pb-10">
+        <div className="pb-16 bg-gray-50">
             <BannerTitle
                 bannerImg={banner}
                 subTitle="Blog Details"
@@ -125,12 +94,12 @@ const BlogDetails = () => {
             />
 
             <Container>
-                <div className="max-w-5xl mx-auto my-12 lg:my-16">
+                <div className="max-w-4xl mx-auto my-8 lg:my-12">
                     {/* Back Button */}
-                    <div className="mb-8">
+                    <div className="mb-6">
                         <Link
                             to="/blogs"
-                            className="inline-flex items-center text-gray-600 hover:text-primary-light transition-colors"
+                            className="inline-flex items-center text-gray-600 hover:text-primary-light transition-colors font-medium"
                         >
                             <IoMdArrowRoundBack className="mr-2" />
                             Back to all articles
@@ -138,58 +107,82 @@ const BlogDetails = () => {
                     </div>
 
                     {/* Main Blog Content */}
-                    <div className="bg-white rounded-2xl shadow-md overflow-hidden">
+                    <div className="bg-white rounded-xl shadow-lg overflow-hidden">
                         {/* Featured Image */}
-                        <div className="relative h-80 md:h-96 lg:h-[500px]">
+                        <div className="relative h-64 sm:h-80 md:h-96">
                             <img
                                 className="w-full h-full object-cover"
                                 src={blog.image}
                                 alt={blog.title}
+                                loading="lazy"
                             />
-                            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6">
-                                <h1 className="text-3xl md:text-4xl font-bold text-white">{blog.title}</h1>
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+                            <div className="absolute bottom-0 left-0 right-0 p-6">
+                                <div className="container mx-auto">
+                                    <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">{blog.title}</h1>
+                                    <div className="flex items-center mt-3 text-white/90">
+                                        <FaRegClock className="mr-2" />
+                                        <span className="text-sm">{readTime} min read • {blog.date}</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
                         {/* Content Container */}
-                        <div className="p-6 md:p-8 lg:p-12">
-                            {/* Meta Information */}
-                            <div className="flex flex-wrap items-center justify-between gap-4 mb-8">
-                                <div className="flex items-center text-gray-500">
-                                    <FaRegClock className="mr-2" />
-                                    <span>{blog.readTime}</span>
-                                </div>
-                                <div className="flex items-center space-x-2">
+                        <div className="p-6 md:p-8">
+                            {/* Share Buttons */}
+                            <div className="mb-8">
+                                <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-3">
+                                    Share this article
+                                </h3>
+                                <div className="flex space-x-3">
                                     <button
-                                        onClick={handleShare}
-                                        className="p-2 text-gray-500 hover:text-primary-light rounded-full bg-gray-100 transition-colors"
-                                        aria-label="Share this article"
+                                        onClick={() => handleShare('facebook')}
+                                        className="p-3 bg-[#4267B2] text-white rounded-full hover:bg-[#365899] transition-colors"
+                                        aria-label="Share on Facebook"
                                     >
-                                        <FaShareAlt />
+                                        <FaFacebook size={18} />
+                                    </button>
+                                    <button
+                                        onClick={() => handleShare('twitter')}
+                                        className="p-3 bg-[#1DA1F2] text-white rounded-full hover:bg-[#1991DB] transition-colors"
+                                        aria-label="Share on Twitter"
+                                    >
+                                        <FaTwitter size={18} />
+                                    </button>
+                                    <button
+                                        onClick={() => handleShare('linkedin')}
+                                        className="p-3 bg-[#0077B5] text-white rounded-full hover:bg-[#00669C] transition-colors"
+                                        aria-label="Share on LinkedIn"
+                                    >
+                                        <FaLinkedin size={18} />
+                                    </button>
+                                    <button
+                                        onClick={() => handleShare('whatsapp')}
+                                        className="p-3 bg-[#25D366] text-white rounded-full hover:bg-[#128C7E] transition-colors"
+                                        aria-label="Share via WhatsApp"
+                                    >
+                                        <FaWhatsapp size={18} />
+                                    </button>
+                                    <button
+                                        onClick={() => handleShare('copy')}
+                                        className="p-3 bg-gray-200 text-gray-700 rounded-full hover:bg-gray-300 transition-colors"
+                                        aria-label="Copy link"
+                                    >
+                                        <FaShareAlt size={16} />
                                     </button>
                                 </div>
                             </div>
-
-                            {/* Author Info */}
-                            <div className="flex items-center mb-8">
-                                <div className="mr-4">
-                                    <div className="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center text-xl font-bold text-gray-600">
-                                        {blog.name.charAt(0)}
-                                    </div>
-                                </div>
-                                <div>
-                                    <h4 className="font-medium text-gray-800">{blog.name}</h4>
-                                    <p className="text-sm text-gray-500">{blog.role}</p>
-                                </div>
-                            </div>
-
+                            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold">{blog.title}</h1>
                             {/* Article Content */}
-                            <article className="prose prose-lg max-w-none">
-                                <p className="text-xl text-gray-700 leading-relaxed mb-6">
-                                    {blog.description}
-                                </p>
+                            <article className="prose prose-lg max-w-none mt-4">
+                                {blog.describe && (
+                                    <p className="text-lg text-gray-700 leading-relaxed mb-6 font-medium">
+                                        {blog.describe}
+                                    </p>
+                                )}
 
-                                {blog.content.map((paragraph, index) => (
+                                {blog.description?.map((paragraph, index) => (
                                     <p key={index} className="text-gray-600 leading-relaxed mb-6">
                                         {paragraph}
                                     </p>
@@ -197,23 +190,21 @@ const BlogDetails = () => {
                             </article>
 
                             {/* Tags */}
-                            {blog.tags && blog.tags.length > 0 && (
-                                <div className="mt-12 pt-8 border-t border-gray-200">
-                                    <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-4">
-                                        Tags
-                                    </h3>
-                                    <div className="flex flex-wrap gap-2">
-                                        {blog.tags.map((tag, index) => (
-                                            <span
-                                                key={index}
-                                                className="inline-block bg-gray-100 text-gray-700 text-sm px-4 py-2 rounded-full hover:bg-primary-light hover:text-white transition-colors"
-                                            >
-                                                #{tag}
-                                            </span>
-                                        ))}
-                                    </div>
+                            <div className="mt-12 pt-8 border-t border-gray-200">
+                                <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-4">
+                                    Tags
+                                </h3>
+                                <div className="flex flex-wrap gap-2">
+                                    {["Article", "Blog", "Trends", "View"].map((tag, index) => (
+                                        <span
+                                            key={index}
+                                            className="inline-block bg-gray-100 text-gray-700 text-sm px-4 py-2 rounded-full hover:bg-primary-light hover:text-white transition-colors"
+                                        >
+                                            #{tag}
+                                        </span>
+                                    ))}
                                 </div>
-                            )}
+                            </div>
                         </div>
                     </div>
                 </div>

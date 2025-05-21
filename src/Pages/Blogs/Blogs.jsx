@@ -4,21 +4,26 @@ import BannerTitle from "../../components/BannerTitle/BannerTitle";
 import banner from "../../assets/hero/banner1.png";
 import { Link } from "react-router-dom";
 import { FaArrowRightLong } from "react-icons/fa6";
+import useAxiosPublic from "../../hooks/useAxiosPublic";
+import { useQuery } from "@tanstack/react-query";
+import LoadingSpinner from "../../components/LoadingSpinner/LoadingSpinner";
 
 
 const Blogs = () => {
 
+    const axiosPublic = useAxiosPublic();
 
-    const [isBlogs, setIsBlogs] = useState([]);
 
+    // Fetch blogs from API
+    const { data: blogsData = [], isLoading } = useQuery({
+        queryKey: ['blogs'],
+        queryFn: async () => {
+            const res = await axiosPublic.get('/blogs');
+            return res.data;
+        }
+    });
 
-    useEffect(() => {
-        
-        fetch('./blogs.json')
-            .then(res => res.json())
-            .then(data => setIsBlogs(data))
-    }, []);
-
+    if (isLoading) return <LoadingSpinner />
 
     return (
         <div>
@@ -28,7 +33,7 @@ const Blogs = () => {
                 title="Our Blogs" />
             <Container>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-4 gap-8 mb-2 pb-16">
-                    {isBlogs.map((item) => (
+                    {blogsData?.map((item, index) => (
                         <div key={item._id} className="bg-white shadow hover:shadow-lg transition-shadow duration-300 flex flex-col h-full">
                             <div className="relative overflow-hidden group">
                                 <img
@@ -37,7 +42,7 @@ const Blogs = () => {
                                     alt={item.description}
                                 />
                                 <p className="absolute bottom-0 left-0 bg-second-light text-black text-4xl font-bold px-8 py-4 w-[106px]">
-                                    {item.number}
+                                    0{index + 1}
                                 </p>
                             </div>
                             <p className="w-[106px] bg-primary-light text-white text-center text-md font-normal px-2 py-1">

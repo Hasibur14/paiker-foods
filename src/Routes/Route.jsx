@@ -54,12 +54,7 @@ const router = createBrowserRouter([
             {
                 path: '/blog-details/:id',
                 element: <BlogDetails />,
-                loader: async ({ params }) => {
-                    const response = await fetch(`/blogs.json`);
-                    const blogs = await response.json();
-                    const blog = blogs.find(p => p._id.toString() === params.id);
-                    return blog;
-                }
+            
             },
 
             {

@@ -1,23 +1,26 @@
 import React from 'react';
 import Container from '../../../components/Container/Container';
 import bg from '../../../assets/About/missionVision.png'
+import { useQuery } from '@tanstack/react-query';
+import LoadingSpinner from '../../../components/LoadingSpinner/LoadingSpinner';
+import useAxiosPublic from '../../../hooks/useAxiosPublic';
 
 const MissionVision = () => {
-    const contentData = [
-        {
-            _id: 1,
-            title: "Our Mission",
-            description: "Our mission is to contribute to the promotion of agricultural products in Vietnam with a commitment to produce sustainable values that meet international standards and thereby create a fair and competitive market.",
+    const axiosPublic = useAxiosPublic();
+
+    const { data: missionVision = [], isPending } = useQuery({
+        queryKey: ["missionVision"],
+        queryFn: async () => {
+            const res = await axiosPublic.get("/mission-vision");
+            return res.data;
         },
-        {
-            _id: 2,
-            title: "Our Vision",
-            description: "Our vision is to be a prestigious standard system that aims towards sustainable and fair agricultural development where Vietnamese producers can produce and benefit from global markets through equitable.",
-        },
-    ];
+    });
+    console.log(missionVision)
+
+    if (isPending) return <LoadingSpinner />
 
     return (
-        <div 
+        <div
             className="py-12 my-16 h-full flex items-center" // Added min-height and flex
             style={{
                 backgroundImage: `url(${bg})`,
@@ -27,7 +30,7 @@ const MissionVision = () => {
             }}>
             <Container>
                 <div className="grid grid-cols-1 gap-10 md:grid-cols-2">
-                    {contentData.map((item) => (
+                    {missionVision?.map((item) => (
                         <div
                             key={item._id}
                             className="bg-[#52320A] text-center rounded-xl p-7 shadow-md hover:shadow-lg transition duration-300">

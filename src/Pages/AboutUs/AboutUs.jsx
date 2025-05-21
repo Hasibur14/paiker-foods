@@ -17,12 +17,12 @@ const AboutUs = () => {
                 bannerImg={banner}
                 subTitle='About Us'
                 title="About Paiker Foods" />
-         
+
 
             <Info />
             <ProvidingProduct />
-            <Timeline />
             <MissionVision />
+            <Timeline />
             <MDMessage />
             <OurTeam />
             <FreshnessCommitment />

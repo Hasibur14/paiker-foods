@@ -151,7 +151,7 @@ const Footer = () => {
                 <div className="border-t border-white border-opacity-20 my-8"></div>
 
                 {/* Copyright section */}
-                <div className="flex flex-col md:flex-row justify-between items-center text-sm">
+                <div className="flex flex-col md:flex-row justify-between items-center text-md font-poppins">
                     <div className="mb-4 md:mb-0">
                         © {currentYear} Paiker Foods. All rights reserved.
                     </div>

@@ -7,7 +7,8 @@ import FreshnessCommitment from './Section/FreshnessCommitment'
 import Timeline from '../Home/Section/Timeline'
 import MDMessage from './Section/MDMessage'
 import OurTeam from './Section/OurTeam'
-import Brands from '../../components/Brands/Brands'
+import Brands from '../../components/Brands/Brands';
+
 
 const AboutUs = () => {
     return (
@@ -16,6 +17,7 @@ const AboutUs = () => {
                 bannerImg={banner}
                 subTitle='About Us'
                 title="About Paiker Foods" />
+         
 
             <Info />
             <ProvidingProduct />

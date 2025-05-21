@@ -1,10 +1,6 @@
 import React, { useState } from "react";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
-import slider1 from '../../assets/hero/banner3.png'
-import slider2 from '../../assets/hero/banner1.png'
-import slider3 from '../../assets/hero/banner4.png'
-import { Link } from "react-router-dom";
 import { LiaSquareFullSolid } from "react-icons/lia";
 import Button from "../Button/Button";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
@@ -12,9 +8,7 @@ import { useQuery } from "@tanstack/react-query";
 import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
 
 const Hero = () => {
-
     const axiosPublic = useAxiosPublic();
-
 
     const { data: sliderData = [], isLoading } = useQuery({
         queryKey: ["hero"],
@@ -24,9 +18,6 @@ const Hero = () => {
         },
     });
 
-
-
-    // Slider with auto-play
     const [currentSlide, setCurrentSlide] = useState(0);
     const [sliderRef, sliderInstance] = useKeenSlider(
         {
@@ -58,8 +49,6 @@ const Hero = () => {
         ]
     );
 
-
-
     if (isLoading) return <LoadingSpinner />
 
     return (
@@ -76,12 +65,13 @@ const Hero = () => {
                             className={`keen-slider__slide number-slide relative inset-0`}
                         >
                             <img
-                                className="w-full h-[50vh] md:h-[80vh] lg:h-[100vh] object-cover"
+                                className="w-full h-[50vh] md:h-[80vh] lg:h-[100vh] bg-no-repeat"
                                 src={slide.image}
                                 alt={slide.title}
                             />
-                            <div className="absolute inset-0 bg-black bg-opacity-70 flex flex-col text-center items-center justify-center space-y-10 px-10 md:px-14 lg:px-20">
-                                <h2 className="font-shadows tracking-[5px] text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl text-white max-w-4xl  lg:mt-32">
+                            {/* Updated overlay with gradient */}
+                            <div className="absolute inset-0 bg-gradient-to-b from-black/85 via-black/50 to-black/30 flex flex-col text-center items-center justify-center space-y-10 px-10 md:px-14 lg:px-20">
+                                <h2 className="font-shadows tracking-[5px] text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl text-white max-w-4xl lg:mt-32">
                                     {slide.title}
                                 </h2>
                                 <p className="font-mulish text-md sm:text-lg md:text-2xl text-gray-300 max-w-5xl animate__animated animate__fadeInUp">

@@ -3,11 +3,25 @@ import 'swiper/css/autoplay';
 import { Autoplay } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import bg from "../../assets/brandsBG.png";
+import useAxiosPublic from '../../hooks/useAxiosPublic';
+import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
+import { useQuery } from '@tanstack/react-query';
 
 
 const Brands = () => {
 
+    const axiosPublic = useAxiosPublic();
 
+    // Fetch data from the backend
+    const { data: brandsData = [], isLoading } = useQuery({
+        queryKey: ["brands"],
+        queryFn: async () => {
+            const res = await axiosPublic.get("/brands");
+            return res.data;
+        },
+    });
+
+    if (isLoading) return <LoadingSpinner />
 
     return (
         <div
@@ -19,7 +33,7 @@ const Brands = () => {
             }}
         >
             {/* Swiper will render only when clients are available */}
-            {data?.length > 0 && (
+            {brandsData?.length > 0 && (
                 <Swiper
                     slidesPerView={1}
                     loop={true}
@@ -46,7 +60,7 @@ const Brands = () => {
                     }}
                     className="my-8"
                 >
-                    {data.map((brand) => (
+                    {brandsData?.map((brand) => (
                         <SwiperSlide key={brand._id}>
                             <div className="flex justify-center items-center p-2">
                                 <img
@@ -67,82 +81,3 @@ const Brands = () => {
 export default Brands;
 
 
-const data = [
-    {
-        "_id"
-            :
-            "680dab75488ba8ef68f5f709",
-        "image"
-            :
-            "https://i.postimg.cc/gJ8S4Xpz/Frame-36.pngImage preview",
-        "title"
-            :
-            "Robi"
-    },
-    {
-        "_id"
-            :
-            "680dab75488ba8ef68f5f70a",
-        "image"
-            :
-            "https://i.postimg.cc/GmmfrmFK/Frame-34.pngImage preview",
-        "title"
-            :
-            "Bata"
-    },
-    {
-        "_id"
-            :
-            "680dab75488ba8ef68f5f70b",
-        "image"
-            :
-            "https://i.postimg.cc/4y18kDnj/Frame-38.pngImage preview",
-        "title"
-            :
-            "Walton"
-    },
-    {
-        "_id"
-            :
-            "680dab75488ba8ef68f5f70c",
-        "image"
-            :
-            "https://i.postimg.cc/FHCBKXG4/Frame-32.pngImage preview",
-        "title"
-            :
-            "Client"
-    },
-    {
-        "_id"
-            :
-            "680dab75488ba8ef68f5f70d",
-        "image"
-            :
-            "https://i.postimg.cc/6Q712b1G/Frame-33.pngImage preview",
-        "title"
-            :
-            "Client"
-    },
-    {
-        "_id"
-            :
-            "680dab75488ba8ef68f5f70e",
-        "image"
-            :
-            "https://i.postimg.cc/R0jpc1jp/Frame-35.pngImage preview",
-        "title"
-            :
-            "Client"
-    },
-    {
-        "_id"
-            :
-            "680dab75488ba8ef68f5f70f",
-        "image"
-            :
-            "https://i.postimg.cc/XqW2PjNw/Frame-37.pngImage preview",
-        "title"
-            :
-            "Client"
-    }
-]

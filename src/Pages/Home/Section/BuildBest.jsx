@@ -28,8 +28,8 @@ const BuildBest = () => {
                 <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-10">
                     <div className="bg-primary-light text-white p-8 lg:px-16 lg:py-20 lg:ml-[14%] rounded shadow-md space-y-8">
                         <h2 className="text-2xl lg:text-4xl font-bold mb-4">{title}</h2>
-                        <p className="text-md mb-6">{description}</p>
-                        <a href="#" className="underline font-semibold text-sm">
+                        <p className="text-md pb-6">{description}</p>
+                        <a href="#" className="underline font-semibold text-sm text-second-light hover:text-second-deep ">
                             DISCOVER MORE
                         </a>
                     </div>

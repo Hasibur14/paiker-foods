@@ -2,24 +2,30 @@ import 'swiper/css';
 import 'swiper/css/autoplay';
 import { Autoplay } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import bg from "../../assets/brandsBG.png";
-import { useEffect, useState } from 'react';
+import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
+import { useQuery } from '@tanstack/react-query';
+import useAxiosPublic from '../../hooks/useAxiosPublic';
 
 
 const BestBuildBrands = () => {
 
-    const [brands, setBrands] = useState([]);
+    const axiosPublic = useAxiosPublic();
 
-    useEffect(() => {
-        fetch('./brands.json')
-            .then(res => res.json())
-            .then(data => setBrands(data))
-    }, [])
+    // Fetch data from the backend
+    const { data: brandsData = [], isLoading } = useQuery({
+        queryKey: ["brands"],
+        queryFn: async () => {
+            const res = await axiosPublic.get("/brands");
+            return res.data;
+        },
+    });
+
+    if (isLoading) return <LoadingSpinner />
 
     return (
         <div>
             {/* Swiper will render only when clients are available */}
-            {brands?.length > 0 && (
+            {brandsData?.length > 0 && (
                 <Swiper
                     slidesPerView={1}
                     loop={true}
@@ -46,7 +52,7 @@ const BestBuildBrands = () => {
                     }}
                     className="my-8"
                 >
-                    {brands.map((brand) => (
+                    {brandsData?.map((brand) => (
                         <SwiperSlide key={brand._id}>
                             <div className="flex justify-center items-center p-2">
                                 <img

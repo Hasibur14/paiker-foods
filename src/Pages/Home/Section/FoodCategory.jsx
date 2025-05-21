@@ -70,6 +70,7 @@ const FoodCategory = () => {
                                 >
                                     <div className='flex gap-5 text-center items-center '>
                                         <img
+                                        className='w-16'
                                             src={tab.icon}
                                             alt="icon" />
                                         <h2 className="font-shadows text-xl tracking-[3px] font-semibold text-gray-800">

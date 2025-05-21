@@ -1,11 +1,10 @@
-import React from 'react';
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
 import { IoLogoYoutube } from 'react-icons/io5';
 import { PiDotOutlineThin } from 'react-icons/pi';
 import { Link, NavLink } from 'react-router-dom';
 import footerBg from '../../../assets/Footer.png';
-import logo from '../../../assets/logo.png'
+import logo from '../../../assets/logo.png';
 import WhatsappCall from '../../Call/WhatsappCall';
 
 const Footer = () => {
@@ -16,48 +15,55 @@ const Footer = () => {
         { name: 'Home', path: '/' },
         { name: 'About Us', path: '/about' },
         { name: 'Products', path: '/products' },
-        { name: 'Our Business', path: '/our-busniess' },
+        { name: 'Our Business', path: '/our-business' },
         { name: 'Blogs', path: '/blogs' },
         { name: 'Contact Us', path: '/contact' }
     ];
 
     const companyLinks = [
-        { name: 'Privacy', path: '#' },
-        { name: 'Terms of Service', path: '#' }
+        { name: 'Privacy Policy', path: '#' },
+        { name: 'Terms of Service', path: '#' },
+        { name: 'Shipping Policy', path: '#' },
+        { name: 'Return Policy', path: '#' }
     ];
 
-    const developerLinks = [
-        { name: 'Public API', path: '#' },
-        { name: 'Documentation', path: '#' },
-        { name: 'Guides', path: '#' }
+    const contactInfo = [
+        { name: 'Email: info@paikerfoods.com' },
+        { name: 'Phone: +880 1234 567890' },
+        { name: '408/445, Raza Bazar, Bogura Sadar, Bogura, Bangladeshh' }
     ];
 
     const socialLinks = [
         {
             icon: <FaFacebookF />,
-            url: 'https://www.facebook.com/codeinnovior2020',
-            label: 'Follow us on Facebook'
+            url: '#',
+            label: 'Facebook'
         },
         {
             icon: <FaLinkedinIn />,
-            url: 'https://www.linkedin.com/in/codeinnovior/',
-            label: 'Follow us on LinkedIn'
+            url: '#',
+            label: 'LinkedIn'
         },
         {
             icon: <FaXTwitter />,
-            url: 'https://x.com/i/flow/login?redirect_after_login=%2Fcodeinnovior',
-            label: 'Follow us on Twitter'
+            url: '#',
+            label: 'Twitter'
         },
         {
             icon: <FaInstagram />,
-            url: 'https://www.instagram.com/codeinnovior/',
-            label: 'Follow us on Instagram'
+            url: '#',
+            label: 'Instagram'
+        },
+        {
+            icon: <IoLogoYoutube />,
+            url: '#',
+            label: 'YouTube'
         }
     ];
 
     // Component sub-parts
     const SocialLinks = () => (
-        <div className="flex space-x-4">
+        <div className="flex space-x-3 mt-3">
             {socialLinks.map((link, index) => (
                 <a
                     key={index}
@@ -65,7 +71,7 @@ const Footer = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={link.label}
-                    className="text-md md:text-xl p-1 rounded bg-[#05B689] text-white hover:bg-white hover:text-[#05B689] transition duration-500"
+                    className="text-lg p-2 rounded-full bg-white bg-opacity-20 text-white hover:text-gray-800 hover:bg-second-light hover:bg-opacity-100 transition duration-300"
                 >
                     {link.icon}
                 </a>
@@ -74,13 +80,13 @@ const Footer = () => {
     );
 
     const renderLinkList = (links) => (
-        <ul className="space-y-1">
+        <ul className="space-y-2">
             {links.map((item, index) => (
-                <li key={index} className="flex gap-2 transition-colors duration-500 cursor-pointer">
-                    <PiDotOutlineThin className="text-white mt-1 text-xl" />
+                <li key={index} className="flex items-start">
+                    <PiDotOutlineThin className="text-white mt-1.5 flex-shrink-0" />
                     <NavLink
                         to={item.path}
-                        className="hover:text-second-light hover:underline"
+                        className="hover:text-second-deep hover:underline ml-1 transition-colors duration-300"
                     >
                         {item.name}
                     </NavLink>
@@ -91,67 +97,80 @@ const Footer = () => {
 
     return (
         <footer
-            className="px-4 pb-4 text-gray-100 bg-primary-deep"
+            className="px-4 pb-6 text-white"
             style={{
                 background: `url(${footerBg}) lightgray 50% / cover no-repeat`,
                 backgroundColor: '#1F4E3D'
             }}
         >
-            <div className="mx-[5%] lg:mx-[8%] xl:mx-[7%] 2xl:mx-[10%] flex flex-col justify-between py-10 space-y-8 lg:flex-row lg:space-y-0">
-                {/* Brand info section */}
-                <div className="lg:w-1/3 space-y-3">
-                    <Link to="/">
-                        <img src={logo} alt="logo" className='w-2 lg:w-32' />
-                    </Link>
-                    <p className="w-full lg:w-2/3 ">
-                        Conveniently monetize covalent data vis-a-vis scalable vortals. Uniquely facilitate
-                        cost effective ideas vis-a-vis collaborative e-tailers. Completely morph progressive
+            <div className="mx-[5%] lg:mx-[8%] xl:mx-[7%] 2xl:mx-[10%] py-12">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                  
+                        {/* Brand info section */}
+                        <div className="space-y-4">
+                            <Link to="/">
+                                <img src={logo} alt="Paiker Foods Logo" className='w-32' />
+                            </Link>
+                            <p className="text-sm leading-relaxed text-justify w-full lg:w-3/5  xl:w-4/5 2xl:w-4/5">
+                                Paiker Foods is a leading Bangladeshi import, export, and distribution company specializing in premium spices, fresh vegetables, edible oils, and seeds. Committed to quality, sustainability, and ethical sourcing, we connect rural farmers to global markets while serving wholesalers, retailers, and food industries worldwide. With a strong distribution network and customized packaging solutions, Paiker Foods ensures fresh, authentic, and safe products delivered with trust.
+                            </p>
+                            <SocialLinks />
+                        </div>
+                  
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:mt-10">
 
-                    </p>
+
+                        {/* Navigation links */}
+                        <div className="space-y-4">
+                            <h3 className="text-lg font-semibold uppercase tracking-wider">Quick Links</h3>
+                            {renderLinkList(navLinks)}
+                        </div>
+
+                        {/* Company links */}
+                        <div className="space-y-4">
+                            <h3 className="text-lg font-semibold uppercase tracking-wider">Company</h3>
+                            {renderLinkList(companyLinks)}
+                        </div>
+
+                        {/* Contact info */}
+                        <div className="space-y-4">
+                            <h3 className="text-lg font-semibold uppercase tracking-wider">Contact Us</h3>
+                            <ul className="space-y-2">
+                                {contactInfo.map((item, index) => (
+                                    <li key={index} className="flex items-start">
+                                        <PiDotOutlineThin className="text-white mt-1.5 flex-shrink-0" />
+                                        <span className="ml-1">{item.name}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    </div>
                 </div>
 
-                {/* Navigation links section */}
-                <div className="grid grid-cols-2 text-sm gap-x-3 gap-y-8 lg:w-2/3 sm:grid-cols-4">
-                    <div className="space-y-3">
-                        <h3 className="tracking-wide uppercase text-gray-50">Navigation</h3>
-                        {renderLinkList(navLinks)}
-                    </div>
+                {/* Divider */}
+                <div className="border-t border-white border-opacity-20 my-8"></div>
 
-                    <div className="space-y-3">
-                        <h3 className="tracking-wide uppercase text-gray-50">Company</h3>
-                        {renderLinkList(companyLinks)}
+                {/* Copyright section */}
+                <div className="flex flex-col md:flex-row justify-between items-center text-sm">
+                    <div className="mb-4 md:mb-0">
+                        © {currentYear} Paiker Foods. All rights reserved.
                     </div>
-
-                    <div className="space-y-3">
-                        <h3 className="uppercase text-gray-50">Developers</h3>
-                        {renderLinkList(developerLinks)}
-                    </div>
-
-                    <div className="space-y-3">
-                        <h3 className="uppercase text-gray-50">Social media</h3>
-                        <p>Follow Us</p>
-                        <SocialLinks />
+                    <div>
+                        Designed & Developed by{' '}
+                        <a
+                            className="font-semibold hover:text-[#05B689] transition-colors duration-300"
+                            href="http://goinnovior.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Goinnovior
+                        </a>
                     </div>
                 </div>
             </div>
 
-            {/* Copyright section */}
-            <div className="text-center text-sm lg:text-base mt-4 mx-4 font-poppins">
-                © {currentYear} All Rights Reserved by Paiker Foods || Design & Developed By{' '}
-                <a
-                    className="font-semibold hover:text-[#00D8A1] transition-colors duration-500"
-                    href="http://goinnovior.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Goinnovior
-                </a>
-            </div>
-
-            {/* Whatsapp call  popup*/}
-            <div>
-                <WhatsappCall />
-            </div>
+            {/* Whatsapp call popup */}
+            <WhatsappCall />
         </footer>
     );
 };

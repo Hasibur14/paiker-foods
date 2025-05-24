@@ -2,7 +2,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 
 const BuyProductModal = ({ product, onClose, onSubmit }) => {
-  
+
   const {
     register,
     handleSubmit,
@@ -15,7 +15,7 @@ const BuyProductModal = ({ product, onClose, onSubmit }) => {
       mobileNumber: "",
       email: "",
       quantity: 1,
-      productName: product.name,
+      productName: product.category,
       message: ""
     }
   });
@@ -29,7 +29,7 @@ const BuyProductModal = ({ product, onClose, onSubmit }) => {
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-[9999]">
       <div className="bg-white rounded-lg w-full max-w-md max-h-[90vh] flex flex-col">
         <div className="flex justify-between items-center p-6 pb-2 border-b">
-          <h2 className="text-xl font-bold font-poppins">Order Product: {product.name}</h2>
+          <h2 className="text-xl font-bold font-poppins">Order Product: {product.category}</h2>
           <button
             onClick={onClose}
             className="text-gray-500 hover:text-rose-600 text-2xl"
@@ -104,7 +104,7 @@ const BuyProductModal = ({ product, onClose, onSubmit }) => {
 
           <div className="mb-4">
             <label className="block text-sm font-medium text-gray-700 mb-1 font-outfit">
-              Product
+              Product Category
             </label>
             <input
               type="text"

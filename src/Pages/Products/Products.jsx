@@ -9,6 +9,9 @@ import { TiStarHalf } from "react-icons/ti";
 import Brands from "../../components/Brands/Brands";
 import BuyProductModal from "../../components/Modal/BuyProductModal";
 import { CiMaximize2 } from "react-icons/ci";
+import useProductCategory from "../../hooks/useProductCategory";
+import useProduct from "../../hooks/useProduct";
+import LoadingSpinner from "../../components/LoadingSpinner/LoadingSpinner";
 
 const Products = () => {
     const [activeTab, setActiveTab] = useState("All Products");
@@ -16,24 +19,20 @@ const Products = () => {
     const [selectedProduct, setSelectedProduct] = useState(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [zoomedImg, setZoomedImg] = useState(null);
+    const [productCategory] = useProductCategory();
+    const [productsData, loading] = useProduct();
 
-    const FilterProducts = [
-        { id: 1, name: "Agricultural Products" },
-        { id: 2, name: "Organic Products" },
-        { id: 3, name: "Dariy Productions" },
-        { id: 4, name: "Sweet Exotic fruits" },
-        { id: 5, name: "Fresh Vegetables" },
-    ];
+    // Filter products based on category filter tab
+    const categoryFilteredProducts = activeFilterTab === "All Products"
+        ? productsData
+        : productsData.filter(product => product.category === activeFilterTab);
 
-
-    const filteredProducts = ProductCard.filter((product) => {
-        const matchesType =
-            activeTab === "All Products" || product.type === activeTab.toLowerCase();
-        const matchesFilter =
-            activeFilterTab === "All Products" ||
-            product.filterType === activeFilterTab.toLowerCase();
-        return matchesType && matchesFilter;
-    });
+    // Further filter products based on the active tab (All Products, Best Seller, New Products)
+    const filteredProducts = activeTab === "All Products"
+        ? categoryFilteredProducts
+        : categoryFilteredProducts.filter(product =>
+            product.filterType?.toLowerCase().includes(activeTab.toLowerCase().split(' ')[0])
+        );
 
     const handleBuyClick = (product) => {
         setSelectedProduct(product);
@@ -51,9 +50,14 @@ const Products = () => {
         handleCloseModal();
     };
 
+    if (loading) return <LoadingSpinner />
+
     return (
-        <div className="overflow-x-hidden ">
-            <BannerTitle bannerImg={banner} subTitle="Products" title="Our Products" />
+        <div className="overflow-x-hidden">
+            <BannerTitle
+                bannerImg={banner}
+                subTitle="Products"
+                title="Our Products" />
 
             <Container>
                 <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 lg:gap-10">
@@ -64,23 +68,23 @@ const Products = () => {
                             <button
                                 onClick={() => setActiveFilterTab("All Products")}
                                 className={`flex items-center justify-between px-4 py-3 rounded font-outfit transition-colors ${activeFilterTab === "All Products"
-                                        ? "bg-primary-light text-white"
-                                        : "bg-white hover:bg-primary-light hover:text-white"
+                                    ? "bg-primary-light text-white"
+                                    : "bg-white hover:bg-primary-light hover:text-white"
                                     }`}
                             >
                                 <h3 className="text-base font-semibold">All Categories</h3>
                                 <FaArrowRight />
                             </button>
-                            {FilterProducts.map((item) => (
+                            {productCategory?.map((item) => (
                                 <button
-                                    key={item.id}
-                                    onClick={() => setActiveFilterTab(item.name.toLowerCase())}
-                                    className={`flex items-center justify-between px-4 py-3 rounded font-outfit transition-colors ${activeFilterTab === item.name.toLowerCase()
-                                            ? "bg-primary-light text-white"
-                                            : "bg-white hover:bg-primary-light hover:text-white"
+                                    key={item._id}  // Changed from item.id to item._id
+                                    onClick={() => setActiveFilterTab(item.category)}
+                                    className={`flex items-center justify-between px-4 py-3 rounded font-outfit transition-colors ${activeFilterTab === item.category  // Changed from item.name to item.category
+                                        ? "bg-primary-light text-white"
+                                        : "bg-white hover:bg-primary-light hover:text-white"
                                         }`}
                                 >
-                                    <h3 className="text-base font-semibold">{item.name}</h3>
+                                    <h3 className="text-base font-semibold">{item.category}</h3>
                                     <FaArrowRight />
                                 </button>
                             ))}
@@ -130,53 +134,58 @@ const Products = () => {
 
                         {/* Product Cards */}
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                            {filteredProducts.map((item) => (
-                                <div key={item.id} className="w-full bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
-                                    <div className="relative h-48 md:h-56 w-full overflow-hidden">
-                                        <img
-                                            className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                                            src={item.img}
-                                            alt={item.name}
-                                            loading="lazy"
-                                        />
-                                        <button
-                                            onClick={() => setZoomedImg(item.img)}
-                                            className="absolute top-3 right-3 p-2 bg-black/30 backdrop-blur-sm rounded-lg hover:bg-black/50 transition-colors"
-                                        >
-                                            <CiMaximize2 className="h-5 w-5 text-white" />
-                                        </button>
-                                    </div>
-                                    <div className="p-4">
-                                        <div className="flex items-center justify-between mb-2">
-                                            <div className="flex text-second-light text-sm md:text-base">
-                                                <IoMdStar />
-                                                <IoMdStar />
-                                                <IoMdStar />
-                                                <IoMdStar />
-                                                <TiStarHalf />
-                                            </div>
-                                            <button className="bg-[#eaf4ed] hover:bg-primary-light hover:text-white rounded-full p-2 transition-colors">
-                                                <IoShareSocialOutline className="text-primary-light hover:text-white" />
+                            {filteredProducts.length > 0 ? (
+                                filteredProducts.map((item) => (
+                                    <div key={item._id} className="w-full bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow border">
+                                        <div className="relative h-48 md:h-56 w-full overflow-hidden">
+                                            <img
+                                                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                                                src={item.image}
+                                                alt={item.productName}
+                                                loading="lazy"
+                                            />
+                                            <button
+                                                onClick={() => setZoomedImg(item.image)}
+                                                className="absolute top-3 right-3 p-2 bg-black/30 backdrop-blur-sm rounded-lg hover:bg-black/50 transition-colors"
+                                            >
+                                                <CiMaximize2 className="h-5 w-5 text-white" />
                                             </button>
                                         </div>
-                                        <h2 className="font-outfit text-lg md:text-xl font-semibold line-clamp-1">
-                                            {item.name}
-                                        </h2>
-                                        <p className="font-outfit text-sm text-gray-600 mt-1">
-                                            {item.subtitle}
-                                        </p>
-                                        <p className="font-outfit text-sm text-gray-500 mt-2 line-clamp-2">
-                                            {item.description}
-                                        </p>
-                                        <button
-                                            onClick={() => handleBuyClick(item)}
-                                            className="w-full mt-4 bg-second-light hover:bg-second-deep text-black hover:text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-300"
-                                        >
-                                            Contact to buy
-                                        </button>
+                                        <div className="p-4">
+                                            <div className="flex items-center justify-between mb-2">
+                                                <div className="flex text-second-light text-sm md:text-base">
+                                                    {[...Array(5)].map((_, i) => (
+                                                        i < Math.floor(Number(item.rating)) ? (
+                                                            <IoMdStar key={i} />
+                                                        ) : i === Math.floor(Number(item.rating)) && Number(item.rating) % 1 !== 0 ? (
+                                                            <TiStarHalf key={i} />
+                                                        ) : null
+                                                    ))}
+                                                </div>
+                                                <button className="bg-green-100 text-green-600 text-sm rounded-full px-2 py-0.5 transition-colors">
+                                                    {item.category}
+                                                </button>
+                                            </div>
+                                            <h2 className="font-outfit text-lg md:text-xl font-semibold line-clamp-1">
+                                                {item.productName}
+                                            </h2>
+                                            <p className="font-outfit text-sm text-gray-500 mt-2 line-clamp-2">
+                                                {item.description}
+                                            </p>
+                                            <button
+                                                onClick={() => handleBuyClick(item)}
+                                                className="w-full font-poppins mt-4 bg-gradient-to-tl from-second-light to-second-deep  font-semibold py-2 px-4 rounded-lg transition-all duration-700 hover:scale-[1.03] hover:shadow-lg hover:brightness-110"
+                                            >
+                                                Contact to buy
+                                            </button>
+                                        </div>
                                     </div>
+                                ))
+                            ) : (
+                                <div className="col-span-3 text-center py-10">
+                                    <p className="text-gray-500">No products found matching your criteria</p>
                                 </div>
-                            ))}
+                            )}
                         </div>
                     </div>
                 </div>
@@ -219,94 +228,3 @@ const Products = () => {
 };
 
 export default Products;
-
-
-const ProductCard = [
-    {
-        id: 1,
-        name: "Rice",
-        subtitle: "Agricultural",
-        description:
-            "A staple food crop grown in flooded fields, essential in the diets of billions worldwide, especially in Asia.",
-        img: "https://i.postimg.cc/x8Lz1LrF/5329ab7f912dddd66367575e3087a698a469bac8.jpg",
-        type: "best seller",
-        filterType: "agricultural products",
-    },
-    {
-        id: 2,
-        name: "Wheat",
-        subtitle: "Agricultural",
-        description:
-            " A cereal grain used to produce flour for bread, pasta, and other foods; widely grown in temperate regions.",
-        img: "https://i.postimg.cc/XvJ4858G/d438fac10a18636a26f8f3558201faa82d55cad5.jpg",
-        type: "new products",
-        filterType: "organic products",
-    },
-    {
-        id: 3,
-        name: "Corn (Maize)",
-        subtitle: "Agricultural",
-        description:
-            "A versatile crop used for human consumption, animal feed, and biofuel production.",
-        img: "https://i.postimg.cc/50Q1cMDf/f4366b42a556696e69292d13de12d3f94c2dfc44.jpg",
-        type: "best seller",
-        filterType: "dariy productions",
-    },
-    {
-        id: 4,
-        name: "Rice",
-        subtitle: "Agricultural",
-        description:
-            "A staple food crop grown in flooded fields, essential in the diets of billions worldwide, especially in Asia.",
-        img: "https://i.postimg.cc/x8Lz1LrF/5329ab7f912dddd66367575e3087a698a469bac8.jpg",
-        type: "best seller",
-        filterType: "fresh vegetables",
-    },
-    {
-        id: 5,
-        name: "Rice",
-        subtitle: "Agricultural",
-        description:
-            " A cereal grain used to produce flour for bread, pasta, and other foods; widely grown in temperate regions.",
-        img: "https://i.postimg.cc/XvJ4858G/d438fac10a18636a26f8f3558201faa82d55cad5.jpg",
-        type: "best seller",
-        filterType: "sweet exotic fruits",
-    },
-    {
-        id: 6,
-        name: "Rice",
-        subtitle: "Agricultural",
-        description:
-            "A versatile crop used for human consumption, animal feed, and biofuel production.",
-        img: "https://i.postimg.cc/x8Lz1LrF/5329ab7f912dddd66367575e3087a698a469bac8.jpg",
-        type: "best seller",
-        filterType: "organic products",
-    },
-    {
-        id: 7,
-        name: "Rice",
-        subtitle: "Agricultural",
-        description:
-            "A staple food crop grown in flooded fields, essential in the diets of billions worldwide, especially in Asia.",
-        img: "https://i.postimg.cc/x8Lz1LrF/5329ab7f912dddd66367575e3087a698a469bac8.jpg",
-        type: "new products",
-    },
-    {
-        id: 8,
-        name: "Rice",
-        subtitle: "Agricultural",
-        description:
-            " A cereal grain used to produce flour for bread, pasta, and other foods; widely grown in temperate regions.",
-        img: "https://i.postimg.cc/x8Lz1LrF/5329ab7f912dddd66367575e3087a698a469bac8.jpg",
-        type: "new products",
-    },
-    {
-        id: 9,
-        name: "Rice",
-        subtitle: "Agricultural",
-        description:
-            "A versatile crop used for human consumption, animal feed, and biofuel production.",
-        img: "https://i.postimg.cc/x8Lz1LrF/5329ab7f912dddd66367575e3087a698a469bac8.jpg",
-        type: "new products",
-    },
-];

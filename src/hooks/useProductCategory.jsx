@@ -12,9 +12,11 @@ const useProductCategory = () => {
             const res = await axiosPublic.get('/fresh-products')
             return res.data
         }
-    })
+    });
 
-    return [productCategory, loading]
+    return [productCategory, loading];
+
+    
 };
 
 export default useProductCategory;

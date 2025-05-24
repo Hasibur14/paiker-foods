@@ -1,19 +1,18 @@
-import React, { useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/autoplay';
 import { Link } from 'react-router-dom';
 import Container from '../../../components/Container/Container';
+import useProductCategory from '../../../hooks/useProductCategory';
+import LoadingSpinner from '../../../components/LoadingSpinner/LoadingSpinner';
 
 const FreshProduct = () => {
-    const [foods, setFoods] = useState([]);
 
-    useEffect(() => {
-        fetch('/freshProduct.json')
-            .then(res => res.json())
-            .then(data => setFoods(data))
-    }, [])
+    const [productCategory, loading] = useProductCategory();
+
+
+    if (loading) return <LoadingSpinner />
 
     return (
         <div className="relative pt-16 pb-24">
@@ -32,7 +31,7 @@ const FreshProduct = () => {
                     </h2>
                 </div>
 
-                {foods?.length > 0 && (
+                {productCategory?.length > 0 && (
                     <Swiper
                         modules={[Autoplay]}
                         spaceBetween={50}
@@ -48,7 +47,7 @@ const FreshProduct = () => {
                             delay: 3000,
                             disableOnInteraction: false,
                         }}>
-                        {foods?.map((item) => (
+                        {productCategory?.map((item) => (
                             <SwiperSlide
                                 key={item._id}
                                 className="flex justify-center h-80 pb-10">
@@ -56,7 +55,7 @@ const FreshProduct = () => {
                                     <img
                                         className="object-center w-full h-72 object-cover rounded-xl lg:h-96 hover:scale-105 transition-all duration-500 cursor-pointer"
                                         src={item.image}
-                                        alt={item.title}
+                                        alt={item.category}
                                     />
 
                                     <div className='absolute -bottom-6 left-5 z-10 p-3 bg-primary-light  shadow-xl rounded-lg text-center '>
@@ -67,10 +66,10 @@ const FreshProduct = () => {
                                     </div>
                                     <div className="absolute -bottom-6 right-5 z-10 px-3 py-4 bg-white w-[60%] shadow-xl rounded-lg text-center ">
                                         <h1 className="font-shadows text-xl  text-gray-900 group-hover:text-sky-500 mb-2 uppercase transition-colors duration-500">
-                                            {item.title}
+                                            {item.category}
                                         </h1>
                                         <Link
-                                            to={`/product-details/${item._id}`}
+                                            to='/products'
                                             className='font-rubik text-second-deep hover:text-orange-400  underline'>
                                             Read More
                                         </Link>
